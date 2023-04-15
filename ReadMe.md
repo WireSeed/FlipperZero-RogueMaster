@@ -44,6 +44,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [Mifare Nested (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) -> Learn [How to Use](https://github.com/AloneLiberty/FlipperNested#how-to-use-it)
 - UL: SubGhz - Temp Fix RAW recording and reading (By xMasterX)
 - UL: Nero Radio 57bit experimental support (By xMasterX)
+- Updated: [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
 
 <a name="release">
 
