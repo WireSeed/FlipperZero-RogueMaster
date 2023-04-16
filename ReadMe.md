@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0415-0428-0.81.2-a95c4e3](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-15 04:28 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-15 04:28 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-16 04:20 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-16 04:20 EST`
 - All [Patreon Members](https://www.patreon.com/RogueMaster/membership) on Apr 14th @ 12PM EST will be granted 10 submissions into our Flipper Zero giveaway! See [Discord](https://discord.gg/gF2bBUzAFe) #announcements for more details on how you can get more chances to win!
 - Updated: [GPS (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` UL PR: [Implements an array for baudrates on GPS UART app #416 (By p0ns)](https://github.com/DarkFlippers/unleashed-firmware/pull/416)
 - Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
@@ -45,6 +45,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: SubGhz - Temp Fix RAW recording and reading (By xMasterX)
 - UL: Nero Radio 57bit experimental support (By xMasterX)
 - Updated: [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
+- UL: Improve nero radio encoder timings (By xMasterX)
+- Updated: [Mifare Nested (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) - FAM and DOCS updated
 
 <a name="release">
 

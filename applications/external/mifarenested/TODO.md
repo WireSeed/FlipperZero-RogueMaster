@@ -2,6 +2,7 @@
 
 1. Better (faster) detection of delay in a nested attack
 2. Fix infinite calibration on static encrypted nonce tags
+3. HardNested attack
 
 ## Thinking about:
 
