@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0416-0432-0.81.2-3c3bce6](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-16 04:32 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-16 04:32 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-16 21:24 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-16 21:24 EST`
 - All [Patreon Members](https://www.patreon.com/RogueMaster/membership) on Apr 14th @ 12PM EST will be granted 10 submissions into our Flipper Zero giveaway! See [Discord](https://discord.gg/gF2bBUzAFe) #announcements for more details on how you can get more chances to win!
 - Updated: [GPS (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` UL PR: [Implements an array for baudrates on GPS UART app #416 (By p0ns)](https://github.com/DarkFlippers/unleashed-firmware/pull/416)
 - Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
@@ -44,9 +44,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [Mifare Nested (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) -> Learn [How to Use](https://github.com/AloneLiberty/FlipperNested#how-to-use-it)
 - UL: SubGhz - Temp Fix RAW recording and reading (By xMasterX)
 - UL: Nero Radio 57bit experimental support (By xMasterX)
-- Updated: [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
 - UL: Improve nero radio encoder timings (By xMasterX)
-- Updated: [Mifare Nested (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) - FAM and DOCS updated
+- Updated: [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
+- Updated: [Mifare Nested 1.1.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) - FAM and DOCS updated
 
 <a name="release">
 
@@ -332,6 +332,7 @@ $ ./fbt dolphin_ext
 - [Metronome (By panki27)](https://github.com/panki27/Metronome)
 - [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey)
 - [Mifare Fuzzer (By spheeere98)](https://github.com/spheeere98/mifare_fuzzer)
+- [Mifare Nested 1.1.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - [Morse Code (By wh00hw)](https://github.com/DarkFlippers/unleashed-firmware/pull/144)
 - [Mouse Jacker (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/mousejacker) ([Pin Out](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/mousejacker) from nocomp/Frog/UberGuidoZ) `Req: NRF24`
 - [Mouse Jiggler (By Jacob-Tate)](https://github.com/Jacob-Tate/flipperzero-firmware/blob/dev/applications/mouse_jiggler/mouse_jiggler.c) (Original By MuddleBox)
