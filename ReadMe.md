@@ -47,6 +47,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Improve nero radio encoder timings (By xMasterX)
 - Updated: [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
 - Updated: [Mifare Nested 1.1.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) - FAM and DOCS updated
+- OFW PR: [Picopass: Fix for GH-2589 #2590 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2590)
 
 <a name="release">
 
