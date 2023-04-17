@@ -47,7 +47,9 @@
  *         },
  *         "select": {
  *             "type": "ap" | "station" | "ssid",
- *             "filter": "all" | "contains \"{SSID fragment}\" or equals \"{SSID}\" or ..." (Not implemented yet on Marauder firmware)
+ *             "filter": "all" | "contains -f '{SSID fragment}' or equals '{SSID}' or ...",
+ *             "index": index number,
+ *             "indexes": [0, 1, 2, 3...],
  *         },
  *         "deauth": {
  *             "timeout": seconds
@@ -89,6 +91,16 @@
  *         }
  *     }
  * }
+ * 
+ * Note: It is possible to inform "stages" as an array, allowing ordering and repetition of stages of the same type:
+ *     "stages": [
+ *       {
+ *         "beaconList": { "ssids": ["SSID 1", "SSID 2"] }
+ *       },
+ *       {
+ *         "beaconList": { "generate": 4 }
+ *       },
+ *     ]
  * ----------------------------------------------------------------------------------------------------
  */
 
@@ -96,6 +108,12 @@
 
 #include <storage/storage.h>
 #include "cJSON.h"
+
+typedef enum {
+    WifiMarauderScriptBooleanFalse = 0,
+    WifiMarauderScriptBooleanTrue = 1,
+    WifiMarauderScriptBooleanUndefined = 2
+} WifiMarauderScriptBoolean;
 
 typedef enum {
     WifiMarauderScriptStageTypeScan,
@@ -139,6 +157,7 @@ typedef struct WifiMarauderScriptStageScan {
 typedef struct WifiMarauderScriptStageSelect {
     WifiMarauderScriptSelectType type;
     char* filter;
+    int* indexes;
     // TODO: Implement a feature to not select the same items in the next iteration of the script
     bool allow_repeat;
 } WifiMarauderScriptStageSelect;
@@ -193,9 +212,8 @@ typedef struct WifiMarauderScript {
     char* name;
     char* description;
     WifiMarauderScriptStage* first_stage;
-    // TODO: Think of a way to not change the settings if they are not informed in the JSON
-    bool enable_led;
-    bool save_pcap;
+    WifiMarauderScriptBoolean enable_led;
+    WifiMarauderScriptBoolean save_pcap;
     int repeat;
 } WifiMarauderScript;
 
@@ -205,4 +223,5 @@ WifiMarauderScript* wifi_marauder_script_parse_file(const char* file_path, Stora
 WifiMarauderScriptStage* wifi_marauder_script_get_stage(
     WifiMarauderScript* script,
     WifiMarauderScriptStageType stage_type);
+WifiMarauderScriptStage* wifi_marauder_script_get_last_stage(WifiMarauderScript* script);
 void wifi_marauder_script_free(WifiMarauderScript* script);

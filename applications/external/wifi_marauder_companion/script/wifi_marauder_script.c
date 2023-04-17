@@ -6,8 +6,6 @@
 #define WIFI_MARAUDER_DEFAULT_TIMEOUT_PROBE 60
 #define WIFI_MARAUDER_DEFAULT_TIMEOUT_SNIFF 60
 #define WIFI_MARAUDER_DEFAULT_TIMEOUT_BEACON 60
-#define WIFI_MARAUDER_DEFAULT_ENABLE_LED true
-#define WIFI_MARAUDER_DEFAULT_SAVE_PCAP true
 
 WifiMarauderScript* wifi_marauder_script_alloc() {
     WifiMarauderScript* script = (WifiMarauderScript*)malloc(sizeof(WifiMarauderScript));
@@ -17,8 +15,8 @@ WifiMarauderScript* wifi_marauder_script_alloc() {
     script->name = NULL;
     script->description = NULL;
     script->first_stage = NULL;
-    script->enable_led = WIFI_MARAUDER_DEFAULT_ENABLE_LED;
-    script->save_pcap = WIFI_MARAUDER_DEFAULT_SAVE_PCAP;
+    script->enable_led = WifiMarauderScriptBooleanUndefined;
+    script->save_pcap = WifiMarauderScriptBooleanUndefined;
     script->repeat = 1;
     return script;
 }
@@ -91,6 +89,8 @@ WifiMarauderScriptStageSelect* _wifi_marauder_script_get_stage_select(cJSON* sta
 
     cJSON* type_json = cJSON_GetObjectItemCaseSensitive(select_stage_json, "type");
     cJSON* filter_json = cJSON_GetObjectItemCaseSensitive(select_stage_json, "filter");
+    cJSON* indexes_json = cJSON_GetObjectItemCaseSensitive(select_stage_json, "indexes");
+    cJSON* index_json = cJSON_GetObjectItemCaseSensitive(select_stage_json, "index");
     cJSON* allow_repeat_json = cJSON_GetObjectItemCaseSensitive(select_stage_json, "allow_repeat");
 
     if(!cJSON_IsString(type_json) || !cJSON_IsString(filter_json)) {
@@ -116,6 +116,24 @@ WifiMarauderScriptStageSelect* _wifi_marauder_script_get_stage_select(cJSON* sta
     stage_select->filter = filter_str;
     stage_select->allow_repeat = cJSON_IsBool(allow_repeat_json) ? allow_repeat_json->valueint :
                                                                    true;
+
+    if(cJSON_IsNumber(index_json)) {
+        int* indexes = (int*)malloc(sizeof(int));
+        indexes[0] = index_json->valueint;
+        stage_select->indexes = indexes;
+    } else if(cJSON_IsArray(indexes_json)) {
+        int indexes_size = cJSON_GetArraySize(indexes_json);
+        int* indexes = (int*)malloc(indexes_size * sizeof(int));
+        for(int i = 0; i < indexes_size; i++) {
+            cJSON* index_item = cJSON_GetArrayItem(indexes_json, i);
+            if(cJSON_IsNumber(index_item)) {
+                indexes[i] = index_item->valueint;
+            }
+        }
+        stage_select->indexes = indexes;
+    } else {
+        stage_select->indexes = NULL;
+    }
 
     return stage_select;
 }
@@ -352,7 +370,7 @@ void _wifi_marauder_script_add_stage(
 }
 
 void _wifi_marauder_script_load_stages(WifiMarauderScript* script, cJSON* stages) {
-    WifiMarauderScriptStage* prev_stage = NULL;
+    WifiMarauderScriptStage* prev_stage = wifi_marauder_script_get_last_stage(script);
 
     // Scan stage
     WifiMarauderScriptStageScan* stage_scan = _wifi_marauder_script_get_stage_scan(stages);
@@ -483,8 +501,16 @@ WifiMarauderScript* wifi_marauder_script_parse_raw(const char* json_raw) {
     }
     cJSON* meta = cJSON_GetObjectItem(json, "meta");
     _wifi_marauder_script_load_meta(script, meta);
+
     cJSON* stages = cJSON_GetObjectItem(json, "stages");
-    _wifi_marauder_script_load_stages(script, stages);
+    if(cJSON_IsArray(stages)) {
+        cJSON* stage_item = NULL;
+        cJSON_ArrayForEach(stage_item, stages) {
+            _wifi_marauder_script_load_stages(script, stage_item);
+        }
+    } else {
+        _wifi_marauder_script_load_stages(script, stages);
+    }
 
     return script;
 }
@@ -530,6 +556,17 @@ WifiMarauderScriptStage* wifi_marauder_script_get_stage(
     return NULL;
 }
 
+WifiMarauderScriptStage* wifi_marauder_script_get_last_stage(WifiMarauderScript* script) {
+    if(script == NULL || script->first_stage == NULL) {
+        return NULL;
+    }
+    WifiMarauderScriptStage* current_stage = script->first_stage;
+    while(current_stage->next_stage != NULL) {
+        current_stage = current_stage->next_stage;
+    }
+    return current_stage;
+}
+
 void wifi_marauder_script_free(WifiMarauderScript* script) {
     if(script == NULL) {
         return;
@@ -542,7 +579,12 @@ void wifi_marauder_script_free(WifiMarauderScript* script) {
             free(current_stage->stage);
             break;
         case WifiMarauderScriptStageTypeSelect:
-            free(((WifiMarauderScriptStageSelect*)current_stage->stage)->filter);
+            if(((WifiMarauderScriptStageSelect*)current_stage->stage)->filter != NULL) {
+                free(((WifiMarauderScriptStageSelect*)current_stage->stage)->filter);
+            }
+            if(((WifiMarauderScriptStageSelect*)current_stage->stage)->indexes != NULL) {
+                free(((WifiMarauderScriptStageSelect*)current_stage->stage)->indexes);
+            }
             free(current_stage->stage);
             break;
         case WifiMarauderScriptStageTypeDeauth:
