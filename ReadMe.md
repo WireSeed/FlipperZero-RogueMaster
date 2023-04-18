@@ -57,6 +57,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Plugins: Improve wifi marauder keyboard (added extra symbols!) (Port uart terminal keyboard into wifi marauder) (By xMasterX)
 - UL: SubGHz Remote add Alutech AT4N Support (By xMasterX)
 - Added: [Nu Pogodi! (Ну, погоди!) (By sionyx)](https://github.com/sionyx/flipper_nupogodi)
+- Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem)  - Changes to BAUDRATE & Power Handling
 
 <a name="release">
 
