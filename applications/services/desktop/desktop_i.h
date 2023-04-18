@@ -11,7 +11,6 @@
 #include "views/desktop_view_slideshow.h"
 #include <desktop/desktop_settings.h>
 #include <bt/bt_settings.h>
-#include <rpc/rpc.h>
 
 #include <furi.h>
 #include <gui/gui.h>
