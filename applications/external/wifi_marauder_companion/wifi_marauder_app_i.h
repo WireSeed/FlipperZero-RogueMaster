@@ -15,9 +15,9 @@
 #include <gui/view_dispatcher.h>
 #include <gui/scene_manager.h>
 #include <gui/modules/text_box.h>
-#include <gui/modules/text_input.h>
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/widget.h>
+#include "wifi_marauder_text_input.h"
 
 #include <storage/storage.h>
 #include <lib/toolbox/path.h>
@@ -48,7 +48,7 @@ struct WifiMarauderApp {
     FuriString* text_box_store;
     size_t text_box_store_strlen;
     TextBox* text_box;
-    TextInput* text_input;
+    WIFI_TextInput* text_input;
     Storage* storage;
     File* capture_file;
     File* log_file;
