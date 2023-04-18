@@ -50,6 +50,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW PR: [Raw RFID documentation (Thank you Astrrra) #597](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/597)
 - UL PR: [Updated infrared assets #421 (By amec0e)](https://github.com/DarkFlippers/unleashed-firmware/pull/421)
 - Updated: [WiFi (Marauder) v3.1.3 (Updated By tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion)
+- [Implemented PR#2583 with Desktop Icon Style and Settings #598 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/598)
+- OFW PR: [Active RPC session icon #2583 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/2583)
 
 <a name="release">
 
