@@ -35,7 +35,6 @@ This software is for experimental purposes only and is not meant for any illegal
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-19 19:03 EST`
 - All [Patreon Members](https://www.patreon.com/RogueMaster/membership) on Apr 14th @ 12PM EST will be granted 10 submissions into our Flipper Zero giveaway! See [Discord](https://discord.gg/gF2bBUzAFe) #announcements for more details on how you can get more chances to win!
 - Updated: [GPS (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` UL PR: [Implements an array for baudrates on GPS UART app #416 (By p0ns)](https://github.com/DarkFlippers/unleashed-firmware/pull/416)
-- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - OFW: [Deep Sleep Idle #2569 (DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2569)
 - UL: [refactoring HID_BLE #420 (By krolchonok)](https://github.com/DarkFlippers/unleashed-firmware/pull/420)
 - UL: Plugins: Bluetooth Remote - implemented YouTube Shorts Remote (may be unstable) (By xMasterX)
@@ -60,6 +59,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem)  - Changes to BAUDRATE & Power Handling
 - OFW: [github: testing SDK with ufbt action #2581 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2581)
 - OFW: [Introduce stealth mode and auto-selective lock #2576 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/2576)
+- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 
 <a name="release">
 
