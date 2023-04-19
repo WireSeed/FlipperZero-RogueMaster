@@ -359,13 +359,11 @@ static void rpc_system_gui_virtual_display_frame_process(const PB_Main* request,
     (void)session;
 }
 
-
 static void rpc_active_session_icon_draw_callback(Canvas* canvas, void* context) {
     UNUSED(context);
     furi_assert(canvas);
     canvas_draw_icon(canvas, 0, 0, &I_Rpc_active_7x8);
 }
-
 
 void* rpc_system_gui_alloc(RpcSession* session) {
     furi_assert(session);
@@ -438,6 +436,18 @@ void* rpc_system_gui_alloc(RpcSession* session) {
 		}
 	}
 
+    // Active session icon
+    rpc_gui->rpc_session_active_viewport = view_port_alloc();
+    view_port_set_width(rpc_gui->rpc_session_active_viewport, icon_get_width(&I_Rpc_active_7x8));
+    view_port_draw_callback_set(
+        rpc_gui->rpc_session_active_viewport, rpc_active_session_icon_draw_callback, session);
+    if(rpc_session_get_owner(rpc_gui->session) != RpcOwnerBle) {
+        view_port_enabled_set(rpc_gui->rpc_session_active_viewport, true);
+    } else {
+        view_port_enabled_set(rpc_gui->rpc_session_active_viewport, false);
+    }
+    gui_add_view_port(rpc_gui->gui, rpc_gui->rpc_session_active_viewport, GuiLayerStatusBarLeft);
+
     RpcHandler rpc_handler = {
         .message_handler = NULL,
         .decode_submessage = NULL,
@@ -483,6 +493,9 @@ void rpc_system_gui_free(void* context) {
 	
 	gui_remove_view_port(rpc_gui->gui, rpc_gui->rpc_session_active_viewport_slim);
     view_port_free(rpc_gui->rpc_session_active_viewport_slim);
+
+    gui_remove_view_port(rpc_gui->gui, rpc_gui->rpc_session_active_viewport);
+    view_port_free(rpc_gui->rpc_session_active_viewport);
 
     if(rpc_gui->is_streaming) {
         rpc_gui->is_streaming = false;

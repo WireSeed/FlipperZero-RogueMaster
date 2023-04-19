@@ -21,6 +21,7 @@ typedef enum {
     DesktopLockMenuIndexPinLock,
     DesktopLockMenuIndexPinLockShutdown,
     // DesktopLockMenuIndexGameMode,
+    DesktopLockMenuIndexStealth,
     DesktopLockMenuIndexDummy,
 
     DesktopLockMenuIndexTotalCount
@@ -52,6 +53,14 @@ void desktop_lock_menu_set_dummy_mode_state(DesktopLockMenuView* lock_menu, bool
         true);
 }
 
+void desktop_lock_menu_set_stealth_mode_state(DesktopLockMenuView* lock_menu, bool stealth_mode) {
+    with_view_model(
+        lock_menu->view,
+        DesktopLockMenuViewModel * model,
+        { model->stealth_mode = stealth_mode; },
+        true);
+}
+
 void desktop_lock_menu_set_idx(DesktopLockMenuView* lock_menu, uint8_t idx) {
     furi_assert(idx < DesktopLockMenuIndexTotalCount);
     with_view_model(
@@ -71,11 +80,11 @@ void desktop_lock_menu_draw_callback(Canvas* canvas, void* model) {
 
         if(i == DesktopLockMenuIndexLock) {
             str = "Lock";
-        } else if(i == DesktopLockMenuIndexPinLock) {
-            if(m->pin_is_set) {
-                str = "Lock with PIN";
+        } else if(i == DesktopLockMenuIndexStealth) {
+            if(m->stealth_mode) {
+                str = "Sound Mode";
             } else {
-                str = "Set PIN";
+                str = "Stealth Mode";
             }
         } else if(i == DesktopLockMenuIndexPinLockShutdown) {
             if(m->pin_is_set) {
@@ -114,6 +123,8 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
     uint8_t idx = 0;
     bool consumed = false;
     bool dummy_mode = false;
+    bool stealth_mode = false;
+    bool pin_is_set = false;
     bool update = false;
 
     with_view_model(
@@ -141,20 +152,32 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
             }
             idx = model->idx;
             dummy_mode = model->dummy_mode;
+            stealth_mode = model->stealth_mode;
+            pin_is_set = model->pin_is_set;
         },
         update);
 
     if(event->key == InputKeyOk) {
         if((idx == DesktopLockMenuIndexLock) && (event->type == InputTypeShort)) {
-            lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
-        } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
-            lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
+            if((pin_is_set) && (event->type == InputTypeShort)) {
+                lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
+            } else if((pin_is_set == false) && (event->type == InputTypeShort)) {
+                lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
+            }
+        // } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
+            // lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
         } else if((idx == DesktopLockMenuIndexPinLockShutdown) && (event->type == InputTypeShort)) {
             lock_menu->callback(DesktopLockMenuEventPinLockShutdown, lock_menu->context);
             // } else if((idx == DesktopLockMenuIndexGameMode) && (event->type == InputTypeShort)) {
             // desktop_view_lock_menu_dumbmode_changed(1);
             // DOLPHIN_DEED(getRandomDeed());
             // lock_menu->callback(DesktopLockMenuEventExit, lock_menu->context);
+        } else if(idx == DesktopLockMenuIndexStealth) {
+            if((stealth_mode == false) && (event->type == InputTypeShort)) {
+                lock_menu->callback(DesktopLockMenuEventStealthModeOn, lock_menu->context);
+            } else if((stealth_mode == true) && (event->type == InputTypeShort)) {
+                lock_menu->callback(DesktopLockMenuEventStealthModeOff, lock_menu->context);
+            }
         } else if(idx == DesktopLockMenuIndexDummy) {
             DOLPHIN_DEED(getRandomDeed());
             if((dummy_mode == false) && (event->type == InputTypeShort)) {
