@@ -355,8 +355,8 @@ void desktop_settings_scene_start_on_exit(void* context) {
 
     if((app->settings.icon_style != origIconStyle_value) ||
        (app->settings.displayBatteryPercentage != origBattDisp_value) ||
-       (app->settings.bt_icon != origBTIcon_value) || (app->settings.rpc_icon != origRPC_value) || (app->settings.sdcard != origSDCard_value) ||
-       (app->settings.top_bar != origTopBar_value)) {
+       (app->settings.bt_icon != origBTIcon_value) || (app->settings.rpc_icon != origRPC_value) ||
+       (app->settings.sdcard != origSDCard_value) || (app->settings.top_bar != origTopBar_value)) {
         furi_hal_power_reset();
     }
 }

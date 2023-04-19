@@ -164,7 +164,7 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
             } else if((pin_is_set == false) && (event->type == InputTypeShort)) {
                 lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
             }
-        // } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
+            // } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
             // lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
         } else if((idx == DesktopLockMenuIndexPinLockShutdown) && (event->type == InputTypeShort)) {
             lock_menu->callback(DesktopLockMenuEventPinLockShutdown, lock_menu->context);
