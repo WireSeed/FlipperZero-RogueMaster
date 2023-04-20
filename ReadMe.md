@@ -40,6 +40,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Fix keeloq custom buttons bug & SubGHZ Remote Fix (By xMasterX)
 - UL: SubGHz changes for Kostily and velosipedy (By xMasterX)
 - UL: Gui, module menu: fix memleak (By DrZlo13)
+- Updated: [WiFi (Marauder) v3.1.3 (Updated By tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion)
 
 <a name="release">
 

@@ -1,25 +1,49 @@
 #include "../wifi_marauder_app_i.h"
 
-enum SubmenuIndex { SubmenuIndexRun, SubmenuIndexEdit, SubmenuIndexDelete };
+enum SubmenuIndex {
+    SubmenuIndexRun,
+    SubmenuIndexSettings,
+    SubmenuIndexEditStages,
+    SubmenuIndexSave,
+    SubmenuIndexDelete
+};
+
+void wifi_marauder_scene_script_options_save_script(WifiMarauderApp* app) {   
+    char script_path[256];
+    snprintf(script_path, sizeof(script_path), "%s/%s.json", MARAUDER_APP_FOLDER_SCRIPTS, app->script->name);
+    wifi_marauder_script_save_json(app->storage, script_path, app->script);
+
+    DialogMessage* message = dialog_message_alloc();
+    dialog_message_set_text(message, "Saved!", 88, 32, AlignCenter, AlignCenter);
+    dialog_message_set_icon(message, &I_DolphinCommon_56x48, 5, 6);
+    dialog_message_set_buttons(message, NULL, "Ok", NULL);
+    dialog_message_show(app->dialogs, message);
+    dialog_message_free(message);
+}
 
 static void wifi_marauder_scene_script_options_callback(void* context, uint32_t index) {
     WifiMarauderApp* app = context;
 
-    switch(index) {
-    case SubmenuIndexRun:
-        scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
-        scene_manager_next_scene(app->scene_manager, WifiMarauderSceneConsoleOutput);
-        break;
-    case SubmenuIndexEdit:
-        scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
-        scene_manager_next_scene(app->scene_manager, WifiMarauderSceneScriptEdit);
-        break;
-    case SubmenuIndexDelete:
-        scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
-        scene_manager_next_scene(app->scene_manager, WifiMarauderSceneScriptConfirmDelete);
-        break;
-    default:
-        break;
+    switch (index) {
+        case SubmenuIndexRun:
+            scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
+            scene_manager_next_scene(app->scene_manager, WifiMarauderSceneConsoleOutput);
+            break;
+        case SubmenuIndexSettings:
+            scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
+            scene_manager_next_scene(app->scene_manager, WifiMarauderSceneScriptSettings);
+            break;
+        case SubmenuIndexEditStages:
+            scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
+            scene_manager_next_scene(app->scene_manager, WifiMarauderSceneScriptEdit);
+            break;
+        case SubmenuIndexSave:
+            wifi_marauder_scene_script_options_save_script(app);
+            break;
+        case SubmenuIndexDelete:
+            scene_manager_set_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions, index);
+            scene_manager_next_scene(app->scene_manager, WifiMarauderSceneScriptConfirmDelete);
+            break;
     }
 }
 
@@ -27,7 +51,7 @@ void wifi_marauder_scene_script_options_on_enter(void* context) {
     WifiMarauderApp* app = context;
 
     // If returning after confirming script deletion
-    if(app->script == NULL) {
+    if (app->script == NULL) {
         scene_manager_previous_scene(app->scene_manager);
         return;
     }
@@ -35,28 +59,13 @@ void wifi_marauder_scene_script_options_on_enter(void* context) {
     Submenu* script_options_submenu = app->script_options_submenu;
 
     submenu_set_header(script_options_submenu, app->script->name);
-    submenu_add_item(
-        script_options_submenu,
-        "[>] RUN",
-        SubmenuIndexRun,
-        wifi_marauder_scene_script_options_callback,
-        app);
-    submenu_add_item(
-        script_options_submenu,
-        "[*] EDIT",
-        SubmenuIndexEdit,
-        wifi_marauder_scene_script_options_callback,
-        app);
-    submenu_add_item(
-        script_options_submenu,
-        "[X] DELETE",
-        SubmenuIndexDelete,
-        wifi_marauder_scene_script_options_callback,
-        app);
+    submenu_add_item(script_options_submenu, "[>] RUN", SubmenuIndexRun, wifi_marauder_scene_script_options_callback, app);
+    submenu_add_item(script_options_submenu, "[S] SETTINGS", SubmenuIndexSettings, wifi_marauder_scene_script_options_callback, app);
+    submenu_add_item(script_options_submenu, "[+] EDIT STAGES", SubmenuIndexEditStages, wifi_marauder_scene_script_options_callback, app);
+    submenu_add_item(script_options_submenu, "[*] SAVE", SubmenuIndexSave, wifi_marauder_scene_script_options_callback, app);
+    submenu_add_item(script_options_submenu, "[X] DELETE", SubmenuIndexDelete, wifi_marauder_scene_script_options_callback, app);
 
-    submenu_set_selected_item(
-        script_options_submenu,
-        scene_manager_get_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions));
+    submenu_set_selected_item(script_options_submenu, scene_manager_get_scene_state(app->scene_manager, WifiMarauderSceneScriptOptions));
     view_dispatcher_switch_to_view(app->view_dispatcher, WifiMarauderAppViewScriptOptions);
 }
 
