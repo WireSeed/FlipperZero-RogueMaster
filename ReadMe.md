@@ -35,6 +35,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-20 06:08 EST`
 - OFW: [cubewb: updated to v1.16.0 #2595 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2595)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) to allow firmware compile
+- Updated: Bad USB is now a FAP again
 
 <a name="release">
 
