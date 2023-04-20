@@ -69,7 +69,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Fixed some desktop setting defaults when unable to load desktop settings #604 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/604)
 - Fixed RM Dice load
 - Added 3 New Waifu passport pictures from Senpai animation and other desktop animations
-- Reverted furi_hal_is_normal_boot changes to try to fix boot loops
+- Reverted furi_hal_is_normal_boot changes to fix boot loops
 
 <a name="release">
 
