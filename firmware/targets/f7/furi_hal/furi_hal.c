@@ -6,12 +6,6 @@
 
 #define TAG "FuriHal"
 
-bool normal_boot = false;
-
-bool furi_hal_is_normal_boot() {
-    return normal_boot;
-}
-
 void furi_hal_init_early() {
     furi_hal_cortex_init_early();
     furi_hal_clock_init_early();
@@ -32,7 +26,6 @@ void furi_hal_deinit_early() {
 }
 
 void furi_hal_init() {
-    normal_boot = true;
     furi_hal_mpu_init();
     furi_hal_clock_init();
     furi_hal_console_init();
