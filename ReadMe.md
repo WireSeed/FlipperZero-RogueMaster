@@ -36,6 +36,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [cubewb: updated to v1.16.0 #2595 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2595)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) to allow firmware compile
 - Updated: Bad USB is now a FAP again
+- If you get furi check crash errors, do a Factory Reset under Settings=> Storage and then go re-set your settings manually
 
 <a name="release">
 
