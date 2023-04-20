@@ -265,15 +265,6 @@ static void render_callback(Canvas* const canvas, void* ctx) {
         case PIMG_WAIFU3:
             canvas_draw_icon(canvas, 11, 2, &I_Waifu3);
             break;
-        case PIMG_WAIFU4:
-            canvas_draw_icon(canvas, 11, 2, &I_Waifu4);
-            break;
-        case PIMG_WAIFU5:
-            canvas_draw_icon(canvas, 11, 2, &I_Waifu5);
-            break;
-        case PIMG_WAIFU6:
-            canvas_draw_icon(canvas, 11, 2, &I_Waifu6);
-            break;
         }
 
         //draw flipper info
