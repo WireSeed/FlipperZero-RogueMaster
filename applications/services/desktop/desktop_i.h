@@ -65,13 +65,14 @@ struct Desktop {
     ViewPort* topbar_icon_viewport;
     ViewPort* sdcard_icon_viewport;
     ViewPort* bt_icon_viewport;
+    ViewPort* stealth_mode_icon_viewport;
 
     ViewPort* lock_icon_slim_viewport;
     ViewPort* dummy_mode_icon_slim_viewport;
     ViewPort* topbar_icon_slim_viewport;
     ViewPort* sdcard_icon_slim_viewport;
     ViewPort* bt_icon_slim_viewport;
-    ViewPort* stealth_mode_icon_viewport;
+    ViewPort* stealth_mode_icon_slim_viewport;
 
     AnimationManager* animation_manager;
 

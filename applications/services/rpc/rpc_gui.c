@@ -441,6 +441,7 @@ void* rpc_system_gui_alloc(RpcSession* session) {
         }
     }
 
+    /*
     // Active session icon
     rpc_gui->rpc_session_active_viewport = view_port_alloc();
     view_port_set_width(rpc_gui->rpc_session_active_viewport, icon_get_width(&I_Rpc_active_7x8));
@@ -452,6 +453,7 @@ void* rpc_system_gui_alloc(RpcSession* session) {
         view_port_enabled_set(rpc_gui->rpc_session_active_viewport, false);
     }
     gui_add_view_port(rpc_gui->gui, rpc_gui->rpc_session_active_viewport, GuiLayerStatusBarLeft);
+	*/
 
     RpcHandler rpc_handler = {
         .message_handler = NULL,
@@ -498,9 +500,6 @@ void rpc_system_gui_free(void* context) {
 
     gui_remove_view_port(rpc_gui->gui, rpc_gui->rpc_session_active_viewport_slim);
     view_port_free(rpc_gui->rpc_session_active_viewport_slim);
-
-    gui_remove_view_port(rpc_gui->gui, rpc_gui->rpc_session_active_viewport);
-    view_port_free(rpc_gui->rpc_session_active_viewport);
 
     if(rpc_gui->is_streaming) {
         rpc_gui->is_streaming = false;
