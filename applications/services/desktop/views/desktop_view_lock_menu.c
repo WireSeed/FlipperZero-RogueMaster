@@ -76,37 +76,59 @@ void desktop_lock_menu_draw_callback(Canvas* canvas, void* model) {
     canvas_set_font(canvas, FontBatteryPercent);
 
     for(size_t i = 0; i < DesktopLockMenuIndexTotalCount; ++i) {
-        const char* str = NULL;
+        char* str = NULL;
 
-        if(i == DesktopLockMenuIndexLock) {
+        switch(i) {
+        case DesktopLockMenuIndexLock:
             str = "Lock";
-        } else if(i == DesktopLockMenuIndexStealth) {
-            if(m->stealth_mode) {
-                str = "Sound Mode";
+            break;
+        case DesktopLockMenuIndexPinLock:
+            if(m->pin_is_set) {
+                str = "Lock with PIN";
             } else {
-                str = "Stealth Mode";
+                str = "Set PIN";
             }
-        } else if(i == DesktopLockMenuIndexPinLockShutdown) {
+            break;
+        case DesktopLockMenuIndexPinLockShutdown:
             if(m->pin_is_set) {
                 str = "Lock with PIN + Off";
             } else {
                 str = "Set PIN + Off";
             }
-            // } else if(i == DesktopLockMenuIndexGameMode) {
-            // str = "Games Mode";
-        } else if(i == DesktopLockMenuIndexDummy) {
+            break;
+        case DesktopLockMenuIndexStealth:
+            if(m->stealth_mode) {
+                str = "Sound Mode";
+            } else {
+                str = "Stealth Mode";
+            }
+            break;
+        case DesktopLockMenuIndexDummy:
             if(m->dummy_mode) {
                 str = "Brainiac Mode";
             } else {
                 str = "Dummy Mode";
             }
+            break;
         }
+        // } else if(i == DesktopLockMenuIndexGameMode) {
+        // str = "Games Mode";
 
         if(str) //-V547
+        {
             canvas_draw_str_aligned(
-                canvas, 64, 9 + (i * 12) + STATUS_BAR_Y_SHIFT, AlignCenter, AlignCenter, str);
+                canvas,
+                64,
+                9 + (((i - m->idx) + 1) * 12) + STATUS_BAR_Y_SHIFT,
+                AlignCenter,
+                AlignCenter,
+                str);
 
-        if(m->idx == i) elements_frame(canvas, 15, 1 + (i * 12) + STATUS_BAR_Y_SHIFT, 98, 15);
+            if(m->idx == i) {
+                elements_frame(
+                    canvas, 15, 1 + (((i - m->idx) + 1) * 12) + STATUS_BAR_Y_SHIFT, 98, 15);
+            }
+        }
     }
 }
 
@@ -164,8 +186,8 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
             } else if((pin_is_set == false) && (event->type == InputTypeShort)) {
                 lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
             }
-            // } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
-            // lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
+        } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
+            lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
         } else if((idx == DesktopLockMenuIndexPinLockShutdown) && (event->type == InputTypeShort)) {
             lock_menu->callback(DesktopLockMenuEventPinLockShutdown, lock_menu->context);
             // } else if((idx == DesktopLockMenuIndexGameMode) && (event->type == InputTypeShort)) {
