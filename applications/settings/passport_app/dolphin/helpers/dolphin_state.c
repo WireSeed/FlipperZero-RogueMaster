@@ -11,7 +11,6 @@
 #define TAG "DolphinState"
 
 #define DOLPHIN_STATE_OLD_PATH INT_PATH(".dolphin.state")
-#define DOLPHIN_STATE_PATH CFG_PATH("dolphin.state")
 #define DOLPHIN_STATE_HEADER_MAGIC 0xD0
 #define DOLPHIN_STATE_HEADER_VERSION 0x01
 

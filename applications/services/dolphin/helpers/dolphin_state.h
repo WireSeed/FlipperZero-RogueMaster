@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <time.h>
+#include <storage/storage.h>
 
 #define DOLPHIN_STATE_PATH CFG_PATH("dolphin.state")
 

@@ -265,19 +265,28 @@ void desktop_unlock(Desktop* desktop) {
 }
 
 void desktop_set_dummy_mode_state(Desktop* desktop, bool enabled) {
+	FURI_LOG_I("DESKTOP", "here1");
     desktop->in_transition = true;
-    switch(desktop->settings.icon_style) {
-    case ICON_STYLE_SLIM:
-        view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, enabled);
-        break;
-    case ICON_STYLE_STOCK:
-        view_port_enabled_set(desktop->dummy_mode_icon_viewport, enabled);
-        break;
-    }
+	if(desktop->settings.dumbmode_icon)
+	{
+		switch(desktop->settings.icon_style) {
+			case ICON_STYLE_SLIM:
+				view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, enabled);
+				break;
+			case ICON_STYLE_STOCK:
+				view_port_enabled_set(desktop->dummy_mode_icon_viewport, enabled);
+				break;
+			}
+	}
+	FURI_LOG_I("DESKTOP", "here2");
     desktop_main_set_dummy_mode_state(desktop->main_view, enabled);
+	FURI_LOG_I("DESKTOP", "here3");
     animation_manager_set_dummy_mode_state(desktop->animation_manager, enabled);
+	FURI_LOG_I("DESKTOP", "here4");
     desktop->settings.dummy_mode = enabled;
+	FURI_LOG_I("DESKTOP", "here5");
     DESKTOP_SETTINGS_SAVE(&desktop->settings);
+	FURI_LOG_I("DESKTOP", "here6");
     desktop->in_transition = false;
 }
 
@@ -288,7 +297,17 @@ void desktop_set_stealth_mode_state(Desktop* desktop, bool enabled) {
     } else {
         furi_hal_rtc_reset_flag(FuriHalRtcFlagStealthMode);
     }
-    view_port_enabled_set(desktop->stealth_mode_icon_viewport, enabled);
+	if(desktop->settings.stealth_icon)
+	{
+		switch(desktop->settings.icon_style) {
+			case ICON_STYLE_SLIM:
+				view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, enabled);
+				break;
+			case ICON_STYLE_STOCK:
+				view_port_enabled_set(desktop->stealth_mode_icon_viewport, enabled);
+				break;
+		}
+	}
     desktop->in_transition = false;
 }
 
@@ -400,14 +419,6 @@ Desktop* desktop_alloc() {
     gui_add_view_port(
         desktop->gui, desktop->dummy_mode_icon_slim_viewport, GuiLayerStatusBarLeftSlim);
 
-    // Top bar icon
-    desktop->topbar_icon_viewport = view_port_alloc();
-    view_port_set_width(desktop->topbar_icon_viewport, icon_get_width(&I_Background_128x11));
-    view_port_draw_callback_set(
-        desktop->topbar_icon_viewport, desktop_topbar_icon_draw_callback, desktop);
-    view_port_enabled_set(desktop->topbar_icon_viewport, false);
-    gui_add_view_port(desktop->gui, desktop->topbar_icon_viewport, GuiLayerStatusBarTop);
-
     // SD card icon hack
     desktop->sdcard_icon_viewport = view_port_alloc();
     view_port_set_width(desktop->sdcard_icon_viewport, icon_get_width(&I_SDcardMounted_11x8));
@@ -445,12 +456,24 @@ Desktop* desktop_alloc() {
     view_port_set_width(desktop->stealth_mode_icon_viewport, icon_get_width(&I_Muted_8x8));
     view_port_draw_callback_set(
         desktop->stealth_mode_icon_viewport, desktop_stealth_mode_icon_draw_callback, desktop);
-    if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
-        view_port_enabled_set(desktop->stealth_mode_icon_viewport, true);
-    } else {
-        view_port_enabled_set(desktop->stealth_mode_icon_viewport, false);
-    }
+    view_port_enabled_set(desktop->stealth_mode_icon_viewport, false);
     gui_add_view_port(desktop->gui, desktop->stealth_mode_icon_viewport, GuiLayerStatusBarLeft);
+
+    // Stealth mode Slim icon
+    desktop->stealth_mode_icon_slim_viewport = view_port_alloc();
+    view_port_set_width(desktop->stealth_mode_icon_slim_viewport, icon_get_width(&I_Muted_8x8));
+    view_port_draw_callback_set(
+        desktop->stealth_mode_icon_slim_viewport, desktop_stealth_mode_icon_draw_callback, desktop);
+    view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, false);
+    gui_add_view_port(desktop->gui, desktop->stealth_mode_icon_slim_viewport, GuiLayerStatusBarLeftSlim);
+
+    // Top bar icon
+    desktop->topbar_icon_viewport = view_port_alloc();
+    view_port_set_width(desktop->topbar_icon_viewport, icon_get_width(&I_Background_128x11));
+    view_port_draw_callback_set(
+        desktop->topbar_icon_viewport, desktop_topbar_icon_draw_callback, desktop);
+    view_port_enabled_set(desktop->topbar_icon_viewport, false);
+    gui_add_view_port(desktop->gui, desktop->topbar_icon_viewport, GuiLayerStatusBarTop);
 
     // Special case: autostart application is already running
     desktop->loader = furi_record_open(RECORD_LOADER);
@@ -566,12 +589,15 @@ int32_t desktop_srv(void* p) {
         if(!loaded) {
             memset(&desktop->settings, 0, sizeof(desktop->settings));
             desktop->settings.displayBatteryPercentage = DISPLAY_BATTERY_BAR_PERCENT;
-            desktop->settings.top_bar = false;
-            desktop->settings.sdcard = true;
             desktop->settings.icon_style = ICON_STYLE_SLIM;
+            desktop->settings.lock_icon = true;
             desktop->settings.bt_icon = true;
             desktop->settings.rpc_icon = true;
+            desktop->settings.sdcard = true;
+			desktop->settings.stealth_icon = true;
+            desktop->settings.top_bar = false;
             desktop->settings.dummy_mode = false;
+            desktop->settings.dumbmode_icon = true;
             DESKTOP_SETTINGS_SAVE(&desktop->settings);
         }
 
@@ -580,12 +606,23 @@ int32_t desktop_srv(void* p) {
         switch(desktop->settings.icon_style) {
         case ICON_STYLE_SLIM:
             view_port_enabled_set(desktop->sdcard_icon_slim_viewport, desktop->settings.sdcard);
-            view_port_enabled_set(
-                desktop->dummy_mode_icon_slim_viewport, desktop->settings.dummy_mode);
+            if(desktop->settings.dumbmode_icon)
+			{
+				view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, desktop->settings.dummy_mode);
+			}
+			if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
+				view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, desktop->settings.stealth_icon);
+			}
             break;
         case ICON_STYLE_STOCK:
             view_port_enabled_set(desktop->sdcard_icon_viewport, desktop->settings.sdcard);
-            view_port_enabled_set(desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
+            if(desktop->settings.dumbmode_icon)
+			{
+				view_port_enabled_set(desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
+			}
+			if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
+				view_port_enabled_set(desktop->stealth_mode_icon_viewport, desktop->settings.stealth_icon);
+			}
             break;
         }
 
