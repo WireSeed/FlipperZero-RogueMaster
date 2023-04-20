@@ -522,6 +522,21 @@ void desktop_free(Desktop* desktop) {
     furi_record_close(RECORD_NOTIFICATION);
     furi_record_close(RECORD_INPUT_EVENTS);
 
+    //free the viewports
+    free(desktop->lock_icon_viewport);
+    free(desktop->dummy_mode_icon_viewport);
+    free(desktop->topbar_icon_viewport);
+    free(desktop->sdcard_icon_viewport);
+    free(desktop->bt_icon_viewport);
+    free(desktop->stealth_mode_icon_viewport);
+
+    free(desktop->lock_icon_slim_viewport);
+    free(desktop->dummy_mode_icon_slim_viewport);
+    free(desktop->topbar_icon_slim_viewport);
+    free(desktop->sdcard_icon_slim_viewport);
+    free(desktop->bt_icon_slim_viewport);
+    free(desktop->stealth_mode_icon_slim_viewport);
+
     view_dispatcher_remove_view(desktop->view_dispatcher, DesktopViewIdMain);
     view_dispatcher_remove_view(desktop->view_dispatcher, DesktopViewIdLockMenu);
     view_dispatcher_remove_view(desktop->view_dispatcher, DesktopViewIdLocked);
