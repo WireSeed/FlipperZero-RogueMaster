@@ -16,7 +16,6 @@
 #include "desktop/views/desktop_view_pin_timeout.h"
 #include "desktop_i.h"
 #include "helpers/pin_lock.h"
-#include "helpers/slideshow_filename.h"
 
 #define TAG "Desktop"
 
