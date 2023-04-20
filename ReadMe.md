@@ -68,7 +68,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Fixed Set Pin/Lock Pin option + Changed how Lock Menu scrolls through items #603 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/603)
 - [Fixed some desktop setting defaults when unable to load desktop settings #604 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/604)
 - Fixed RM Dice load
-- Added 2 New Waifu passport pictures from Senpai animation
+- Added 6 New Waifu passport pictures from Senpai animation and other desktop animations
 
 <a name="release">
 

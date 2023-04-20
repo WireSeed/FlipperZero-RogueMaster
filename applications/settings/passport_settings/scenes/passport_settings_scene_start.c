@@ -41,7 +41,7 @@ const char* const image_text[PROFILE_IMG_COUNT] = {
     "FSociety",   "Goku (Set)", "Goku (Kid)", "Goku (Adult)",     "Goku (SSJ)",  "Goku (SSJ3)",
     "Guy Fawkes", "Lain",       "Mario",      "Marvin",           "Moreleeloo",  "Neuromancer",
     "Rabbit",     "Shinkai",    "Sonic",      "Spider Jerusalem", "Tank Girl",   "Totoro",
-    "Waifu 1",     "Waifu 2"   };
+    "Waifu 1",     "Waifu 2",     "Waifu 3",    "Waifu 4",     "Waifu 5",     "Waifu 6"   };
 
 const uint32_t image_value[PROFILE_IMG_COUNT] = {
     PIMG_NONE,    PIMG_BRIAREOS,    PIMG_COBRA,       PIMG_DALI,    PIMG_DOLPHIN,
@@ -49,7 +49,7 @@ const uint32_t image_value[PROFILE_IMG_COUNT] = {
     PIMG_GOKUSSJ, PIMG_GOKUSSJ3,    PIMG_GUYFAWKES,   PIMG_LAIN,    PIMG_MARIO,
     PIMG_MARVIN,  PIMG_MORELEELLOO, PIMG_NEUROMANCER, PIMG_RABBIT,  PIMG_SHINKAI,
     PIMG_SONIC,   PIMG_SPIDER,      PIMG_TANKGIRL,    PIMG_TOTORO,    PIMG_WAIFU1,
-    PIMG_WAIFU2};
+    PIMG_WAIFU2,    PIMG_WAIFU3,    PIMG_WAIFU4,    PIMG_WAIFU5,    PIMG_WAIFU6};
 
 const uint32_t name_value[PASSPORT_ON_OFF_COUNT] = {false, true};
 
