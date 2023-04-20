@@ -66,6 +66,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Removed/Commented: [Dolphin Restorer (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/1384) Cloned by RogueMaster
 - [Added On/Off options for Stealth, Lock, and Dummy Mode Icons + Stock/Slim functionality for those, Fixed Clock app - missing functions after Desktop Settings rework, Fixed Dolphin Trainer - missing functions after Desktop Settings rework, Fixed issue with Lock Icon not following Stock/Slim option & Fixed issue with double RPC icon appearing #601 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/601)
 - [Fixed Set Pin/Lock Pin option + Changed how Lock Menu scrolls through items #603 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/603)
+- [Fixed some desktop setting defaults when unable to load desktop settings #604 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/604)
+- Fixed RM Dice load
 
 <a name="release">
 
