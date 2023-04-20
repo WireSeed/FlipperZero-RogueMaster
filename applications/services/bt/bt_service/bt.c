@@ -120,6 +120,10 @@ Bt* bt_alloc() {
         bt_settings_save(&bt->bt_settings);
     }
     // Keys storage
+    Storage* storage = furi_record_open(RECORD_STORAGE);
+    storage_common_copy(storage, BT_KEYS_STORAGE_OLD_PATH, BT_KEYS_STORAGE_PATH);
+    storage_common_remove(storage, BT_KEYS_STORAGE_OLD_PATH);
+    furi_record_close(RECORD_STORAGE);
     bt->keys_storage = bt_keys_storage_alloc(BT_KEYS_STORAGE_PATH);
     // Alloc queue
     bt->message_queue = furi_message_queue_alloc(8, sizeof(BtMessage));
@@ -376,7 +380,7 @@ int32_t bt_srv(void* p) {
     UNUSED(p);
     Bt* bt = bt_alloc();
 
-    if(furi_hal_rtc_get_boot_mode() != FuriHalRtcBootModeNormal) {
+    if(!furi_hal_is_normal_boot()) {
         FURI_LOG_W(TAG, "Skipping start in special boot mode");
         ble_glue_wait_for_c2_start(FURI_HAL_BT_C2_START_TIMEOUT);
         furi_record_create(RECORD_BT, bt);

@@ -550,9 +550,18 @@ static bool desktop_check_file_flag(const char* flag_path) {
 int32_t desktop_srv(void* p) {
     UNUSED(p);
 
-    if(furi_hal_rtc_get_boot_mode() != FuriHalRtcBootModeNormal) {
+    if(!furi_hal_is_normal_boot()) {
         FURI_LOG_W("Desktop", "Desktop load skipped. Device is in special startup mode.");
     } else {
+
+        if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagResetPin)) {
+            Storage* storage = furi_record_open(RECORD_STORAGE);
+            storage_common_remove(storage, DESKTOP_SETTINGS_PATH);
+            storage_common_remove(storage, DESKTOP_SETTINGS_OLD_PATH);
+            furi_record_close(RECORD_STORAGE);
+            furi_hal_rtc_reset_flag(FuriHalRtcFlagResetPin);
+        }
+
         Desktop* desktop = desktop_alloc();
 
         bool loaded = DESKTOP_SETTINGS_LOAD(&desktop->settings);

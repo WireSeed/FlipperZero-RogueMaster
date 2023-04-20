@@ -5,6 +5,8 @@
 #include <stdint.h>
 #include <time.h>
 
+#define DOLPHIN_STATE_PATH CFG_PATH("dolphin.state")
+
 #ifdef __cplusplus
 extern "C" {
 #endif
