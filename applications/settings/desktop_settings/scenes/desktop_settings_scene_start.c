@@ -271,7 +271,8 @@ void desktop_settings_scene_start_on_enter(void* context) {
         desktop_settings_scene_start_lockicon_changed,
         app);
 
-    value_index = value_index_uint32(app->settings.lock_icon, lockicon_value, DESKTOP_ON_OFF_COUNT);
+    value_index =
+        value_index_uint32(app->settings.lock_icon, lockicon_value, DESKTOP_ON_OFF_COUNT);
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, desktop_on_off_text[value_index]);
 
@@ -315,7 +316,8 @@ void desktop_settings_scene_start_on_enter(void* context) {
         desktop_settings_scene_start_stealth_changed,
         app);
 
-    value_index = value_index_uint32(app->settings.stealth_icon, stealth_value, DESKTOP_ON_OFF_COUNT);
+    value_index =
+        value_index_uint32(app->settings.stealth_icon, stealth_value, DESKTOP_ON_OFF_COUNT);
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, desktop_on_off_text[value_index]);
 
@@ -349,7 +351,8 @@ void desktop_settings_scene_start_on_enter(void* context) {
         desktop_settings_scene_start_dumbmode_icon_changed,
         app);
 
-    value_index = value_index_uint32(app->settings.dumbmode_icon, dumbmode_icon_value, DESKTOP_ON_OFF_COUNT);
+    value_index =
+        value_index_uint32(app->settings.dumbmode_icon, dumbmode_icon_value, DESKTOP_ON_OFF_COUNT);
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, desktop_on_off_text[value_index]);
 
@@ -439,7 +442,8 @@ void desktop_settings_scene_start_on_exit(void* context) {
        (app->settings.lock_icon != origLockIcon_value) ||
        (app->settings.bt_icon != origBTIcon_value) || (app->settings.rpc_icon != origRPC_value) ||
        (app->settings.sdcard != origSDCard_value) ||
-       (app->settings.stealth_icon != origStealth_value) || (app->settings.top_bar != origTopBar_value) ||
+       (app->settings.stealth_icon != origStealth_value) ||
+       (app->settings.top_bar != origTopBar_value) ||
        (app->settings.dumbmode_icon != origDumbIcon_value)) {
         furi_hal_power_reset();
     }

@@ -441,7 +441,7 @@ void* rpc_system_gui_alloc(RpcSession* session) {
         }
     }
 
-	/*
+    /*
     // Active session icon
     rpc_gui->rpc_session_active_viewport = view_port_alloc();
     view_port_set_width(rpc_gui->rpc_session_active_viewport, icon_get_width(&I_Rpc_active_7x8));

@@ -53,14 +53,14 @@ typedef struct {
     uint8_t displayBatteryPercentage;
     bool is_dumbmode;
     uint8_t icon_style;
-	bool lock_icon;
+    bool lock_icon;
     bool bt_icon;
     bool rpc_icon;
     bool sdcard;
-	bool stealth_icon;
+    bool stealth_icon;
     bool top_bar;
     uint8_t dummy_mode;
-	bool dumbmode_icon;
+    bool dumbmode_icon;
     bool auto_lock_with_pin;
 } DesktopSettings;
 

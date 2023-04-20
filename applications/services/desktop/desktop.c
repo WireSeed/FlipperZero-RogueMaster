@@ -265,28 +265,27 @@ void desktop_unlock(Desktop* desktop) {
 }
 
 void desktop_set_dummy_mode_state(Desktop* desktop, bool enabled) {
-	FURI_LOG_I("DESKTOP", "here1");
+    FURI_LOG_I("DESKTOP", "here1");
     desktop->in_transition = true;
-	if(desktop->settings.dumbmode_icon)
-	{
-		switch(desktop->settings.icon_style) {
-			case ICON_STYLE_SLIM:
-				view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, enabled);
-				break;
-			case ICON_STYLE_STOCK:
-				view_port_enabled_set(desktop->dummy_mode_icon_viewport, enabled);
-				break;
-			}
-	}
-	FURI_LOG_I("DESKTOP", "here2");
+    if(desktop->settings.dumbmode_icon) {
+        switch(desktop->settings.icon_style) {
+        case ICON_STYLE_SLIM:
+            view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, enabled);
+            break;
+        case ICON_STYLE_STOCK:
+            view_port_enabled_set(desktop->dummy_mode_icon_viewport, enabled);
+            break;
+        }
+    }
+    FURI_LOG_I("DESKTOP", "here2");
     desktop_main_set_dummy_mode_state(desktop->main_view, enabled);
-	FURI_LOG_I("DESKTOP", "here3");
+    FURI_LOG_I("DESKTOP", "here3");
     animation_manager_set_dummy_mode_state(desktop->animation_manager, enabled);
-	FURI_LOG_I("DESKTOP", "here4");
+    FURI_LOG_I("DESKTOP", "here4");
     desktop->settings.dummy_mode = enabled;
-	FURI_LOG_I("DESKTOP", "here5");
+    FURI_LOG_I("DESKTOP", "here5");
     DESKTOP_SETTINGS_SAVE(&desktop->settings);
-	FURI_LOG_I("DESKTOP", "here6");
+    FURI_LOG_I("DESKTOP", "here6");
     desktop->in_transition = false;
 }
 
@@ -297,17 +296,16 @@ void desktop_set_stealth_mode_state(Desktop* desktop, bool enabled) {
     } else {
         furi_hal_rtc_reset_flag(FuriHalRtcFlagStealthMode);
     }
-	if(desktop->settings.stealth_icon)
-	{
-		switch(desktop->settings.icon_style) {
-			case ICON_STYLE_SLIM:
-				view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, enabled);
-				break;
-			case ICON_STYLE_STOCK:
-				view_port_enabled_set(desktop->stealth_mode_icon_viewport, enabled);
-				break;
-		}
-	}
+    if(desktop->settings.stealth_icon) {
+        switch(desktop->settings.icon_style) {
+        case ICON_STYLE_SLIM:
+            view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, enabled);
+            break;
+        case ICON_STYLE_STOCK:
+            view_port_enabled_set(desktop->stealth_mode_icon_viewport, enabled);
+            break;
+        }
+    }
     desktop->in_transition = false;
 }
 
@@ -463,9 +461,12 @@ Desktop* desktop_alloc() {
     desktop->stealth_mode_icon_slim_viewport = view_port_alloc();
     view_port_set_width(desktop->stealth_mode_icon_slim_viewport, icon_get_width(&I_Muted_8x8));
     view_port_draw_callback_set(
-        desktop->stealth_mode_icon_slim_viewport, desktop_stealth_mode_icon_draw_callback, desktop);
+        desktop->stealth_mode_icon_slim_viewport,
+        desktop_stealth_mode_icon_draw_callback,
+        desktop);
     view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, false);
-    gui_add_view_port(desktop->gui, desktop->stealth_mode_icon_slim_viewport, GuiLayerStatusBarLeftSlim);
+    gui_add_view_port(
+        desktop->gui, desktop->stealth_mode_icon_slim_viewport, GuiLayerStatusBarLeftSlim);
 
     // Top bar icon
     desktop->topbar_icon_viewport = view_port_alloc();
@@ -594,7 +595,7 @@ int32_t desktop_srv(void* p) {
             desktop->settings.bt_icon = true;
             desktop->settings.rpc_icon = true;
             desktop->settings.sdcard = true;
-			desktop->settings.stealth_icon = true;
+            desktop->settings.stealth_icon = true;
             desktop->settings.top_bar = false;
             desktop->settings.dummy_mode = false;
             desktop->settings.dumbmode_icon = true;
@@ -606,23 +607,25 @@ int32_t desktop_srv(void* p) {
         switch(desktop->settings.icon_style) {
         case ICON_STYLE_SLIM:
             view_port_enabled_set(desktop->sdcard_icon_slim_viewport, desktop->settings.sdcard);
-            if(desktop->settings.dumbmode_icon)
-			{
-				view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, desktop->settings.dummy_mode);
-			}
-			if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
-				view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, desktop->settings.stealth_icon);
-			}
+            if(desktop->settings.dumbmode_icon) {
+                view_port_enabled_set(
+                    desktop->dummy_mode_icon_slim_viewport, desktop->settings.dummy_mode);
+            }
+            if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
+                view_port_enabled_set(
+                    desktop->stealth_mode_icon_slim_viewport, desktop->settings.stealth_icon);
+            }
             break;
         case ICON_STYLE_STOCK:
             view_port_enabled_set(desktop->sdcard_icon_viewport, desktop->settings.sdcard);
-            if(desktop->settings.dumbmode_icon)
-			{
-				view_port_enabled_set(desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
-			}
-			if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
-				view_port_enabled_set(desktop->stealth_mode_icon_viewport, desktop->settings.stealth_icon);
-			}
+            if(desktop->settings.dumbmode_icon) {
+                view_port_enabled_set(
+                    desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
+            }
+            if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode)) {
+                view_port_enabled_set(
+                    desktop->stealth_mode_icon_viewport, desktop->settings.stealth_icon);
+            }
             break;
         }
 
