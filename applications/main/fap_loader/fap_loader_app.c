@@ -37,7 +37,8 @@ bool fap_loader_load_name_and_icon(
 
     bool load_success = false;
 
-    if(preload_res == FlipperApplicationPreloadStatusSuccess || preload_res == FlipperApplicationPreloadStatusApiMismatch) {
+    if(preload_res == FlipperApplicationPreloadStatusSuccess ||
+       preload_res == FlipperApplicationPreloadStatusApiMismatch) {
         const FlipperApplicationManifest* manifest = flipper_application_get_manifest(app);
         if(manifest->has_icon) {
             memcpy(*icon_ptr, manifest->icon, FAP_MANIFEST_MAX_ICON_SIZE);

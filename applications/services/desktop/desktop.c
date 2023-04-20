@@ -553,7 +553,6 @@ int32_t desktop_srv(void* p) {
     if(!furi_hal_is_normal_boot()) {
         FURI_LOG_W("Desktop", "Desktop load skipped. Device is in special startup mode.");
     } else {
-
         if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagResetPin)) {
             Storage* storage = furi_record_open(RECORD_STORAGE);
             storage_common_remove(storage, DESKTOP_SETTINGS_PATH);
