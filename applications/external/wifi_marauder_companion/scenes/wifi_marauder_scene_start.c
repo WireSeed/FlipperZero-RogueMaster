@@ -163,7 +163,8 @@ static void wifi_marauder_scene_start_var_list_enter_callback(void* context, uin
 
     // Select automation script
     if(index == NUM_MENU_ITEMS - 2) {
-        view_dispatcher_send_custom_event(app->view_dispatcher, WifiMarauderEventStartScriptSelect);
+        view_dispatcher_send_custom_event(
+            app->view_dispatcher, WifiMarauderEventStartScriptSelect);
         return;
     }
 
