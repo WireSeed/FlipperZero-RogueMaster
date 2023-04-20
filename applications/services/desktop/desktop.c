@@ -265,7 +265,6 @@ void desktop_unlock(Desktop* desktop) {
 }
 
 void desktop_set_dummy_mode_state(Desktop* desktop, bool enabled) {
-    FURI_LOG_I("DESKTOP", "here1");
     desktop->in_transition = true;
     if(desktop->settings.dumbmode_icon) {
         switch(desktop->settings.icon_style) {
@@ -277,15 +276,10 @@ void desktop_set_dummy_mode_state(Desktop* desktop, bool enabled) {
             break;
         }
     }
-    FURI_LOG_I("DESKTOP", "here2");
     desktop_main_set_dummy_mode_state(desktop->main_view, enabled);
-    FURI_LOG_I("DESKTOP", "here3");
     animation_manager_set_dummy_mode_state(desktop->animation_manager, enabled);
-    FURI_LOG_I("DESKTOP", "here4");
     desktop->settings.dummy_mode = enabled;
-    FURI_LOG_I("DESKTOP", "here5");
     DESKTOP_SETTINGS_SAVE(&desktop->settings);
-    FURI_LOG_I("DESKTOP", "here6");
     desktop->in_transition = false;
 }
 
