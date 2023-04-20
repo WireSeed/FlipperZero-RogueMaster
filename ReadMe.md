@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0412-1357-0.81.2-bee09a4.tgz&channel=RM0412-1357-0.81.2-bee09a4&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0412-1357-0.81.2-bee09a4-NoAnim.tgz&channel=RM0412-1357-0.81.2-bee09a4-NoAnim&version=0.81.2)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0420-0608-0.81.2-20cef85.tgz&channel=RM0420-0608-0.81.2-20cef85&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0420-0608-0.81.2-20cef85-NoAnim.tgz&channel=RM0420-0608-0.81.2-20cef85-NoAnim&version=0.81.2)
 
 ## Thank you so much to our RM Pro/Extreme Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -31,45 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0420-0545-0.81.2-737564c](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-20 05:45 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-20 05:45 EST`
-- All [Patreon Members](https://www.patreon.com/RogueMaster/membership) on Apr 14th @ 12PM EST will be granted 10 submissions into our Flipper Zero giveaway! See [Discord](https://discord.gg/gF2bBUzAFe) #announcements for more details on how you can get more chances to win!
-- Updated: [GPS (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` UL PR: [Implements an array for baudrates on GPS UART app #416 (By p0ns)](https://github.com/DarkFlippers/unleashed-firmware/pull/416)
-- OFW: [Deep Sleep Idle #2569 (DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2569)
-- UL: [refactoring HID_BLE #420 (By krolchonok)](https://github.com/DarkFlippers/unleashed-firmware/pull/420)
-- UL: Plugins: Bluetooth Remote - implemented YouTube Shorts Remote (may be unstable) (By xMasterX)
-- UL: Revert Deep Sleep due to BLE issues and other random freezes - OFW breaking things again
-- Added: [Mifare Nested (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) -> Learn [How to Use](https://github.com/AloneLiberty/FlipperNested#how-to-use-it)
-- UL: SubGhz - Temp Fix RAW recording and reading (By xMasterX)
-- UL: Nero Radio 57bit experimental support (By xMasterX)
-- UL: Improve nero radio encoder timings (By xMasterX)
-- Updated: [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
-- Updated: [Mifare Nested 1.1.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested) - FAM and DOCS updated
-- OFW PR: [Picopass: Fix for GH-2589 #2590 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2590)
-- OFW PR: [Raw RFID documentation (Thank you Astrrra) #597](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/597)
-- UL PR: [Updated infrared assets #421 (By amec0e)](https://github.com/DarkFlippers/unleashed-firmware/pull/421)
-- [Implemented PR#2583 with Desktop Icon Style and Settings #598 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/598)
-- OFW PR: [Active RPC session icon #2583 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/2583)
-- READD OFW: [Deep Sleep Idle #2569 (DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2569)
-- OFW: [Various stop mode fixes #2584 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2584)
-- UL: Plugins: Improve wifi marauder keyboard (added extra symbols!) (Port uart terminal keyboard into wifi marauder) (By xMasterX)
-- UL: SubGHz Remote add Alutech AT4N Support (By xMasterX)
-- Added: [Nu Pogodi! (Ну, погоди!) (By sionyx)](https://github.com/sionyx/flipper_nupogodi)
-- Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem)  - Changes to BAUDRATE & Power Handling
-- OFW: [github: testing SDK with ufbt action #2581 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2581)
-- OFW: [Introduce stealth mode and auto-selective lock #2576 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/2576)
-- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
-- Updated: [WiFi (Marauder) v3.1.3 (Updated By tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion)
-- Load fap meta anyway on api mismatch, Move setting files to sd card, Move slideshow temp file to external storage, Store main settings in dedicated ext folder, Fix critical boot modes (dfu / recovery), Expose storage_get_data, Fix resetting PIN code with key combo & U2F keys on external storage (By Willy-JL)
-- Updated: [Dolphin Trainer (By nymda)](https://github.com/nymda/FlipperAntidepressants) With New Dolphin State File Location
-- Removed/Commented: [Dolphin Backup (By nminaylov)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1384) Modified by RogueMaster
-- Removed/Commented: [Dolphin Restorer (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/1384) Cloned by RogueMaster
-- [Added On/Off options for Stealth, Lock, and Dummy Mode Icons + Stock/Slim functionality for those, Fixed Clock app - missing functions after Desktop Settings rework, Fixed Dolphin Trainer - missing functions after Desktop Settings rework, Fixed issue with Lock Icon not following Stock/Slim option & Fixed issue with double RPC icon appearing #601 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/601)
-- [Fixed Set Pin/Lock Pin option + Changed how Lock Menu scrolls through items #603 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/603)
-- [Fixed some desktop setting defaults when unable to load desktop settings #604 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/604)
-- Fixed RM Dice load
-- Added 3 New Waifu passport pictures from Senpai animation and other desktop animations
-- Reverted furi_hal_is_normal_boot changes to fix boot loops
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-20 06:08 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-20 06:08 EST`
 
 <a name="release">
 
@@ -180,7 +143,7 @@ $ ./fbt dolphin_ext
 - Dolphin: Passport: As a FAP with Multiple Pages, and Dynamic Icons/Images support [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/527)
 - Dolphin: Passport: Default Mario Themed [(Thanks to Kuronons)](https://github.com/Kuronons/FZ_graphics/tree/main/Passport%20background)
 - Dolphin: Passport: Many thanks to Kuronons for the many passport backgrounds and profile images available and included.
-- Dolphin: Passport: Now has 9 selectable backgrounds options and 24 profile image options. (Changes By RogueMaster with thanks to ESurge)
+- Dolphin: Passport: Now has 9 selectable backgrounds options and 27 profile image options. (Changes By RogueMaster with thanks to ESurge)
 - Dolphin: Passport: Passport Settings app to configure dynamic icons in Passport FAP [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/527)
 - Dolphin: Passport: Rename Dolphin with Name Changer app under Applications=>Settings [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/488)
 - Dolphin: Passport: Show EXP [(By Dabolus)](https://github.com/Dabolus/flipperzero-firmware-rpg/)
@@ -416,4 +379,4 @@ $ ./fbt dolphin_ext
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
 - [Zero Tracker (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-music-tracker)
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0412-1357-0.81.2-bee09a4.tgz&channel=RM0412-1357-0.81.2-bee09a4&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0412-1357-0.81.2-bee09a4-NoAnim.tgz&channel=RM0412-1357-0.81.2-bee09a4-NoAnim&version=0.81.2)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0420-0608-0.81.2-20cef85.tgz&channel=RM0420-0608-0.81.2-20cef85&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0420-0608-0.81.2-20cef85-NoAnim.tgz&channel=RM0420-0608-0.81.2-20cef85-NoAnim&version=0.81.2)
