@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0418-1821-0.81.2-a48cc5a](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-19 19:03 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-19 19:03 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-20 03:32 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-20 03:32 EST`
 - All [Patreon Members](https://www.patreon.com/RogueMaster/membership) on Apr 14th @ 12PM EST will be granted 10 submissions into our Flipper Zero giveaway! See [Discord](https://discord.gg/gF2bBUzAFe) #announcements for more details on how you can get more chances to win!
 - Updated: [GPS (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` UL PR: [Implements an array for baudrates on GPS UART app #416 (By p0ns)](https://github.com/DarkFlippers/unleashed-firmware/pull/416)
 - OFW: [Deep Sleep Idle #2569 (DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2569)
@@ -64,6 +64,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Dolphin Trainer (By nymda)](https://github.com/nymda/FlipperAntidepressants) With New Dolphin State File Location
 - Removed/Commented: [Dolphin Backup (By nminaylov)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1384) Modified by RogueMaster
 - Removed/Commented: [Dolphin Restorer (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/1384) Cloned by RogueMaster
+- [Added On/Off options for Stealth, Lock, and Dummy Mode Icons + Stock/Slim functionality for those, Fixed Clock app - missing functions after Desktop Settings rework, Fixed Dolphin Trainer - missing functions after Desktop Settings rework, Fixed issue with Lock Icon not following Stock/Slim option & Fixed issue with double RPC icon appearing #601 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/601)
+- [Fixed Set Pin/Lock Pin option + Changed how Lock Menu scrolls through items #603 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/603)
 
 <a name="release">
 
