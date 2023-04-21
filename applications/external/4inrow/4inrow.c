@@ -13,11 +13,9 @@ int player = 1;
 int scoreX = 0;
 int scoreO = 0;
 
-void init(){
-    for (size_t i = 0; i < 6; i++)
-    {
-        for (size_t j = 0; j < 7; j++)
-        {
+void init() {
+    for(size_t i = 0; i < 6; i++) {
+        for(size_t j = 0; j < 7; j++) {
             matrix[i][j] = 0;
         }
     }
@@ -51,7 +49,7 @@ const NotificationSequence end = {
 void intToStr(int num, char* str) {
     int i = 0, sign = 0;
 
-    if (num < 0) {
+    if(num < 0) {
         num = -num;
         sign = 1;
     }
@@ -59,9 +57,9 @@ void intToStr(int num, char* str) {
     do {
         str[i++] = num % 10 + '0';
         num /= 10;
-    } while (num > 0);
+    } while(num > 0);
 
-    if (sign) {
+    if(sign) {
         str[i++] = '-';
     }
 
@@ -70,85 +68,76 @@ void intToStr(int num, char* str) {
     // Reverse the string
     int j, len = i;
     char temp;
-    for (j = 0; j < len / 2; j++) {
+    for(j = 0; j < len / 2; j++) {
         temp = str[j];
         str[j] = str[len - j - 1];
         str[len - j - 1] = temp;
     }
 }
 
-int next_height(int x){
-    if (matrix[0][x] != 0){
+int next_height(int x) {
+    if(matrix[0][x] != 0) {
         return -1;
     }
-    for (size_t y = 1; y < 6; y++)
-    {
-        if (matrix[y][x] != 0){
-            return y-1;
+    for(size_t y = 1; y < 6; y++) {
+        if(matrix[y][x] != 0) {
+            return y - 1;
         }
     }
     return 5;
 }
 
-int wincheck(){
-
-    for (size_t y = 0; y <= 2; y++)
-    {
-        for (size_t x = 0; x <= 6; x++)
-        {
-            if (matrix[y][x] != 0 && matrix[y][x] == matrix[y+1][x] && matrix[y][x] == matrix[y+2][x] && matrix[y][x] == matrix[y+3][x]){
+int wincheck() {
+    for(size_t y = 0; y <= 2; y++) {
+        for(size_t x = 0; x <= 6; x++) {
+            if(matrix[y][x] != 0 && matrix[y][x] == matrix[y + 1][x] &&
+               matrix[y][x] == matrix[y + 2][x] && matrix[y][x] == matrix[y + 3][x]) {
                 return matrix[y][x];
             }
         }
     }
 
-    for (size_t y = 0; y <= 5; y++)
-    {
-        for (size_t x = 0; x <= 3; x++)
-        {
-            if (matrix[y][x] != 0 && matrix[y][x] == matrix[y][x+1] && matrix[y][x] == matrix[y][x+2] && matrix[y][x] == matrix[y][x+3]){
+    for(size_t y = 0; y <= 5; y++) {
+        for(size_t x = 0; x <= 3; x++) {
+            if(matrix[y][x] != 0 && matrix[y][x] == matrix[y][x + 1] &&
+               matrix[y][x] == matrix[y][x + 2] && matrix[y][x] == matrix[y][x + 3]) {
                 return matrix[y][x];
             }
         }
     }
 
-    for (size_t y = 0; y <= 2; y++)
-    {
-        for (size_t x = 0; x <= 3; x++)
-        {
-            if (matrix[y][x] != 0 && matrix[y][x] == matrix[y+1][x+1] && matrix[y][x] == matrix[y+2][x+2] && matrix[y][x] == matrix[y+3][x+3]){
+    for(size_t y = 0; y <= 2; y++) {
+        for(size_t x = 0; x <= 3; x++) {
+            if(matrix[y][x] != 0 && matrix[y][x] == matrix[y + 1][x + 1] &&
+               matrix[y][x] == matrix[y + 2][x + 2] && matrix[y][x] == matrix[y + 3][x + 3]) {
                 return matrix[y][x];
             }
         }
     }
 
-    for (size_t y = 3; y <= 5; y++)
-    {
-        for (size_t x = 0; x <= 3; x++)
-        {
-            if (matrix[y][x] != 0 && matrix[y][x] == matrix[y-1][x+1] && matrix[y][x] == matrix[y-2][x+2] && matrix[y][x] == matrix[y-3][x+3]){
+    for(size_t y = 3; y <= 5; y++) {
+        for(size_t x = 0; x <= 3; x++) {
+            if(matrix[y][x] != 0 && matrix[y][x] == matrix[y - 1][x + 1] &&
+               matrix[y][x] == matrix[y - 2][x + 2] && matrix[y][x] == matrix[y - 3][x + 3]) {
                 return matrix[y][x];
             }
         }
     }
 
     bool tf = true;
-    for (size_t y = 0; y < 6; y++)
-    {
-        for (size_t x = 0; x < 7; x++)
-        {
-            if (matrix[y][x] == 0){
+    for(size_t y = 0; y < 6; y++) {
+        for(size_t x = 0; x < 7; x++) {
+            if(matrix[y][x] == 0) {
                 tf = false;
             }
         }
     }
-    if(tf){
+    if(tf) {
         return 0;
     }
 
     return -1;
 }
-
 
 static void draw_callback(Canvas* canvas, void* ctx) {
     UNUSED(ctx);
@@ -156,36 +145,32 @@ static void draw_callback(Canvas* canvas, void* ctx) {
     furi_mutex_acquire(mutex, FuriWaitForever);
     canvas_clear(canvas);
 
-    if(wincheck()!=-1){
-
+    if(wincheck() != -1) {
         canvas_set_font(canvas, FontPrimary);
 
-        if (wincheck()==0){
+        if(wincheck() == 0) {
             canvas_draw_str(canvas, 30, 35, "Draw! O_o");
         }
-        if (wincheck()==1){
+        if(wincheck() == 1) {
             canvas_draw_str(canvas, 30, 35, "Player X win!");
-            }
-        if (wincheck()==2){
+        }
+        if(wincheck() == 2) {
             canvas_draw_str(canvas, 30, 35, "Player O win!");
         }
 
-        furi_mutex_release(mutex); 
+        furi_mutex_release(mutex);
 
         return;
     }
 
-    for (size_t i = 0; i < 6; i++)
-    {
-        for (size_t j = 0; j < 7; j++)
-        {
+    for(size_t i = 0; i < 6; i++) {
+        for(size_t j = 0; j < 7; j++) {
             char el[2];
-            switch (matrix[i][j])
-            {
+            switch(matrix[i][j]) {
             case 0:
                 strcpy(el, "_\0");
                 break;
-            
+
             case 1:
                 strcpy(el, "X\0");
                 break;
@@ -193,18 +178,16 @@ static void draw_callback(Canvas* canvas, void* ctx) {
             case 2:
                 strcpy(el, "O\0");
                 break;
-
             }
-            canvas_draw_str(canvas, j*10 + 10, i*10 + 10, el);
-
+            canvas_draw_str(canvas, j * 10 + 10, i * 10 + 10, el);
         }
     }
-    canvas_draw_str(canvas, cursorx*10+8, cursory*10+10, "[ ]");
+    canvas_draw_str(canvas, cursorx * 10 + 8, cursory * 10 + 10, "[ ]");
 
-    if (player == 1){
+    if(player == 1) {
         canvas_draw_str(canvas, 80, 10, "Turn: X");
     }
-    if (player == 2){
+    if(player == 2) {
         canvas_draw_str(canvas, 80, 10, "Turn: O");
     }
     char scX[1];
@@ -212,16 +195,14 @@ static void draw_callback(Canvas* canvas, void* ctx) {
     char scO[1];
     intToStr(scoreO, scO);
 
-    
     canvas_draw_str(canvas, 80, 20, "X:");
     canvas_draw_str(canvas, 90, 20, scX);
 
     canvas_draw_str(canvas, 80, 30, "O:");
     canvas_draw_str(canvas, 90, 30, scO);
 
-    furi_mutex_release(mutex); 
+    furi_mutex_release(mutex);
 }
-
 
 static void input_callback(InputEvent* input_event, void* ctx) {
     // Проверяем, что контекст не нулевой
@@ -258,34 +239,31 @@ int32_t four_in_row_app(void* p) {
 
     // Бесконечный цикл обработки очереди событий
     while(1) {
-
         // Выбираем событие из очереди в переменную event (ждем бесконечно долго, если очередь пуста)
         // и проверяем, что у нас получилось это сделать
         furi_check(furi_message_queue_get(event_queue, &event, FuriWaitForever) == FuriStatusOk);
         furi_mutex_acquire(mutex, FuriWaitForever);
         // Если нажата кнопка "назад", то выходим из цикла, а следовательно и из приложения
-        if(wincheck()!=-1){ 
-
+        if(wincheck() != -1) {
             notification_message(notification, &end);
             furi_delay_ms(1000);
-            if (wincheck() == 1){
+            if(wincheck() == 1) {
                 scoreX++;
             }
-            if (wincheck() == 2){
+            if(wincheck() == 2) {
                 scoreO++;
             }
             init();
-            
         }
 
         if(event.type == InputTypePress) {
             if(event.key == InputKeyOk) {
                 int nh = next_height(cursorx);
-                if (nh!=-1){
+                if(nh != -1) {
                     matrix[nh][cursorx] = player;
                     player = 3 - player;
+                }
             }
-        }
             if(event.key == InputKeyUp) {
                 //cursory--;
             }
@@ -293,21 +271,21 @@ int32_t four_in_row_app(void* p) {
                 //cursory++;
             }
             if(event.key == InputKeyLeft) {
-                if (cursorx > 0){
+                if(cursorx > 0) {
                     cursorx--;
                 }
             }
             if(event.key == InputKeyRight) {
-                if (cursorx < 6){
+                if(cursorx < 6) {
                     cursorx++;
-                }            }
+                }
+            }
             if(event.key == InputKeyBack) {
                 break;
             }
         }
         view_port_update(view_port);
         furi_mutex_release(mutex);
-
     }
 
     // Специальная очистка памяти, занимаемой очередью

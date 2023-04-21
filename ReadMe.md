@@ -49,6 +49,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Reverted Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) to allow firmware compile
 - UL: Added: [4 in row (By leo-need-more-coffee)](https://github.com/leo-need-more-coffee/flipperzero-4inrow)
 - UL: Plugins: BLE Remote -> Keynote with vertical layout (by Kami-no | PR #428)
+- Updated: [Intravelometer (By theageoflove)](https://github.com/theageoflove/flipperzero-zeitraffer)
 
 <a name="release">
 
