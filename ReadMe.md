@@ -46,6 +46,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: [Keynote with vertical layout #428 (By Kami-no)](https://github.com/DarkFlippers/unleashed-firmware/pull/428)
 - UL: [SubGHz - Add date/time to history and files #429 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/429) - Was already partially in RM
 - UL: SubGHz scroll improvements (By xMasterX)
+- Reverted Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) to allow firmware compile
 
 <a name="release">
 
