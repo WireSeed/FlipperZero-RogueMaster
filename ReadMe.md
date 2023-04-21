@@ -41,6 +41,11 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: SubGHz changes for Kostily and velosipedy (By xMasterX)
 - UL: Gui, module menu: fix memleak (By DrZlo13)
 - Updated: [WiFi (Marauder) v3.1.3 (Updated By tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion)
+- [Desktop Settings Update - No more reboot needed #607 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/607)
+- Reverted OFW: [cubewb: updated to v1.16.0 #2595 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2595) to fix boot loop
+- UL: [Keynote with vertical layout #428 (By Kami-no)](https://github.com/DarkFlippers/unleashed-firmware/pull/428)
+- UL: [SubGHz - Add date/time to history and files #429 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/429) - Was already partially in RM
+- UL: SubGHz scroll improvements (By xMasterX)
 
 <a name="release">
 
