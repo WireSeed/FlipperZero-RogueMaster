@@ -6,7 +6,7 @@
 
 # Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0420-0608-0.81.2-20cef85.tgz&channel=RM0420-0608-0.81.2-20cef85&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0420-0608-0.81.2-20cef85-NoAnim.tgz&channel=RM0420-0608-0.81.2-20cef85-NoAnim&version=0.81.2)
 
-## Thank you so much to our RM Pro/Extreme Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
+## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
 <table><tr><th><div align="left">
 This firmware is a fork of <a href='https://github.com/DarkFlippers/unleashed-firmware/'>Unleashed</a> and the main Flipper Devices FW! We are NOT paywalled. I will try to keep active development and updates from both in this build along with any other projects that can be found to be useful to the community. I try to keep this FW build the most cutting edge with updates from both and updates from nearly all active community projects. See the RM <a href='https://github.com/RogueMaster/flipperzero-firmware-wPlugins#Games'>Games</a> and <a href='https://github.com/RogueMaster/flipperzero-firmware-wPlugins#Plugins'>Plugins</a> for a list of most of those projects.
