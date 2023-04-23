@@ -29,10 +29,10 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0422-0218-0.81.2-1e5dba6](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0423-0254-0.81.2-25ed29f](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-23 02:48 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-23 02:48 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-23 02:54 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-23 02:54 EST`
 - OFW: [cubewb: updated to v1.16.0 #2595 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2595)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) to allow firmware compile
 - Updated: Bad USB is now a FAP again
@@ -57,6 +57,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: hal: gpio: don't trigger furi_check on furi_hal_gpio_add_int_callback() with same parameters (By xMasterX)
 - UL: Fix external subghz module (By xMasterX)
 - UL: SubGHz: [Using scene manager function #437 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/437)
+- Updated: [Barcode App (By Kingal1337)](https://github.com/Kingal1337/flipper-barcode-generator)
 
 <a name="release">
 
