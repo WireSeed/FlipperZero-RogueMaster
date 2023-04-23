@@ -1,7 +1,5 @@
 #include <furi_hal_flash.h>
 #include <furi_hal_bt.h>
-#include <furi_hal_power.h>
-#include <furi_hal_cortex.h>
 #include <furi.h>
 #include <ble/ble.h>
 #include <interface/patterns/ble_thread/shci/shci.h>
@@ -26,16 +24,6 @@
 #define FURI_HAL_FLASH_OPT_KEY1 0x08192A3B
 #define FURI_HAL_FLASH_OPT_KEY2 0x4C5D6E7F
 #define FURI_HAL_FLASH_OB_TOTAL_WORDS (0x80 / (sizeof(uint32_t) * 2))
-
-/* lib/STM32CubeWB/Projects/P-NUCLEO-WB55.Nucleo/Applications/BLE/BLE_RfWithFlash/Core/Src/flash_driver.c
- * ProcessSingleFlashOperation, quote:
-  > In most BLE application, the flash should not be blocked by the CPU2 longer than FLASH_TIMEOUT_VALUE (1000ms)
-  > However, it could be that for some marginal application, this time is longer.
-  > ... there is no other way than waiting the operation to be completed.
-  > If for any reason this test is never passed, this means there is a failure in the system and there is no other
-  > way to recover than applying a device reset. 
- */
-#define FURI_HAL_FLASH_C2_LOCK_TIMEOUT_MS 3000u /* 3 seconds */
 
 #define IS_ADDR_ALIGNED_64BITS(__VALUE__) (((__VALUE__)&0x7U) == (0x00UL))
 #define IS_FLASH_PROGRAM_ADDRESS(__VALUE__)                                             \
@@ -141,11 +129,9 @@ static void furi_hal_flash_begin_with_core2(bool erase_flag) {
     for(volatile uint32_t i = 0; i < 35; i++)
         ;
 
-    FuriHalCortexTimer timer = furi_hal_cortex_timer_get(FURI_HAL_FLASH_C2_LOCK_TIMEOUT_MS * 1000);
     while(true) {
         /* Wait till flash controller become usable */
         while(LL_FLASH_IsActiveFlag_OperationSuspended()) {
-            furi_check(!furi_hal_cortex_timer_is_expired(timer));
             furi_thread_yield();
         };
 
@@ -155,7 +141,6 @@ static void furi_hal_flash_begin_with_core2(bool erase_flag) {
         /* Actually we already have mutex for it, but specification is specification  */
         if(LL_HSEM_IsSemaphoreLocked(HSEM, CFG_HW_BLOCK_FLASH_REQ_BY_CPU1_SEMID)) {
             taskEXIT_CRITICAL();
-            furi_check(!furi_hal_cortex_timer_is_expired(timer));
             furi_thread_yield();
             continue;
         }
@@ -163,7 +148,6 @@ static void furi_hal_flash_begin_with_core2(bool erase_flag) {
         /* Take sempahopre and prevent core2 from anything funky */
         if(LL_HSEM_1StepLock(HSEM, CFG_HW_BLOCK_FLASH_REQ_BY_CPU2_SEMID) != 0) {
             taskEXIT_CRITICAL();
-            furi_check(!furi_hal_cortex_timer_is_expired(timer));
             furi_thread_yield();
             continue;
         }
@@ -244,13 +228,17 @@ static void furi_hal_flush_cache(void) {
 
 bool furi_hal_flash_wait_last_operation(uint32_t timeout) {
     uint32_t error = 0;
+    uint32_t countdown = 0;
 
     /* Wait for the FLASH operation to complete by polling on BUSY flag to be reset.
        Even if the FLASH operation fails, the BUSY flag will be reset and an error
        flag will be set */
-    FuriHalCortexTimer timer = furi_hal_cortex_timer_get(timeout * 1000);
+    countdown = timeout;
     while(READ_BIT(FLASH->SR, FLASH_SR_BSY)) {
-        if(furi_hal_cortex_timer_is_expired(timer)) {
+        if(LL_SYSTICK_IsActiveCounterFlag()) {
+            countdown--;
+        }
+        if(countdown == 0) {
             return false;
         }
     }
@@ -273,9 +261,12 @@ bool furi_hal_flash_wait_last_operation(uint32_t timeout) {
     CLEAR_BIT(FLASH->SR, error);
 
     /* Wait for control register to be written */
-    timer = furi_hal_cortex_timer_get(timeout * 1000);
+    countdown = timeout;
     while(READ_BIT(FLASH->SR, FLASH_SR_CFGBSY)) {
-        if(furi_hal_cortex_timer_is_expired(timer)) {
+        if(LL_SYSTICK_IsActiveCounterFlag()) {
+            countdown--;
+        }
+        if(countdown == 0) {
             return false;
         }
     }

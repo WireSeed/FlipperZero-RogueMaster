@@ -112,8 +112,6 @@ def DistCommand(env, name, source, **kw):
 
 
 def generate(env):
-    if not env["VERBOSE"]:
-        env.SetDefault(COPROCOMSTR="\tCOPRO\t${TARGET}")
     env.AddMethod(AddFwProject)
     env.AddMethod(DistCommand)
     env.AddMethod(AddOpenOCDFlashTarget)
@@ -149,7 +147,7 @@ def generate(env):
                         '--stack_file="${COPRO_STACK_BIN}" '
                         "--stack_addr=${COPRO_STACK_ADDR} ",
                     ],
-                    "$COPROCOMSTR",
+                    "\tCOPRO\t${TARGET}",
                 )
             ),
         }
