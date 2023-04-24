@@ -35,6 +35,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-24 06:32 EST`
 - Reapply Flipper Scope fixes, Deep Sleep, BLE stack / cubewb updates from OFW successfully without boot loop
 - Known Issue: Flipper Scope does not load
+- Archive: Allow Folder Favorites [(By Willy-JL)]
+- GUI: Extended Keyboard [(By Willy-JL)]
 
 <a name="release">
 
@@ -103,6 +105,7 @@ $ ./fbt dolphin_ext
 - Animations: SubGHZ Scanning image with Pikachu [Thanks to Panzer00Z](https://github.com/Panzer00Z/flipperzero-firmware/blob/3a548ea9bb181c9348d8afb427890c411456134e/assets/icons/SubGhz/Scanning_123x52.png)
 - Animations: Trimmed out the Flipper animations. `/ext/dolphin` folder on your Flipper should now be managed by you! [Copy this folder (RM Select)](https://github.com/RogueMaster/awesome-flipperzero-withModules/tree/rogue_main/dolphin-RMselect) or [this folder (RM minimal)](https://github.com/RogueMaster/awesome-flipperzero-withModules/tree/rogue_main/dolphin-minimal) if you don't want to do the work but want more animations.
 - [Archive: File Browser Ordering (By Dig03)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/389)
+- Archive: Allow Folder Favorites [(By Willy-JL)]
 - [Archive: Browser: Context menu to show file content (By askoriy)](https://github.com/DarkFlippers/unleashed-firmware/pull/139)
 - Archive: FAPs are now launchable from Archive [By RogueMaster], thanks xMasterX for the suggestion
 - Assets: Includes a NFC Level 50 Z3lda Amiibo
@@ -160,6 +163,7 @@ $ ./fbt dolphin_ext
 	- Tetris, Snake, or Flappy Bird Score For EXP
 	- Zombiez for every 20 Zombie kills
 - Dolphin: SD dolphin manifest updated to weight animations differently
+- GUI: Extended Keyboard [(By Willy-JL)]
 - iButton: [Fixed issue when loading iButton keys or U2F token from Archive app #382 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/382)
 - iButton: iButton.fap loader apps and available as Favorites [Thanks to ESurge](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/336)
 - Icon Decode/Encode [(Thanks to PixlEmly)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/55/files)
@@ -181,6 +185,7 @@ $ ./fbt dolphin_ext
 - Settings: Custom name with this compile: CUSTOM_FLIPPER_NAME=name ./fbt updater_package [By Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware)
 - Settings: Desktop => [Games Only Mode (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/GAMES_ONLY.md)
 - - [UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT FROM CLOCK](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/GAMES_ONLY.md) (FULL LIST OF GAMES ONLY CONTROLS)
+- Settings: External instead of internal for all except notifications [(By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/notification/notification_settings_app.c)
 - Settings: LCD Timeout Options Added: 10s+90s+2min+5min+10min [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/notification/notification_settings_app.c)
 - Settings: Rename from App [(Thanks to ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/409)
 - Settings: Rename from SD `dolphin/name.txt` [(Thanks to ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/259)
