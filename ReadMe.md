@@ -36,6 +36,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Reapply Flipper Scope fixes, Deep Sleep, BLE stack / cubewb updates from OFW successfully without boot loop](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/087c6446652b96bdca20b9e51d7a8e8fb64e409b)
 - Known Issue: Flipper Scope does not load
 - [Archive: Allow Folder Favorites & GUI: Extended Keyboard (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/20bc89888ecaa47f3ee65c63416e609eeff70026)
+- Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
 
 <a name="release">
 
