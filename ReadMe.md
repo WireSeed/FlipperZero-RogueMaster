@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0423-1538-0.81.2-994045c](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-23 15:38 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-23 15:38 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-23 20:55 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-23 20:55 EST`
 - OFW: [cubewb: updated to v1.16.0 #2595 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2595)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) to allow firmware compile
 - Updated: Bad USB is now a FAP again
@@ -61,6 +61,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: scripts: storage: fixed exception handler for paths
 - UL: [RFID: More user-friendly RAW emulation (By dcaprita)](https://forum.flipperzero.one/t/electra-intercom/6368/43)
 - Added: [Wifi Mapping (By carvilsi)](https://github.com/carvilsi/flipper0-wifi-map/tree/main) `Req: ESP32`
+- UL: SubGHz Fix external radio SPI handlers
+- UL: Updated: [Sub-GHz Bruteforcer v3.5 (By Ganapati/xMasterX/derskythe)](https://github.com/derskythe/flipperzero-subbrute/tree/master)
 
 <a name="release">
 
