@@ -118,7 +118,7 @@ static const TextInputKey symbol_keyboard_keys_row_1[] = {
 };
 
 static const TextInputKey symbol_keyboard_keys_row_2[] = {
-   {'~', 2, 20},
+    {'~', 2, 20},
     {'+', 12, 20},
     {'-', 22, 20},
     {'=', 32, 20},
@@ -376,10 +376,12 @@ static void text_input_handle_up(TextInput* text_input, TextInputModel* model) {
     if(model->selected_row > 0) {
         model->selected_row--;
         if(model->selected_row == 0 &&
-            model->selected_column > get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 6) {
+           model->selected_column >
+               get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 6) {
             model->selected_column = model->selected_column + 1;
         }
-        if(model->selected_row == 1 && model->selected_keyboard == symbol_keyboard.keyboard_index) {
+        if(model->selected_row == 1 &&
+           model->selected_keyboard == symbol_keyboard.keyboard_index) {
             if(model->selected_column > 5)
                 model->selected_column += 2;
             else if(model->selected_column > 1)
@@ -398,10 +400,12 @@ static void text_input_handle_down(TextInput* text_input, TextInputModel* model)
     } else if(model->selected_row < keyboard_row_count - 1) {
         model->selected_row++;
         if(model->selected_row == 1 &&
-            model->selected_column > get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 4) {
+           model->selected_column >
+               get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 4) {
             model->selected_column = model->selected_column - 1;
         }
-        if(model->selected_row == 2 && model->selected_keyboard == symbol_keyboard.keyboard_index) {
+        if(model->selected_row == 2 &&
+           model->selected_keyboard == symbol_keyboard.keyboard_index) {
             if(model->selected_column > 7)
                 model->selected_column -= 2;
             else if(model->selected_column > 1)
@@ -691,15 +695,11 @@ void text_input_set_result_callback(
         true);
 }
 
-void text_input_set_minimum_length(
-    TextInput* text_input,
-    size_t minimum_length) {
+void text_input_set_minimum_length(TextInput* text_input, size_t minimum_length) {
     with_view_model(
         text_input->view,
         TextInputModel * model,
-        {
-            model->minimum_length = minimum_length;
-        },
+        { model->minimum_length = minimum_length; },
         true);
 }
 
