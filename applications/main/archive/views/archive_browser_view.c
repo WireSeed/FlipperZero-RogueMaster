@@ -79,7 +79,7 @@ static void render_item_menu(Canvas* canvas, ArchiveBrowserViewModel* model) {
                 menu_array_push_raw(model->context_menu),
                 item_pin,
                 ArchiveBrowserEventFileMenuPin);
-            if(selected->type <= ArchiveFileTypeBadKb) {
+            if(selected->type <= ArchiveFileTypeBadUsb) {
                 archive_menu_add_item(
                     menu_array_push_raw(model->context_menu),
                     item_show,
