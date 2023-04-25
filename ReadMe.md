@@ -31,14 +31,16 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0424-1855-0.81.2-eb8c014](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-24 19:30 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-24 19:30 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-24 22:23 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-24 22:23 EST`
 - [Reapply Flipper Scope fixes, Deep Sleep, BLE stack / cubewb updates from OFW successfully without boot loop](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/087c6446652b96bdca20b9e51d7a8e8fb64e409b)
 - [Archive: Allow Folder Favorites & GUI: Extended Keyboard (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/20bc89888ecaa47f3ee65c63416e609eeff70026)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
 - OFW PR: [BadUSB: command parser fix #2607 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2607)
 - UL: [SubGHz: Fixed Frequency Ananyzer issues, Fixed read mode issues & Fixed re-inits in HAL (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/ab669b26dab688067682e77e0c3789955783790d)
 - Updated: [WiFi (Marauder) v3.1.3 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED` [ESP32 MARAUDER Firmware](https://github.com/tcpassos/ESP32Marauder)
+- UL: Lock with Pin by Holding Down for Lock (By xMasterX)
+- UL: Update YT Shorts Remote (By xMasterX)
 
 <a name="release">
 
