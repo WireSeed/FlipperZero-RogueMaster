@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0424-2335-0.81.2-a04daa7](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-24 23:35 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-24 23:35 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-25 15:24 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-25 15:24 EST`
 - [Reapply Flipper Scope fixes, Deep Sleep, BLE stack / cubewb updates from OFW successfully without boot loop](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/087c6446652b96bdca20b9e51d7a8e8fb64e409b)
 - [Archive: Allow Folder Favorites & GUI: Extended Keyboard (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/20bc89888ecaa47f3ee65c63416e609eeff70026)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
@@ -41,6 +41,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [WiFi (Marauder) v3.1.3 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED` [ESP32 MARAUDER Firmware](https://github.com/tcpassos/ESP32Marauder)
 - UL: Lock with Pin by Holding Down for Lock (By xMasterX)
 - UL: Update YT Shorts Remote (By xMasterX)
+- OFW: [Dont reboot on crash in debug builds #2613 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2613)
+- UL PR: [Updated infrared assets #441 (By amec0e)](https://github.com/DarkFlippers/unleashed-firmware/pull/441)
 
 <a name="release">
 
@@ -59,7 +61,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Use Web Installer link for easy install
 ### OR
 - Extract/unzip the downloaded RM*.TGZ/ZIP file from RELEASES to a folder on your computer (Use 7Zip or WinRAR)
-- Copy the entire folder to the update folder onto the SD card you're using in your FlipperZero
+- Copy the entire folder to the update folder onto the SD card you are using in your FlipperZero
 - Once the SD card is back in the Flipper (or you've copied the files successfully via qFlipper), press down at the Desktop (the screen with the animations)
 - This opens the Archive app, press left/right to get to the Browser section
 - Locate the update folder, and the folder you copied earlier
