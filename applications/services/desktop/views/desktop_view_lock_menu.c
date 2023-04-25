@@ -82,11 +82,11 @@ void desktop_lock_menu_draw_callback(Canvas* canvas, void* model) {
         case DesktopLockMenuIndexLock:
             str = "Lock";
             break;
-        // case DesktopLockMenuIndexPinLock:
+            // case DesktopLockMenuIndexPinLock:
             // if(m->pin_is_set) {
-                // str = "Lock with PIN";
+            // str = "Lock with PIN";
             // } else {
-                // str = "Set PIN";
+            // str = "Set PIN";
             // }
             // break;
         case DesktopLockMenuIndexPinLockShutdown:
@@ -186,7 +186,7 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
             } else if(event->type == InputTypeShort) {
                 lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
             }
-        // } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
+            // } else if((idx == DesktopLockMenuIndexPinLock) && (event->type == InputTypeShort)) {
             // lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
         } else if((idx == DesktopLockMenuIndexPinLockShutdown) && (event->type == InputTypeShort)) {
             lock_menu->callback(DesktopLockMenuEventPinLockShutdown, lock_menu->context);
