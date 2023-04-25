@@ -43,6 +43,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Update YT Shorts Remote (By xMasterX)
 - OFW: [Dont reboot on crash in debug builds #2613 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2613)
 - UL PR: [Updated infrared assets #441 (By amec0e)](https://github.com/DarkFlippers/unleashed-firmware/pull/441)
+- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
+- Updated: [Mifare Nested 1.1.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 
 <a name="release">
 
