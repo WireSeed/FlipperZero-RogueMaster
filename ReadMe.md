@@ -29,10 +29,10 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0425-1549-0.82.2-fe8a403](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
+## Latest Updates - [PATREON: Latest Release RM0426-0238-0.82.2-4359615](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-26 02:28 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-26 02:28 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-26 02:38 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-26 02:38 EST`
 - [Reapply Flipper Scope fixes, Deep Sleep, BLE stack / cubewb updates from OFW successfully without boot loop](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/087c6446652b96bdca20b9e51d7a8e8fb64e409b)
 - [Archive: Allow Folder Favorites & GUI: Extended Keyboard (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/20bc89888ecaa47f3ee65c63416e609eeff70026)
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
@@ -45,9 +45,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL PR: [Updated infrared assets #441 (By amec0e)](https://github.com/DarkFlippers/unleashed-firmware/pull/441)
 - Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - OFW: [FuriHal: use proper divider for core2 when transition to sleep, remove extra stop mode transition checks, cleanup code. Furi: proper assert and check messages #2615 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2615)
-- Updated: Name Changer to filter text due to updated keyboard layout (By ESurge) Validator (By Willy-JL)
-- Updated: Passport App to no longer require a copy of Dolphin Helper files (By ESurge)
-- Updated: BT Service (Implemented By ESurge / Original By Willy-JL)
+- Updated: [Name Changer to filter text due to updated keyboard layout (By ESurge) Validator (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
+- Updated: [Passport App to no longer require a copy of Dolphin Helper files (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
+- Updated: [BT Service (Implemented By ESurge / Original By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
 - Updated: [Mifare Nested 1.2.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 
 <a name="release">
