@@ -22,6 +22,7 @@
 #include <gui/modules/widget.h>
 
 #include <assets_icons.h>
+#include <ESP32_WiFi_Marauder_icons.h>
 #include <storage/storage.h>
 #include <lib/toolbox/path.h>
 #include <dialogs/dialogs.h>
