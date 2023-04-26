@@ -49,6 +49,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Passport App to no longer require a copy of Dolphin Helper files (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
 - Updated: [BT Service (Implemented By ESurge / Original By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
 - Updated: [Mifare Nested 1.2.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- Backup+restore internal U2F keys on factory reset (By Willy-JL)
 
 <a name="release">
 
