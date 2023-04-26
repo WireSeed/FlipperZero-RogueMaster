@@ -468,7 +468,7 @@ uint32_t mifare_nested_worker_predict_delay(
     }
 
     free(crypto);
-    
+
     return 1;
 }
 
