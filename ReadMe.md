@@ -46,6 +46,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - Updated: [Mifare Nested 1.1.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - OFW: [FuriHal: use proper divider for core2 when transition to sleep, remove extra stop mode transition checks, cleanup code. Furi: proper assert and check messages #2615 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2615)
+- Updated: Name Changer to filter text due to updated keyboard layout (By ESurge) Validator (By Willy-JL)
+- Updated: Passport App to no longer require a copy of Dolphin Helper files (By ESurge)
+- Updated: BT Service (Implemented By ESurge / Original By Willy-JL)
 
 <a name="release">
 

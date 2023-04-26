@@ -9,8 +9,9 @@
 #include <furi_hal_version.h>
 
 #include "math.h"
+#include <dolphin/helpers/dolphin_state.h>
+#include <dolphin/helpers/dolphin_deed.h>
 #include <dolphin/dolphin.h>
-#include "dolphin/helpers/dolphin_state.h"
 #include "desktop/desktop_settings.h"
 #include "passport_settings/passport_settings.h"
 #include "Passport_icons.h"
