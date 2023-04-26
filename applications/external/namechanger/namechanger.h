@@ -35,6 +35,8 @@ typedef struct {
     TextInput* text_input;
     Popup* popup;
     Widget* widget;
+
+    char* error;
 } NameChanger;
 
 typedef enum {
