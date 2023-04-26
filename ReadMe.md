@@ -51,6 +51,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Mifare Nested 1.2.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - [Backup & Restore internal U2F keys on factory reset (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/975144818c942f03073460c18ee342b943024ca6#diff-d22e948bbfb198eeb5fd170960ea79fbcd95cb99b2928de767464f613bffdc4d) Just a reminder, if you use U2F, you should be backing up your keys.
 - OFW PR: [Picopass: remove spaces in CSN #2616 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2616)
+- New Slime Profile Picture (By NeonKodama)
 
 <a name="release">
 
@@ -161,7 +162,7 @@ $ ./fbt dolphin_ext
 - Dolphin: Passport: As a FAP with Multiple Pages, and Dynamic Icons/Images support [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/527)
 - Dolphin: Passport: Default Mario Themed [(Thanks to Kuronons)](https://github.com/Kuronons/FZ_graphics/tree/main/Passport%20background)
 - Dolphin: Passport: Many thanks to Kuronons for the many passport backgrounds and profile images available and included.
-- Dolphin: Passport: Now has 9 selectable backgrounds options and 27 profile image options. (Changes By RogueMaster with thanks to ESurge)
+- Dolphin: Passport: Now has 9 selectable backgrounds options and 28 profile image options. (Changes By RogueMaster with thanks to ESurge)
 - Dolphin: Passport: Passport Settings app to configure dynamic icons in Passport FAP [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/527)
 - Dolphin: Passport: Rename Dolphin with Name Changer app under Applications=>Settings [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/488)
 - Dolphin: Passport: Show EXP [(By Dabolus)](https://github.com/Dabolus/flipperzero-firmware-rpg/)
