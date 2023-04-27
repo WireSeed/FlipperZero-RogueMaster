@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0423-2348-0.81.2-bda53e1.tgz&channel=RM0423-2348-0.81.2-bda53e1&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0423-2348-0.81.2-bda53e1-NoAnim.tgz&channel=RM0423-2348-0.81.2-bda53e1-NoAnim&version=0.81.2)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474.tgz&channel=RM0427-1834-0.82.4-2e5d474&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474-NoAnim.tgz&channel=RM0427-1834-0.82.4-2e5d474-NoAnim&version=0.82.4)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -33,32 +33,6 @@ This software is for experimental purposes only and is not meant for any illegal
 
 - Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-04-27 17:51 EST`
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-04-27 17:51 EST`
-- [Reapply Flipper Scope fixes, Deep Sleep, BLE stack / cubewb updates from OFW successfully without boot loop](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/087c6446652b96bdca20b9e51d7a8e8fb64e409b)
-- [Archive: Allow Folder Favorites & GUI: Extended Keyboard (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/20bc89888ecaa47f3ee65c63416e609eeff70026)
-- Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
-- OFW PR: [BadUSB: command parser fix #2607 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2607)
-- UL: [SubGHz: Fixed Frequency Ananyzer issues, Fixed read mode issues & Fixed re-inits in HAL (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/ab669b26dab688067682e77e0c3789955783790d)
-- UL: Lock with Pin by Holding Down for Lock (By xMasterX)
-- UL: Update YT Shorts Remote (By xMasterX)
-- OFW: [Dont reboot on crash in debug builds #2613 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2613)
-- UL PR: [Updated infrared assets #441 (By amec0e)](https://github.com/DarkFlippers/unleashed-firmware/pull/441)
-- OFW: [FuriHal: use proper divider for core2 when transition to sleep, remove extra stop mode transition checks, cleanup code. Furi: proper assert and check messages #2615 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2615)
-- Updated: [Name Changer to filter text due to updated keyboard layout (By ESurge) Validator (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
-- Updated: [Passport App to no longer require a copy of Dolphin Helper files (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
-- Updated: [BT Service (Implemented By ESurge / Original By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
-- [Backup & Restore internal U2F keys on factory reset (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/975144818c942f03073460c18ee342b943024ca6#diff-d22e948bbfb198eeb5fd170960ea79fbcd95cb99b2928de767464f613bffdc4d) Just a reminder, if you use U2F, you should be backing up your keys.
-- OFW PR: [Picopass: remove spaces in CSN #2616 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2616)
-- New Slime Profile Picture (By NeonKodama)
-- UL/OFW PR: [Fix reading Mifare Classic cards with unusual access conditions and fix emulation of unknown keys #2620 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/2620)
-- UL/OFW PR: [WS: add protocol Wendox W6726 #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
-- UL Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
-- UL: Confirm when removing t5577 password (By xMasterX)
-- Updated: [Servotester (By spin7ion)](https://github.com/spin7ion/flipper-servotester)
-- Updated: [Mifare Nested 1.2.5 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
-- Revert: [Backup & Restore internal U2F keys on factory reset (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/975144818c942f03073460c18ee342b943024ca6#diff-d22e948bbfb198eeb5fd170960ea79fbcd95cb99b2928de767464f613bffdc4d) Causes boot loop for some.
-- [Fix small issue with Passport App #611 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/611)
-- OFW: [Keep HSI16 working in stop mode #2621 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2621)
-- UL: Plugins: iButton Fuzzer default keys update (by team-orangeBlue)
 
 <a name="release">
 
@@ -409,4 +383,4 @@ $ ./fbt dolphin_ext
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
 - [Zero Tracker (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-music-tracker)
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0423-2348-0.81.2-bda53e1.tgz&channel=RM0423-2348-0.81.2-bda53e1&version=0.81.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0423-2348-0.81.2-bda53e1-NoAnim.tgz&channel=RM0423-2348-0.81.2-bda53e1-NoAnim&version=0.81.2)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474.tgz&channel=RM0427-1834-0.82.4-2e5d474&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474-NoAnim.tgz&channel=RM0427-1834-0.82.4-2e5d474-NoAnim&version=0.82.4)
