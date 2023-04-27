@@ -76,7 +76,6 @@ TotpIteratorUpdateTokenResult totp_token_info_iterator_add_new_token(
     TOTP_ITERATOR_UPDATE_TOKEN_ACTION update,
     const void* update_context);
 
-
 /**
  * @brief Remvoves current token info
  * @param context token info iterator context

@@ -46,15 +46,15 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Name Changer to filter text due to updated keyboard layout (By ESurge) Validator (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
 - Updated: [Passport App to no longer require a copy of Dolphin Helper files (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
 - Updated: [BT Service (Implemented By ESurge / Original By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/609)
-- Updated: [Mifare Nested 1.2.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - [Backup & Restore internal U2F keys on factory reset (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/975144818c942f03073460c18ee342b943024ca6#diff-d22e948bbfb198eeb5fd170960ea79fbcd95cb99b2928de767464f613bffdc4d) Just a reminder, if you use U2F, you should be backing up your keys.
 - OFW PR: [Picopass: remove spaces in CSN #2616 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2616)
 - New Slime Profile Picture (By NeonKodama)
 - UL/OFW PR: [Fix reading Mifare Classic cards with unusual access conditions and fix emulation of unknown keys #2620 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/2620)
 - UL/OFW PR: [WS: add protocol Wendox W6726 #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
-- UL Updated: [WiFi (Marauder) v3.1.3 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED` [ESP32 MARAUDER Firmware](https://github.com/tcpassos/ESP32Marauder)
 - UL Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - UL: Confirm when removing t5577 password (By xMasterX)
+- Updated: [Servotester (By spin7ion)](https://github.com/spin7ion/flipper-servotester)
+- Updated: [Mifare Nested 1.2.5 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 
 <a name="release">
 
@@ -342,7 +342,7 @@ $ ./fbt dolphin_ext
 - [Metronome (By panki27)](https://github.com/panki27/Metronome)
 - [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey)
 - [Mifare Fuzzer (By spheeere98)](https://github.com/spheeere98/mifare_fuzzer)
-- [Mifare Nested 1.2.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- [Mifare Nested 1.2.5 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - [Morse Code (By wh00hw)](https://github.com/DarkFlippers/unleashed-firmware/pull/144)
 - [Mouse Jacker (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/mousejacker) ([Pin Out](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/mousejacker) from nocomp/Frog/UberGuidoZ) `Req: NRF24`
 - [Mouse Jiggler (By Jacob-Tate)](https://github.com/Jacob-Tate/flipperzero-firmware/blob/dev/applications/mouse_jiggler/mouse_jiggler.c) (Original By MuddleBox)
