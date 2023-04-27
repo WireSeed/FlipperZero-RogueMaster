@@ -145,10 +145,14 @@ int32_t servotester_app(void* p) {
                 if(mode == Auto) {
                     dir = true; // deterministic direction
                 }
-            } else if(mode == Manual && event.input.key == InputKeyLeft && event.input.type == InputTypeRelease) {
+            } else if(
+                mode == Manual && event.input.key == InputKeyLeft &&
+                event.input.type == InputTypeRelease) {
                 // small step on release for precise setting
                 pWidthNew -= WIDTH_STEP_SMALL;
-            } else if(mode == Manual && event.input.key == InputKeyRight && event.input.type == InputTypeRelease) {
+            } else if(
+                mode == Manual && event.input.key == InputKeyRight &&
+                event.input.type == InputTypeRelease) {
                 // small step on release for precise setting
                 pWidthNew += WIDTH_STEP_SMALL;
             } else if(mode == Manual && event.input.key == InputKeyDown) {
@@ -160,20 +164,20 @@ int32_t servotester_app(void* p) {
             }
         } else if(event.type == EventTypeTick) {
             if(mode == Auto) {
-                if (dir) {
+                if(dir) {
                     pWidthNew += WIDTH_STEP_AUTO;
-                    if (pWidthNew >= MAX_WIDTH) dir = false;
+                    if(pWidthNew >= MAX_WIDTH) dir = false;
                 } else {
                     pWidthNew -= WIDTH_STEP_AUTO;
-                    if (pWidthNew <= MIN_WIDTH) dir = true;
+                    if(pWidthNew <= MIN_WIDTH) dir = true;
                 }
             }
         }
 
-        if (pWidthNew < MIN_WIDTH) pWidthNew = MIN_WIDTH;
-        if (pWidthNew > MAX_WIDTH) pWidthNew = MAX_WIDTH;
+        if(pWidthNew < MIN_WIDTH) pWidthNew = MIN_WIDTH;
+        if(pWidthNew > MAX_WIDTH) pWidthNew = MAX_WIDTH;
 
-        if (pWidthNew != pWidth) {
+        if(pWidthNew != pWidth) {
             pWidth = pWidthNew;
             servotester_update_pwm();
         }
