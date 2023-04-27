@@ -16,7 +16,6 @@
 #include <gui/view_dispatcher.h>
 #include <gui/scene_manager.h>
 #include <gui/modules/text_box.h>
-#include <gui/modules/text_input.h>
 #include <gui/modules/submenu.h>
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/widget.h>
