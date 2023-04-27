@@ -148,10 +148,8 @@ bool wifi_marauder_scene_log_viewer_on_event(void* context, SceneManagerEvent ev
             // Browse
             FuriString* predefined_filepath = furi_string_alloc_set_str(MARAUDER_APP_FOLDER_LOGS);
             FuriString* selected_filepath = furi_string_alloc();
-            DialogsFileBrowserOptions browser_options;
-            dialog_file_browser_set_basic_options(&browser_options, ".log", &I_Text_10x10);
             if(dialog_file_browser_show(
-                   app->dialogs, selected_filepath, predefined_filepath, &browser_options)) {
+                   app->dialogs, selected_filepath, predefined_filepath, NULL)) {
                 strncpy(
                     app->log_file_path,
                     furi_string_get_cstr(selected_filepath),
