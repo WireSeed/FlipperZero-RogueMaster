@@ -57,6 +57,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Mifare Nested 1.2.5 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - Revert: [Backup & Restore internal U2F keys on factory reset (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/975144818c942f03073460c18ee342b943024ca6#diff-d22e948bbfb198eeb5fd170960ea79fbcd95cb99b2928de767464f613bffdc4d) Causes boot loop for some.
 - [Fix small issue with Passport App #611 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/611)
+- OFW: [Keep HSI16 working in stop mode #2621 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2621)
+- UL: Plugins: iButton Fuzzer default keys update (by team-orangeBlue)
 
 <a name="release">
 
