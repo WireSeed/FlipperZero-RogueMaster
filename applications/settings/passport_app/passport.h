@@ -19,9 +19,9 @@
 #define MOODS_TOTAL 1
 #define BUTTHURT_MAX 14
 
-typedef enum { AniRedVirus, AniYelVirus, AniBluVirus, AniRabbit, AniSlime, AniSonic } Animations;
+typedef enum { AniRedVirus, AniYelVirus, AniBluVirus, AniRabbit, AniSlime, AniSonic, AniMaxNum } Animations;
 
-static IconAnimation* animations[5];
+static IconAnimation* animations[AniMaxNum];
 
 typedef enum { EventGameTick, EventKeyPress } EventType;
 
