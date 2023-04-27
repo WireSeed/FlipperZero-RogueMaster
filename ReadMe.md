@@ -55,6 +55,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Confirm when removing t5577 password (By xMasterX)
 - Updated: [Servotester (By spin7ion)](https://github.com/spin7ion/flipper-servotester)
 - Updated: [Mifare Nested 1.2.5 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- Revert: [Backup & Restore internal U2F keys on factory reset (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/975144818c942f03073460c18ee342b943024ca6#diff-d22e948bbfb198eeb5fd170960ea79fbcd95cb99b2928de767464f613bffdc4d) Causes boot loop for some, what a surprise...
 
 <a name="release">
 
