@@ -2,7 +2,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <furi_hal_bt.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,16 +43,6 @@ BtStatus bt_get_status(Bt* bt);
  * @return          true on success
  */
 bool bt_set_profile(Bt* bt, BtProfile profile);
-
-// Set BT Name
-void bt_set_profile_adv_name(Bt* bt, const char* fmt, ...);
-// Get BT Name
-const char* bt_get_profile_adv_name(Bt* bt);
-
-// Set BT MAC Address
-void bt_set_profile_mac_address(Bt* bt, const uint8_t mac[6]);
-// Get BT MAC Address
-const uint8_t* bt_get_profile_mac_address(Bt* bt);
 
 /** Disconnect from Central
  *
