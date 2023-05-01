@@ -1,5 +1,5 @@
 App(
-    appid="bomberduck",
+    appid="Bomberduck",
     name="Bomberduck",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="bomberduck_app",
@@ -11,4 +11,5 @@ App(
 	fap_icon="bomb.png",
     fap_category="Games",
     fap_icon_assets="assets",
+    fap_icon_assets_symbol="bomberduck",
 )
