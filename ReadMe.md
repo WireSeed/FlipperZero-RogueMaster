@@ -44,6 +44,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Bluetooth: Fix Version instead of branch (By xMasterX)
 - GPIO: Fix for P0kemon Trading app (Thanks to ESurge)
 - UL: HID App Updated Layout
+- Fix internal storage bugs with restoring U2F keys, Fix check for normal boot (fix bootloop on flash), Only load notification settings on normal boot (By Willy-JL)
+- Fix for bootloops from new code by adding test from OFW (By RogueMaster)
+- Add cstr version of elements_scrollable_text_line & Scroll long text in variable item list (By Willy-JL)
 
 <a name="release">
 
