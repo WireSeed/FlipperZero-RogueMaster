@@ -40,13 +40,13 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [Wiegand Reader (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
 - Added: [Resistance Calculator (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - Thank You xMasterX for finding these apps.
-- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - UL: Bluetooth: Fix Version instead of branch (By xMasterX)
 - GPIO: Fix for P0kemon Trading app (Thanks to ESurge)
 - UL: HID App Updated Layout
-- Fix internal storage bugs with restoring U2F keys, Fix check for normal boot (fix bootloop on flash), Only load notification settings on normal boot (By Willy-JL)
+- Fix internal storage bugs with restoring U2F keys, Fix check for normal boot (fix bootloop on flash), Only load notification settings on normal boot, Add cstr version of elements_scrollable_text_line & Scroll long text in variable item list (By Willy-JL)
 - Fix for bootloops from new code by adding test from OFW (By RogueMaster)
-- Add cstr version of elements_scrollable_text_line & Scroll long text in variable item list (By Willy-JL)
+- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
+- Updated: [Temp Sensors Reader (By quen0n)](https://github.com/quen0n/Unitemp-Flipper-Zero-Plugin) `Req: BMP180/BMP280/BME280/BME680/DHT11/DHT22(AM2302)/AM2301/AM2320/HTU2XD/HTU21x/HDC1080/MAX31855/MAX6675`
 
 <a name="release">
 
