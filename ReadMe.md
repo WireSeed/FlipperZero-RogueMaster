@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0501-0513-0.82.4-8a1b068](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-01 18:55 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-01 18:55 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-01 22:40 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-01 22:40 EST`
 - Added: [DVD Bounce (By schaene)](https://github.com/schaene/Flipper-DVD-Bounce)
 - Added: [ServoTester (2) (By mhasbini)](https://github.com/mhasbini/ServoTesterApp/tree/master)
 - Added: [Mx2125 Dual-Axis Accelerometer (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
@@ -50,6 +50,10 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Resistance Calculator (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - UL: Fix SWD Probe plugin GPIO pins state (By xMasterX)
 - Added: [Bomberduck (By leo-need-more-coffee)](https://github.com/leo-need-more-coffee/flipperzero-bomberduck)
+- UL: Undo some mifare changes (By xMasterX)
+- UL: Desktop: Temp fix for old backlight bug when locking by holding up arrow (By xMasterX)
+- UL: IR: Add Sharp and Vizio to Universal TV remote
+- UL: OFW PR 2627: Add HID mouse auto-clicker (by rwl4)
 
 <a name="release">
 
