@@ -29,10 +29,10 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0501-2322-0.82.4-833d1c5](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0503-0231-0.82.4-27dfce0](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-03 02:00 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-03 02:00 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-03 02:31 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-03 02:31 EST`
 - Added: [DVD Bounce (By schaene)](https://github.com/schaene/Flipper-DVD-Bounce)
 - Added: [ServoTester (2) (By mhasbini)](https://github.com/mhasbini/ServoTesterApp/tree/master)
 - Added: [Mx2125 Dual-Axis Accelerometer (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
@@ -60,7 +60,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [Permit replacement of a view's input callback #2623 (By instantiator)](https://github.com/flipperdevices/flipperzero-firmware/pull/2623)
 - OFW: [Added API version to device info #2611 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2611)
 - OFW: [Remove spaces in CSN #2616 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2616)
-- OFW: [WS: add protocol "Wendox W6726" #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
+- OFW: [WS: add protocol 'Wendox W6726' #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
 - OFW: [BadUSB: command parser fix #2607 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2607)
 - OFW: [Dolphin builder in ufbt; minor ufbt/fbt improvements #2601 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2601)
 - Added: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
