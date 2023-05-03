@@ -63,11 +63,11 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [WS: add protocol 'Wendox W6726' #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
 - OFW: [BadUSB: command parser fix #2607 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2607)
 - OFW: [Dolphin builder in ufbt; minor ufbt/fbt improvements #2601 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2601)
-- Added: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - Updated: [IR Remote (By Hong5489)](https://github.com/Hong5489/ir_remote) [Hold Option (By d4ve10)](https://github.com/d4ve10/ir_remote/tree/infrared_hold_option)
 - Updated: [4 in row (By leo-need-more-coffee)](https://github.com/leo-need-more-coffee/flipperzero-4inrow)
 - Updated: [WiFi (Marauder) v3.1.4 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED`
 - OFW: [Add HID mouse auto-clicker #2627 (By rwl4)](https://github.com/flipperdevices/flipperzero-firmware/pull/2627)
+- Remove: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 
 <a name="release">
 
@@ -261,7 +261,6 @@ $ ./fbt dolphin_ext
 - [Etch-A-Sketch (By SimplyMinimal)](https://github.com/SimplyMinimal/FlipperZero-Etch-A-Sketch)
 - [Flappy Bird (By DroomOne)](https://github.com/DroomOne/flipperzero-firmware/tree/dev/applications/flappy_bird) [Flappy: Border hitboxes, bigger Pilars (By TQMatvey)](https://github.com/DarkFlippers/unleashed-firmware/pull/114) [Increase pilars line width to improve visibility (By ahumeniy)](https://github.com/DarkFlippers/unleashed-firmware/pull/140)
 - [Game of Life (Updated to work by tgxn) (By itsyourbedtime)](https://github.com/tgxn/flipperzero-firmware/blob/dev/applications/game_of_life/game_of_life.c)
-- [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - [Heap Defence (By xMasterX)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/fc776446de9fdd553b221c02668b925b689378d8) [(original by wquinoa & Vedmein)](https://github.com/Vedmein/flipperzero-firmware/tree/hd/svisto-perdelki)
 - [Mandelbrot Set (By Possibly-Matt)](https://github.com/Possibly-Matt/flipperzero-firmware-wPlugins)
 - [Minesweeper (By panki27)](https://github.com/panki27/minesweeper) [Fix minesweeper freeze bug, do some refactoring (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/56c11c70b3617764b6d2ea7b008c67dce517fa25)
