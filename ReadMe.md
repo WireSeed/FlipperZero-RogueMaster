@@ -69,12 +69,13 @@ This software is for experimental purposes only and is not meant for any illegal
 - Remove: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - Updated: [IFTTT Virtual Button (By Ferrazzi)](https://github.com/Ferrazzi/FlipperZero_IFTTT_Virtual_Button) `Req: ESP8266 w/ IFTTT FW Flashed` (by Willy-JL)
 - Updated: Code Cleanup & Some memory issues fixed (By Willy-JL)
-- Updated: NFC-F + NFC-V from their sources / Willy-JL
+- Updated: NFC-F - Willy-JL? + [NFC-V (Updates By Bartbroere)](https://github.com/g3gg0/flipperzero-firmware/pull/2) 
 - Updated: [4 in row (By leo-need-more-coffee)](https://github.com/leo-need-more-coffee/flipperzero-4inrow)
 - ReAdded: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - UL: Plugins: Added Numpad keyboard to HID app (by clipboard1 | PR #452)
 - UL: Infrared: Updated universal remote assets (by amec0e | PR #454)
 - UL: Hide Region Info in About
+- Fixed IR Remote Path
 
 <a name="release">
 
