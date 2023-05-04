@@ -68,6 +68,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [WiFi (Marauder) v3.1.4 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED`
 - OFW: [Add HID mouse auto-clicker #2627 (By rwl4)](https://github.com/flipperdevices/flipperzero-firmware/pull/2627)
 - Remove: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
+- Updated: [IFTTT Virtual Button (By Ferrazzi)](https://github.com/Ferrazzi/FlipperZero_IFTTT_Virtual_Button) `Req: ESP8266 w/ IFTTT FW Flashed` (by Willy-JL)
+- Updated: Code Cleanup & Some memory issues fixed (By Willy-JL)
 
 <a name="release">
 
