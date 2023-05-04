@@ -70,6 +70,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Remove: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - Updated: [IFTTT Virtual Button (By Ferrazzi)](https://github.com/Ferrazzi/FlipperZero_IFTTT_Virtual_Button) `Req: ESP8266 w/ IFTTT FW Flashed` (by Willy-JL)
 - Updated: Code Cleanup & Some memory issues fixed (By Willy-JL)
+- Updated: NFC-F + NFC-V from their sources / Willy-JL
 
 <a name="release">
 
