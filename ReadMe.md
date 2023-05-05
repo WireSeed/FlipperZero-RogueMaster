@@ -77,6 +77,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [IR Remote (By Hong5489)](https://github.com/Hong5489/ir_remote) [Hold Option (By d4ve10)](https://github.com/d4ve10/ir_remote/tree/infrared_hold_option)
 - Updated: [Mifare Nested 1.4.0 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - Updated: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
+- Updated: [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey) - PVS Fixes
 
 <a name="release">
 
