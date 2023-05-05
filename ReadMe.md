@@ -75,7 +75,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Plugins: Added Numpad keyboard to HID app (by clipboard1 | PR #452)
 - UL: Infrared: Updated universal remote assets (by amec0e | PR #454)
 - UL: Hide Region Info in About
-- Fixed IR Remote Path
+- [Fixed IR Remote Path (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/a5fc1155a54688db282a57f981ed617cd3f20a92)
+- [Fixed BT app crash (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ee36dbc23bd143b8b75107797c87c832134ced89)
 
 <a name="release">
 
