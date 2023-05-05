@@ -54,7 +54,6 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Desktop: Temp fix for old backlight bug when locking by holding up arrow (By xMasterX)
 - UL: IR: Add Sharp and Vizio to Universal TV remote
 - UL: OFW PR 2627: Add HID mouse auto-clicker (by rwl4)
-- Updated: [Mifare Nested 1.3.0 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - OFW: [Fix TERMINFO on Linux systems #2630 (By gsurkov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2630)
 - OFW: [Move gauge calibration to separate header, add f18 calibration #2622 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2622)
 - OFW: [Permit replacement of a view's input callback #2623 (By instantiator)](https://github.com/flipperdevices/flipperzero-firmware/pull/2623)
@@ -63,10 +62,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [WS: add protocol 'Wendox W6726' #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
 - OFW: [BadUSB: command parser fix #2607 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2607)
 - OFW: [Dolphin builder in ufbt; minor ufbt/fbt improvements #2601 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2601)
-- Updated: [IR Remote (By Hong5489)](https://github.com/Hong5489/ir_remote) [Hold Option (By d4ve10)](https://github.com/d4ve10/ir_remote/tree/infrared_hold_option)
 - Updated: [WiFi (Marauder) v3.1.4 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED`
 - OFW: [Add HID mouse auto-clicker #2627 (By rwl4)](https://github.com/flipperdevices/flipperzero-firmware/pull/2627)
-- Remove: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - Updated: [IFTTT Virtual Button (By Ferrazzi)](https://github.com/Ferrazzi/FlipperZero_IFTTT_Virtual_Button) `Req: ESP8266 w/ IFTTT FW Flashed` (by Willy-JL)
 - Updated: Code Cleanup & Some memory issues fixed (By Willy-JL)
 - Updated: NFC-F - Willy-JL? + [NFC-V (Updates By Bartbroere)](https://github.com/g3gg0/flipperzero-firmware/pull/2) 
@@ -77,6 +74,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Hide Region Info in About
 - [Fixed IR Remote Path (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/a5fc1155a54688db282a57f981ed617cd3f20a92)
 - [Fixed BT app crash (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ee36dbc23bd143b8b75107797c87c832134ced89)
+- Updated: [IR Remote (By Hong5489)](https://github.com/Hong5489/ir_remote) [Hold Option (By d4ve10)](https://github.com/d4ve10/ir_remote/tree/infrared_hold_option)
+- Updated: [Mifare Nested 1.4.0 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- Updated: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 
 <a name="release">
 
@@ -368,7 +368,7 @@ $ ./fbt dolphin_ext
 - [Metronome (By panki27)](https://github.com/panki27/Metronome)
 - [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey)
 - [Mifare Fuzzer (By spheeere98)](https://github.com/spheeere98/mifare_fuzzer)
-- [Mifare Nested 1.3.0 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- [Mifare Nested 1.4.0 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - [Morse Code (By wh00hw)](https://github.com/DarkFlippers/unleashed-firmware/pull/144)
 - [Mouse Jacker (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/mousejacker) ([Pin Out](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/mousejacker) from nocomp/Frog/UberGuidoZ) `Req: NRF24`
 - [Mouse Jiggler (By Jacob-Tate)](https://github.com/Jacob-Tate/flipperzero-firmware/blob/dev/applications/mouse_jiggler/mouse_jiggler.c) (Original By MuddleBox)

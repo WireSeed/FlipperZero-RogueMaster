@@ -16,8 +16,17 @@
 #include "infrared_remote.h"
 #include "infrared_remote_button.h"
 #define TAG "IR_Remote"
+#define MENU_BTN_TXT_X 36
 
 #include <flipper_format/flipper_format.h>
+
+struct InfraredSignal {
+    bool is_raw;
+    union {
+        InfraredMessage message;
+        InfraredRawSignal raw;
+    } payload;
+};
 
 typedef struct {
     int status;
@@ -63,17 +72,47 @@ static void app_draw_callback(Canvas* canvas, void* ctx) {
         canvas_set_font(canvas, FontSecondary);
 
         canvas_draw_str_aligned(
-            canvas, 32, 8, AlignCenter, AlignCenter, furi_string_get_cstr(app->up_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            8,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->up_button));
         canvas_draw_str_aligned(
-            canvas, 32, 18, AlignCenter, AlignCenter, furi_string_get_cstr(app->down_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            18,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->down_button));
         canvas_draw_str_aligned(
-            canvas, 32, 28, AlignCenter, AlignCenter, furi_string_get_cstr(app->left_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            28,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->left_button));
         canvas_draw_str_aligned(
-            canvas, 32, 38, AlignCenter, AlignCenter, furi_string_get_cstr(app->right_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            38,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->right_button));
         canvas_draw_str_aligned(
-            canvas, 32, 48, AlignCenter, AlignCenter, furi_string_get_cstr(app->ok_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            48,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->ok_button));
         canvas_draw_str_aligned(
-            canvas, 32, 58, AlignCenter, AlignCenter, furi_string_get_cstr(app->back_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            58,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->back_button));
 
         canvas_draw_line(canvas, 0, 65, 64, 65);
 
@@ -85,21 +124,41 @@ static void app_draw_callback(Canvas* canvas, void* ctx) {
         canvas_draw_icon(canvas, 0, 118, &I_back_10px);
 
         canvas_draw_str_aligned(
-            canvas, 32, 73, AlignCenter, AlignCenter, furi_string_get_cstr(app->up_hold_button));
-        canvas_draw_str_aligned(
-            canvas, 32, 83, AlignCenter, AlignCenter, furi_string_get_cstr(app->down_hold_button));
-        canvas_draw_str_aligned(
-            canvas, 32, 93, AlignCenter, AlignCenter, furi_string_get_cstr(app->left_hold_button));
+            canvas,
+            MENU_BTN_TXT_X,
+            73,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->up_hold_button));
         canvas_draw_str_aligned(
             canvas,
-            32,
+            MENU_BTN_TXT_X,
+            83,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->down_hold_button));
+        canvas_draw_str_aligned(
+            canvas,
+            MENU_BTN_TXT_X,
+            93,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->left_hold_button));
+        canvas_draw_str_aligned(
+            canvas,
+            MENU_BTN_TXT_X,
             103,
             AlignCenter,
             AlignCenter,
             furi_string_get_cstr(app->right_hold_button));
         canvas_draw_str_aligned(
-            canvas, 32, 113, AlignCenter, AlignCenter, furi_string_get_cstr(app->ok_hold_button));
-        canvas_draw_str_aligned(canvas, 32, 123, AlignCenter, AlignCenter, "Exit App");
+            canvas,
+            MENU_BTN_TXT_X,
+            113,
+            AlignCenter,
+            AlignCenter,
+            furi_string_get_cstr(app->ok_hold_button));
+        canvas_draw_str_aligned(canvas, MENU_BTN_TXT_X, 123, AlignCenter, AlignCenter, "Exit App");
     }
 }
 
@@ -115,7 +174,6 @@ int32_t infrared_remote_app(void* p) {
     FuriMessageQueue* event_queue = furi_message_queue_alloc(8, sizeof(InputEvent));
 
     // App button string
-    DOLPHIN_DEED(DolphinDeedPluginStart);
     IRApp* app = malloc(sizeof(IRApp));
     app->up_button = furi_string_alloc();
     app->down_button = furi_string_alloc();
@@ -148,7 +206,10 @@ int32_t infrared_remote_app(void* p) {
     DialogsFileBrowserOptions browser_options;
     dialog_file_browser_set_basic_options(&browser_options, ".txt", &I_sub1_10px);
     FuriString* map_file = furi_string_alloc();
-    furi_string_set(map_file, "/ext/infrared/ir_remote");
+    furi_string_set(map_file, "/ext/ir_remote");
+    if(!storage_file_exists(storage, ANY_PATH("ir_remote"))) {
+        storage_common_mkdir(storage, ANY_PATH("ir_remote")); //Make Folder If dir not exist
+    }
 
     bool res = dialog_file_browser_show(dialogs, map_file, map_file, &browser_options);
 
@@ -234,6 +295,8 @@ int32_t infrared_remote_app(void* p) {
         //set missing filenames to N/A
         //assign button signals
         size_t index = 0;
+        // Add rewind to fix the string ordering issue
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "UP", app->up_button)) {
             FURI_LOG_W(TAG, "Could not read UP string");
             furi_string_set(app->up_button, "N/A");
@@ -248,6 +311,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "DOWN", app->down_button)) {
             FURI_LOG_W(TAG, "Could not read DOWN string");
             furi_string_set(app->down_button, "N/A");
@@ -262,6 +326,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "LEFT", app->left_button)) {
             FURI_LOG_W(TAG, "Could not read LEFT string");
             furi_string_set(app->left_button, "N/A");
@@ -276,6 +341,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "RIGHT", app->right_button)) {
             FURI_LOG_W(TAG, "Could not read RIGHT string");
             furi_string_set(app->right_button, "N/A");
@@ -290,6 +356,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "OK", app->ok_button)) {
             FURI_LOG_W(TAG, "Could not read OK string");
             furi_string_set(app->ok_button, "N/A");
@@ -304,6 +371,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "BACK", app->back_button)) {
             FURI_LOG_W(TAG, "Could not read BACK string");
             furi_string_set(app->back_button, "N/A");
@@ -318,6 +386,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "UPHOLD", app->up_hold_button)) {
             FURI_LOG_W(TAG, "Could not read UPHOLD string");
             furi_string_set(app->up_hold_button, "N/A");
@@ -332,6 +401,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "DOWNHOLD", app->down_hold_button)) {
             FURI_LOG_W(TAG, "Could not read DOWNHOLD string");
             furi_string_set(app->down_hold_button, "N/A");
@@ -346,6 +416,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "LEFTHOLD", app->left_hold_button)) {
             FURI_LOG_W(TAG, "Could not read LEFTHOLD string");
             furi_string_set(app->left_hold_button, "N/A");
@@ -360,6 +431,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "RIGHTHOLD", app->right_hold_button)) {
             FURI_LOG_W(TAG, "Could not read RIGHTHOLD string");
             furi_string_set(app->right_hold_button, "N/A");
@@ -374,6 +446,7 @@ int32_t infrared_remote_app(void* p) {
             }
         }
 
+        flipper_format_rewind(ff);
         if(!flipper_format_read_string(ff, "OKHOLD", app->ok_hold_button)) {
             FURI_LOG_W(TAG, "Could not read OKHOLD string");
             furi_string_set(app->ok_hold_button, "N/A");
@@ -508,9 +581,17 @@ int32_t infrared_remote_app(void* p) {
                     if(is_transmitting) {
                         infrared_worker_tx_stop(app->infrared_worker);
                     }
-                    InfraredMessage* message = infrared_signal_get_message(active_signal);
+                    // Check the signal is raw
+                    if(active_signal->is_raw) {
+                        InfraredRawSignal* raw_signal =
+                            infrared_signal_get_raw_signal(active_signal);
+                        infrared_worker_set_raw_signal(
+                            app->infrared_worker, raw_signal->timings, raw_signal->timings_size);
+                    } else {
+                        InfraredMessage* message = infrared_signal_get_message(active_signal);
+                        infrared_worker_set_decoded_signal(app->infrared_worker, message);
+                    }
 
-                    infrared_worker_set_decoded_signal(app->infrared_worker, message);
                     infrared_worker_tx_set_get_signal_callback(
                         app->infrared_worker, infrared_worker_tx_get_signal_steady_callback, app);
 
