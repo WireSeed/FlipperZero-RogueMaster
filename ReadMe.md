@@ -78,6 +78,15 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Mifare Nested 1.4.0 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - Updated: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
 - Updated: [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey) - PVS Fixes
+- UL: Plugins: RFID and iButton Fuzzer remove excessive free's (thanks Willy-JL)
+- UL: Plugins: Use COUNT_OF in mouse jiggler
+- UL: About: Don't show 00 on about screens
+- UL: SubGHz: Combine FuriString allocs and other small changes
+- To avoid issues, delete your apps folder before installing this release.
+- OFW: [Loader refactoring, part 1 #2593 (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2593)
+- [Add Dummy Loader support to Loader #618 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/618)
+- OFW: [SubGhz: refactoring app #2554 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2554)
+- OFW: [Various Furi/FuriHal bug fixes and improvements #2637 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2637)
 
 <a name="release">
 
