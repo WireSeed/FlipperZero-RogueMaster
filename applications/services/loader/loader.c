@@ -255,6 +255,11 @@ static void loader_do_app_closed(Loader* loader) {
         furi_hal_power_insomnia_exit();
     }
 
+    if(loader->app.link) {
+        free(loader->app.link);
+        loader->app.link = NULL;
+    }
+
     free(loader->app.name);
     loader->app.name = NULL;
 
