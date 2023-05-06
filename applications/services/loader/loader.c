@@ -106,6 +106,7 @@ static Loader* loader_alloc() {
     loader->loader_menu = NULL;
     loader->app.args = NULL;
     loader->app.name = NULL;
+    loader->app.link = NULL;
     loader->app.thread = NULL;
     loader->app.insomniac = false;
     return loader;
@@ -215,7 +216,16 @@ static LoaderStatus loader_do_start_by_name(Loader* loader, const char* name, co
         return LoaderStatusErrorUnknownApp;
     }
 
-    loader_start_internal_app(loader, app, args);
+    if(strcmp(app->link, "NULL") != 0) {
+        const FlipperApplication* new_app = loader_find_application_by_name("Applications");
+
+        if(!new_app) {
+            return LoaderStatusErrorUnknownApp;
+        }
+        loader_start_internal_app(loader, new_app, app->link);
+    } else {
+        loader_start_internal_app(loader, app, args);
+    }
     return LoaderStatusOk;
 }
 
@@ -243,6 +253,11 @@ static void loader_do_app_closed(Loader* loader) {
 
     if(loader->app.insomniac) {
         furi_hal_power_insomnia_exit();
+    }
+
+    if(loader->app.link) {
+        free(loader->app.link);
+        loader->app.link = NULL;
     }
 
     free(loader->app.name);
