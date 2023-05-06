@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474.tgz&channel=RM0427-1834-0.82.4-2e5d474&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474-NoAnim.tgz&channel=RM0427-1834-0.82.4-2e5d474-NoAnim&version=0.82.4)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0506-0402-0.82.4-a64ada2.tgz&channel=RM0506-0402-0.82.4-a64ada2&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0506-0402-0.82.4-a64ada2-NoAnim.tgz&channel=RM0506-0402-0.82.4-a64ada2-NoAnim&version=0.82.4)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -33,61 +33,6 @@ This software is for experimental purposes only and is not meant for any illegal
 
 - Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-06 04:00 EST`
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-06 04:00 EST`
-- Added: [DVD Bounce (By schaene)](https://github.com/schaene/Flipper-DVD-Bounce)
-- Added: [ServoTester (2) (By mhasbini)](https://github.com/mhasbini/ServoTesterApp/tree/master)
-- Added: [Mx2125 Dual-Axis Accelerometer (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
-- Added: [Control 7-segment display with Flipper Zero (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
-- Added: [Wiegand Reader (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
-- Added: [Resistance Calculator (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
-- Thank You xMasterX for finding these apps.
-- UL: Bluetooth: Fix Version instead of branch (By xMasterX)
-- GPIO: Fix for P0kemon Trading app (Thanks to ESurge)
-- UL: HID App Updated Layout
-- Fix internal storage bugs with restoring U2F keys, Fix check for normal boot (fix bootloop on flash), Only load notification settings on normal boot, Add cstr version of elements_scrollable_text_line & Scroll long text in variable item list (By Willy-JL)
-- Fix for bootloops from new code by adding test from OFW (By RogueMaster)
-- Updated: [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
-- Updated: [Temp Sensors Reader (By quen0n)](https://github.com/quen0n/Unitemp-Flipper-Zero-Plugin) `Req: BMP180/BMP280/BME280/BME680/DHT11/DHT22(AM2302)/AM2301/AM2320/HTU2XD/HTU21x/HDC1080/MAX31855/MAX6675`
-- Updated: [Resistance Calculator (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
-- UL: Fix SWD Probe plugin GPIO pins state (By xMasterX)
-- Added: [Bomberduck (By leo-need-more-coffee)](https://github.com/leo-need-more-coffee/flipperzero-bomberduck)
-- UL: Undo some mifare changes (By xMasterX)
-- UL: Desktop: Temp fix for old backlight bug when locking by holding up arrow (By xMasterX)
-- UL: IR: Add Sharp and Vizio to Universal TV remote
-- UL: OFW PR 2627: Add HID mouse auto-clicker (by rwl4)
-- OFW: [Fix TERMINFO on Linux systems #2630 (By gsurkov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2630)
-- OFW: [Move gauge calibration to separate header, add f18 calibration #2622 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2622)
-- OFW: [Permit replacement of a view's input callback #2623 (By instantiator)](https://github.com/flipperdevices/flipperzero-firmware/pull/2623)
-- OFW: [Added API version to device info #2611 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2611)
-- OFW: [Remove spaces in CSN #2616 (By bettse)](https://github.com/flipperdevices/flipperzero-firmware/pull/2616)
-- OFW: [WS: add protocol 'Wendox W6726' #2604 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2604)
-- OFW: [BadUSB: command parser fix #2607 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2607)
-- OFW: [Dolphin builder in ufbt; minor ufbt/fbt improvements #2601 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2601)
-- Updated: [WiFi (Marauder) v3.1.4 (By 0xchocolate & tcpassos)](https://github.com/tcpassos/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED`
-- OFW: [Add HID mouse auto-clicker #2627 (By rwl4)](https://github.com/flipperdevices/flipperzero-firmware/pull/2627)
-- Updated: [IFTTT Virtual Button (By Ferrazzi)](https://github.com/Ferrazzi/FlipperZero_IFTTT_Virtual_Button) `Req: ESP8266 w/ IFTTT FW Flashed` (by Willy-JL)
-- Updated: Code Cleanup & Some memory issues fixed (By Willy-JL)
-- Updated: NFC-F - Willy-JL? + [NFC-V (Updates By Bartbroere)](https://github.com/g3gg0/flipperzero-firmware/pull/2) 
-- Updated: [4 in row (By leo-need-more-coffee)](https://github.com/leo-need-more-coffee/flipperzero-4inrow)
-- ReAdded: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
-- UL: Plugins: Added Numpad keyboard to HID app (by clipboard1 | PR #452)
-- UL: Infrared: Updated universal remote assets (by amec0e | PR #454)
-- UL: Hide Region Info in About
-- [Fixed IR Remote Path (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/a5fc1155a54688db282a57f981ed617cd3f20a92)
-- [Fixed BT app crash (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ee36dbc23bd143b8b75107797c87c832134ced89)
-- Updated: [IR Remote (By Hong5489)](https://github.com/Hong5489/ir_remote) [Hold Option (By d4ve10)](https://github.com/d4ve10/ir_remote/tree/infrared_hold_option)
-- Updated: [Mifare Nested 1.4.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
-- Updated: [Game of Tag WIP (By instantiator)](https://github.com/instantiator/flipper-zero-experimental-apps)
-- Updated: [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey) - PVS Fixes
-- UL: Plugins: RFID and iButton Fuzzer remove excessive free's (thanks Willy-JL)
-- UL: Plugins: Use COUNT_OF in mouse jiggler
-- UL: About: Don't show 00 on about screens
-- UL: SubGHz: Combine FuriString allocs and other small changes
-- To avoid issues, delete your apps folder before installing this release.
-- OFW: [Loader refactoring, part 1 #2593 (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2593)
-- [Add Dummy Loader support to Loader #618 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/618)
-- OFW: [SubGhz: refactoring app #2554 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2554)
-- OFW: [Various Furi/FuriHal bug fixes and improvements #2637 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2637)
-- Updated: [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
 
 <a name="release">
 
@@ -446,4 +391,4 @@ $ ./fbt dolphin_ext
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
 - [Zero Tracker (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-music-tracker)
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474.tgz&channel=RM0427-1834-0.82.4-2e5d474&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0427-1834-0.82.4-2e5d474-NoAnim.tgz&channel=RM0427-1834-0.82.4-2e5d474-NoAnim&version=0.82.4)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0506-0402-0.82.4-a64ada2.tgz&channel=RM0506-0402-0.82.4-a64ada2&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0506-0402-0.82.4-a64ada2-NoAnim.tgz&channel=RM0506-0402-0.82.4-a64ada2-NoAnim&version=0.82.4)
