@@ -87,6 +87,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Add Dummy Loader support to Loader #618 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/618)
 - OFW: [SubGhz: refactoring app #2554 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2554)
 - OFW: [Various Furi/FuriHal bug fixes and improvements #2637 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2637)
+- Updated: [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
 
 <a name="release">
 
