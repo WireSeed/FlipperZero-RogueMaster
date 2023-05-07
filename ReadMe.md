@@ -36,6 +36,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [MH-Z19 CO2 Sensor (By meshchaninov)](https://github.com/meshchaninov/flipper-zero-mh-z19)
 - Added: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
 - Added: [U-Blox GPS (By liamhays)](https://github.com/liamhays/flipped/tree/main/ublox)
+- Switch GPIO to compile externally
 
 <a name="release">
 
