@@ -36,6 +36,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [MH-Z19 CO2 Sensor (By meshchaninov)](https://github.com/meshchaninov/flipper-zero-mh-z19)
 - Added: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
 - Switch GPIO to be stored externally on SD.
+- Updated: [CLI Bridge (By ranchordo)](https://github.com/ranchordo/flipperzero-cli-bridge) (Changes by xMasterX)
+- Updated: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
 
 <a name="release">
 
