@@ -10,7 +10,7 @@
 #include <notification/notification_messages.h>
 #include "bad_bt_icons.h"
 
-#define BAD_BT_APP_BASE_FOLDER EXT_PATH("badbt")
+#define BAD_BT_APP_BASE_FOLDER EXT_PATH("badusb")
 #define BAD_BT_APP_PATH_LAYOUT_FOLDER BAD_BT_APP_BASE_FOLDER "/assets/layouts"
 #define BAD_BT_APP_SCRIPT_EXTENSION ".txt"
 #define BAD_BT_APP_LAYOUT_EXTENSION ".kl"

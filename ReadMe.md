@@ -40,6 +40,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
 - OFW: [Fix storage.py exist_dir logic #2639 (By perryprog)](https://github.com/flipperdevices/flipperzero-firmware/pull/2639)
 - Fix Infrared Remote Folder Location
+- Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
+- [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 
 <a name="release">
 
@@ -268,6 +270,7 @@ $ ./fbt dolphin_ext
 - [Authenticator/TOTP (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - [AVR Flasher WIP (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2475)
 - [AZERTY Mouse Jacker (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/mousejacker) `Req: NRF24` (Uses AZERTY keyboard - Source Unknown)
+- [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
 - [Barcode App (By Kingal1337)](https://github.com/Kingal1337/flipper-barcode-generator)
 - [Barcode Generator (By McAzzaMan)](https://github.com/McAzzaMan/flipperzero-firmware/tree/UPC-A_Barcode_Generator/applications/barcode_generator)
 - [BarCode Scanner Emulator (By polarikus)](https://github.com/polarikus/flipper-zero_bc_scanner_emulator) `Uses: COM-port`
