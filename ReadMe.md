@@ -39,6 +39,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [CLI Bridge (By ranchordo)](https://github.com/ranchordo/flipperzero-cli-bridge) (Changes by xMasterX)
 - Updated: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
 - OFW: [Fix storage.py exist_dir logic #2639 (By perryprog)](https://github.com/flipperdevices/flipperzero-firmware/pull/2639)
+- Fix Infrared Remote Folder Location
 
 <a name="release">
 
