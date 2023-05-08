@@ -33,13 +33,6 @@ This software is for experimental purposes only and is not meant for any illegal
 
 - Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-08 02:22 EST`
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-08 02:22 EST`
-- Added: [MH-Z19 CO2 Sensor (By meshchaninov)](https://github.com/meshchaninov/flipper-zero-mh-z19)
-- Added: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
-- Switch GPIO to be stored externally on SD.
-- Updated: [CLI Bridge (By ranchordo)](https://github.com/ranchordo/flipperzero-cli-bridge) (Changes by xMasterX)
-- Updated: [Device Info (By hedger)](https://github.com/hedger/flipperdevinfo)
-- OFW: [Fix storage.py exist_dir logic #2639 (By perryprog)](https://github.com/flipperdevices/flipperzero-firmware/pull/2639)
-- Fix Infrared Remote Folder Location
 - Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 
