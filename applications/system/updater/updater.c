@@ -32,7 +32,7 @@ static void
     updater_main_model_set_state(main_view, message, progress, failed);
 }
 
-Updater* updater_alloc(char* arg) {
+Updater* updater_alloc(const char* arg) {
     Updater* updater = malloc(sizeof(Updater));
     if(arg && strlen(arg)) {
         updater->startup_arg = furi_string_alloc_set(arg);
