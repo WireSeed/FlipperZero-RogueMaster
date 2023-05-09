@@ -51,7 +51,7 @@ void infrared_scene_start_on_enter(void* context) {
             SubmenuIndexDebug,
             infrared_scene_start_submenu_callback,
             infrared);
-        }
+    }
 
     submenu_add_item(
         submenu,
