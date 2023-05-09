@@ -44,6 +44,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [Debug: revert cortex debug to lxml and drop DWT #2651 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2651)
 - OFW: [furi_crash: added C2 status; added fw-version gdb command #2638 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2638)
 - OFW: [Removed STM32CubeWB module #2608 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2608)
+- [expose external gpio pins for infrared application without needing debug enabled #621 (By jbohack)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/621)
 
 <a name="release">
 
