@@ -31,13 +31,19 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0508-0222-0.82.4-9f88c2a](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-08 11:20 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-08 11:20 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-09 01:40 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-09 01:40 EST`
 - Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - OFW: [API version in UI #2649 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2649)
 - OFW: [ufbt: improvements #2648 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2648)
 - Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) (Thanks to hedger)
+- OFW: [ble: attempt to handle hardfaulted c2 #2653 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2653)
+- OFW: [Add Mfkey32 application #2517 (By noproto)](https://github.com/flipperdevices/flipperzero-firmware/pull/2617)
+- OFW: [added DigitalSequence and PulseReader #2070 (By g3gg0)](https://github.com/flipperdevices/flipperzero-firmware/pull/2070)
+- OFW: [Debug: revert cortex debug to lxml and drop DWT #2651 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2651)
+- OFW: [furi_crash: added C2 status; added fw-version gdb command #2638 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2638)
+- OFW: [Removed STM32CubeWB module #2608 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2608)
 
 <a name="release">
 
