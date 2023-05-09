@@ -37,6 +37,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - OFW: [API version in UI #2649 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2649)
 - OFW: [ufbt: improvements #2648 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2648)
+- Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) (Thanks to hedger)
 
 <a name="release">
 
