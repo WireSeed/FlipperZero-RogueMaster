@@ -54,6 +54,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Remove Old Passport, Rename Applications to Apps & Remove One Off Inversion (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/625)
 - [Updated: NRF24Batch Assets (By vad7)](https://github.com/vad7/nRF24-Batch/commit/ac292998857e972f0b92695b2bdbe28e45489013)
 - Updated: [Mifare Nested 1.4.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- Added: [ESP32 WIFI Mapping (By carvilsi)](https://github.com/carvilsi/flipper0-wifi-map) `Req: ESP32` & [ESP32 FW](https://github.com/carvilsi/esp32-wifi-map)
 
 <a name="release">
 
@@ -312,6 +313,7 @@ $ ./fbt dolphin_ext
 - [DSTIKE Deauther (By SequoiaSan)](https://github.com/SequoiaSan/FlipperZero-Wifi-ESP8266-Deauther-Module/tree/FlipperZero-Module-v2/FlipperZeroModule/FlipperZero-ESP8266-Deauth-App) `Req: ESP8266`
 - [DTMF Dolphin (By litui)](https://github.com/litui/dtmf_dolphin)
 - [EM4100 Key Generator (By Milk-Cool)](https://github.com/Milk-Cool/fz-em4100-generator)
+- [ESP32 WIFI Mapping (By carvilsi)](https://github.com/carvilsi/flipper0-wifi-map) `Req: ESP32` & [ESP32 FW](https://github.com/carvilsi/esp32-wifi-map)
 - [ESP32CAM Camera (By Z4urce & eried)](https://github.com/eried/flipperzero-mayhem)
 - [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem)
 - [ESP32CAM Morse Flasher (By eried)](https://github.com/eried/flipperzero-mayhem)
