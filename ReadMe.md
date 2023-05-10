@@ -52,6 +52,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Mifare Nested 1.4.2 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - Removed duplicate Mfkey32 app
 - [WiFi (Deauther) V2 (By Timmotools)](https://github.com/Timmotools/flipperzero_esp8266_deautherv2) `Req: ESP8266` (Updated By xMasterX)
+- [Remove Old Passport, Rename Applications to Apps & Remove One Off Inversion (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/625)
 
 <a name="release">
 
