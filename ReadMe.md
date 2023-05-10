@@ -46,6 +46,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [Removed STM32CubeWB module #2608 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2608)
 - [expose external gpio pins for infrared application without needing debug enabled #621 (By jbohack)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/621)
 - [NFC EMV handling modified to hopefully fix some detection (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/bf577091a66385ad535270ff50047eee1d85995e)
+- UL: Update to new versioning with merge fixes
 
 <a name="release">
 

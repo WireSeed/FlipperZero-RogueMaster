@@ -37,7 +37,7 @@ class GitVersion:
 
         version = (
             os.environ.get("DIST_SUFFIX", None)
-            or "unknown"
+            or "0.82.5"
         )
 
         custom_fz_name = (
@@ -58,7 +58,7 @@ class GitVersion:
                 "GIT_COMMIT": commit,
                 "GIT_BRANCH": branch,
                 "FURI_CUSTOM_FLIPPER_NAME": custom_fz_name,
-                "VERSION": "0.82.5",
+                "VERSION": version,
                 "BUILD_DIRTY": 0,
             }
         else:
@@ -66,7 +66,7 @@ class GitVersion:
                 "GIT_COMMIT": commit,
                 "GIT_BRANCH": branch,
                 "VERSION": version,
-                "BUILD_DIRTY": dirty and 1 or 0,
+                "BUILD_DIRTY": 0,
             }
 
     def _exec_git(self, args):
