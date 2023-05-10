@@ -88,13 +88,13 @@ static void desktop_scene_main_open_app_or_profile(Desktop* desktop, const char*
                 FURI_LOG_E(TAG, "loader_start failed: %d", status);
             }
         }
-		// else {
-            // furi_record_close(RECORD_STORAGE);
-            // LoaderStatus status = loader_start(desktop->loader, "Passport (Old)", NULL);
+        // else {
+        // furi_record_close(RECORD_STORAGE);
+        // LoaderStatus status = loader_start(desktop->loader, "Passport (Old)", NULL);
 
-            // if(status != LoaderStatusOk) {
-                // FURI_LOG_E(TAG, "loader_start failed: %d", status);
-            // }
+        // if(status != LoaderStatusOk) {
+        // FURI_LOG_E(TAG, "loader_start failed: %d", status);
+        // }
         // }
     } while(false);
 }
@@ -267,13 +267,13 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
                         FURI_LOG_E(TAG, "loader_start failed: %d", status);
                     }
                 }
-				// else {
-                    // furi_record_close(RECORD_STORAGE);
-                    // LoaderStatus status = loader_start(desktop->loader, "Passport (Old)", NULL);
+                // else {
+                // furi_record_close(RECORD_STORAGE);
+                // LoaderStatus status = loader_start(desktop->loader, "Passport (Old)", NULL);
 
-                    // if(status != LoaderStatusOk) {
-                        // FURI_LOG_E(TAG, "loader_start failed: %d", status);
-                    // }
+                // if(status != LoaderStatusOk) {
+                // FURI_LOG_E(TAG, "loader_start failed: %d", status);
+                // }
                 // }
             }
             consumed = true;
@@ -289,13 +289,13 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
                     FURI_LOG_E(TAG, "loader_start failed: %d", status);
                 }
             }
-			// else {
-                // furi_record_close(RECORD_STORAGE);
-                // LoaderStatus status = loader_start(desktop->loader, "Passport (Old)", NULL);
+            // else {
+            // furi_record_close(RECORD_STORAGE);
+            // LoaderStatus status = loader_start(desktop->loader, "Passport (Old)", NULL);
 
-                // if(status != LoaderStatusOk) {
-                    // FURI_LOG_E(TAG, "loader_start failed: %d", status);
-                // }
+            // if(status != LoaderStatusOk) {
+            // FURI_LOG_E(TAG, "loader_start failed: %d", status);
+            // }
             // }
             break;
         }
