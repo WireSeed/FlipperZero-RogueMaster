@@ -47,6 +47,11 @@ This software is for experimental purposes only and is not meant for any illegal
 - [expose external gpio pins for infrared application without needing debug enabled #621 (By jbohack)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/621)
 - [NFC EMV handling modified to hopefully fix some detection (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/bf577091a66385ad535270ff50047eee1d85995e)
 - UL: Update to new versioning with merge fixes
+- Removed: [T-Rex (By gelin)](https://github.com/gelin/t-rex-runner) WIP
+- Added: [T-Rex Runner (By Rrycbarm)](https://github.com/Rrycbarm/t-rex-runner)
+- Updated: [Mifare Nested 1.4.2 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- Removed duplicate Mfkey32 app
+- [WiFi (Deauther) V2 (By Timmotools)](https://github.com/Timmotools/flipperzero_esp8266_deautherv2) `Req: ESP8266` (Updated By xMasterX)
 
 <a name="release">
 
@@ -258,7 +263,7 @@ $ ./fbt dolphin_ext
 - [Snake 2.0 (By Willzvul)](https://github.com/Willzvul/Snake_2.0/)
 - [Solitaire (By teeebor)](https://github.com/teeebor/flipper_games)
 - [SUPER-CHIP Emulator (By Milk-Cool)](https://github.com/Milk-Cool/fz-schip)
-- [T-Rex (By gelin)](https://github.com/gelin/t-rex-runner) WIP
+- [T-Rex Runner (By Rrycbarm)](https://github.com/Rrycbarm/t-rex-runner)
 - [TAMA P1: Save State & Layout Update (By DroomOne)](https://github.com/DroomOne/flipperzero-tamagotch-p1) [Original TAMA P1 (By GMMan)](https://github.com/GMMan/flipperzero-firmware/tree/tama-p1) [Mute & Settings (By Round-Pi)](https://github.com/Round-Pi/flipperzero-tamagotch-p1)
 - [Tanks (By Alexgr13)](https://github.com/alexgr13/flipperzero-firmware/tree/fork/dev/applications/tanks-game)
 - [Tetris (By jeffplang)](https://github.com/jeffplang/flipperzero-firmware/tree/tetris_game/applications/tetris_game)
@@ -341,7 +346,7 @@ $ ./fbt dolphin_ext
 - [Mfkey32 (By noproto)](https://github.com/noproto/FlipperMfkey)
 - [MH-Z19 CO2 Sensor (By meshchaninov)](https://github.com/meshchaninov/flipper-zero-mh-z19)
 - [Mifare Fuzzer (By spheeere98)](https://github.com/spheeere98/mifare_fuzzer)
-- [Mifare Nested 1.4.1 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- [Mifare Nested 1.4.2 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
 - [Morse Code (By wh00hw)](https://github.com/DarkFlippers/unleashed-firmware/pull/144)
 - [Mouse Jacker (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/mousejacker) ([Pin Out](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/mousejacker) from nocomp/Frog/UberGuidoZ) `Req: NRF24`
 - [Mouse Jiggler (By Jacob-Tate)](https://github.com/Jacob-Tate/flipperzero-firmware/blob/dev/applications/mouse_jiggler/mouse_jiggler.c) (Original By MuddleBox)
