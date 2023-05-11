@@ -54,42 +54,14 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
             desktop_lock(desktop);
             consumed = true;
             break;
-        case DesktopLockMenuEventPinLock:
-            if(desktop->settings.pin_code.length > 0) {
-                desktop_pin_lock(&desktop->settings);
-                desktop_lock(desktop);
-            } else {
-                LoaderStatus status =
-                    loader_start(desktop->loader, "Desktop", DESKTOP_SETTINGS_RUN_PIN_SETUP_ARG);
-                if(status == LoaderStatusOk) {
-                    scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 1);
-                } else {
-                    FURI_LOG_E(TAG, "Unable to start desktop settings");
-                }
-            }
-            consumed = true;
-            break;
         case DesktopLockMenuEventPinLockShutdown:
-            if(desktop->settings.pin_code.length > 0) {
-                desktop_pin_lock(&desktop->settings);
-                desktop_lock(desktop);
-            } else {
-                LoaderStatus status =
-                    loader_start(desktop->loader, "Desktop", DESKTOP_SETTINGS_RUN_PIN_SETUP_ARG);
-                if(status == LoaderStatusOk) {
-                    scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 1);
-                } else {
-                    FURI_LOG_E(TAG, "Unable to start desktop settings");
-                }
-            }
+            scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 0);
+            desktop_lock(desktop);
             consumed = true;
             Power* power = furi_record_open(RECORD_POWER);
             furi_delay_ms(666);
             power_off(power);
             furi_record_close(RECORD_POWER);
-            break;
-        case DesktopLockMenuEventExit:
-            scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 0);
             break;
         case DesktopLockMenuEventDummyModeOn:
             desktop_set_dummy_mode_state(desktop, true);

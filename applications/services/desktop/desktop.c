@@ -665,6 +665,16 @@ int32_t desktop_srv(void* p) {
     bool loaded = DESKTOP_SETTINGS_LOAD(&desktop->settings);
     if(!loaded) {
         memset(&desktop->settings, 0, sizeof(desktop->settings));
+        desktop->settings.displayBatteryPercentage = DISPLAY_BATTERY_BAR_PERCENT;
+        desktop->settings.icon_style = ICON_STYLE_SLIM;
+        desktop->settings.lock_icon = true;
+        desktop->settings.bt_icon = true;
+        desktop->settings.rpc_icon = true;
+        desktop->settings.sdcard = true;
+        desktop->settings.stealth_icon = true;
+        desktop->settings.top_bar = false;
+        desktop->settings.dummy_mode = false;
+        desktop->settings.dumbmode_icon = true;
         DESKTOP_SETTINGS_SAVE(&desktop->settings);
     }
 
@@ -681,24 +691,6 @@ int32_t desktop_srv(void* p) {
         if(!loader_is_locked(desktop->loader)) {
             desktop_auto_lock_arm(desktop);
         }
-    }
-
-    Desktop* desktop = desktop_alloc();
-
-    bool loaded = DESKTOP_SETTINGS_LOAD(&desktop->settings);
-    if(!loaded) {
-        memset(&desktop->settings, 0, sizeof(desktop->settings));
-        desktop->settings.displayBatteryPercentage = DISPLAY_BATTERY_BAR_PERCENT;
-        desktop->settings.icon_style = ICON_STYLE_SLIM;
-        desktop->settings.lock_icon = true;
-        desktop->settings.bt_icon = true;
-        desktop->settings.rpc_icon = true;
-        desktop->settings.sdcard = true;
-        desktop->settings.stealth_icon = true;
-        desktop->settings.top_bar = false;
-        desktop->settings.dummy_mode = false;
-        desktop->settings.dumbmode_icon = true;
-        DESKTOP_SETTINGS_SAVE(&desktop->settings);
     }
 
     view_port_enabled_set(desktop->topbar_icon_viewport, desktop->settings.top_bar);
@@ -751,16 +743,6 @@ int32_t desktop_srv(void* p) {
         desktop->animation_manager, desktop->settings.dummy_mode);
 
     scene_manager_next_scene(desktop->scene_manager, DesktopSceneMain);
-
-    desktop_pin_lock_init(&desktop->settings);
-
-    if(!desktop_pin_lock_is_locked()) {
-        if(!loader_is_locked(desktop->loader)) {
-            desktop_auto_lock_arm(desktop);
-        }
-    } else {
-        desktop_lock(desktop);
-    }
 
     if(desktop_check_file_flag(SLIDESHOW_FS_PATH)) {
         scene_manager_next_scene(desktop->scene_manager, DesktopSceneSlideshow);
