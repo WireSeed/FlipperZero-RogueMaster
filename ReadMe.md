@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0511-0044-0.82.5-753b977](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-11 00:44 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-11 00:44 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-11 15:44 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-11 15:44 EST`
 - Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - OFW: [API version in UI #2649 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2649)
@@ -59,6 +59,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: [SubGhz app refactoring #461 (By gid9798 & xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/pull/461)
 - UL: Some Infrared Power Changes (By xMasterX)
 - OFW: [Part 2 of hooking C2 IPC #2662 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2662)
+- UL: [Using scene manager functions in DecodeRAW #462 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/462)
+- OFW: [Rpc: add desktop service. Desktop: refactor locking routine. #2665 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2665)
 
 <a name="release">
 
