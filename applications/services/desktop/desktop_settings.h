@@ -6,7 +6,7 @@
 #include <toolbox/saved_struct.h>
 #include <storage/storage.h>
 
-#define DESKTOP_SETTINGS_VER (9)
+#define DESKTOP_SETTINGS_VER (8)
 
 #define DESKTOP_SETTINGS_OLD_PATH INT_PATH(".desktop.settings")
 #define DESKTOP_SETTINGS_PATH CFG_PATH("desktop.settings")
@@ -48,6 +48,7 @@ typedef struct {
     FavoriteApp favorite_tertiary;
     FavoriteApp favorite_quaternary;
     PinCode pin_code;
+    uint8_t is_locked;
     uint32_t auto_lock_delay_ms;
     uint8_t displayBatteryPercentage;
     bool is_dumbmode;
