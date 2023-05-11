@@ -184,14 +184,6 @@ static void desktop_settings_scene_start_dumbmode_icon_changed(VariableItem* ite
     app->settings.dumbmode_icon = stealth_value[index];
 }
 
-static void desktop_settings_scene_start_auto_lock_pin_changed(VariableItem* item) {
-    DesktopSettingsApp* app = variable_item_get_context(item);
-    uint8_t value = variable_item_get_current_value_index(item);
-
-    variable_item_set_current_value_text(item, value ? "ON" : "OFF");
-    app->settings.auto_lock_with_pin = value;
-}
-
 void desktop_settings_scene_start_on_enter(void* context) {
     DesktopSettingsApp* app = context;
     VariableItemList* variable_item_list = app->variable_item_list;
