@@ -37,7 +37,7 @@ class GitVersion:
 
         version = (
             os.environ.get("DIST_SUFFIX", None)
-            or "0.82.5"
+            or "0.83.1"
         )
 
         custom_fz_name = (
