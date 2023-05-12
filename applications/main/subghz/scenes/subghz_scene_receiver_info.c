@@ -128,7 +128,7 @@ bool subghz_scene_receiver_info_on_event(void* context, SceneManagerEvent event)
                    subghz_history_get_raw_data(subghz->history, subghz->idx_menu_chosen))) {
                 subghz_txrx_rx_start(subghz->txrx);
                 subghz_txrx_hopper_unpause(subghz->txrx);
-                subghz->state_notifications = SubGhzNotificationStateRx;
+                subghz->state_notifications = SubGhzNotificationStateIDLE;
             } else {
                 subghz->state_notifications = SubGhzNotificationStateTx;
             }
@@ -145,7 +145,7 @@ bool subghz_scene_receiver_info_on_event(void* context, SceneManagerEvent event)
                 subghz_txrx_rx_start(subghz->txrx);
 
                 subghz_txrx_hopper_unpause(subghz->txrx);
-                subghz->state_notifications = SubGhzNotificationStateRx;
+                subghz->state_notifications = SubGhzNotificationStateIDLE;
             }
             return true;
         } else if(event.event == SubGhzCustomEventSceneReceiverInfoSave) {
