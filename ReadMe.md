@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0508-0232-0.82.4-9f88c2a.tgz&channel=RM0508-0232-0.82.4-9f88c2a&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0508-0232-0.82.4-9f88c2a-NoAnim.tgz&channel=RM0508-0232-0.82.4-9f88c2a-NoAnim&version=0.82.4)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7.tgz&channel=RM0512-1442-0.83.1-f0144d7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7-NoAnim.tgz&channel=RM0512-1442-0.83.1-f0144d7-NoAnim&version=0.83.1)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -31,42 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0512-0353-0.82.5-0522121](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-12 03:53 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-12 03:53 EST`
-- Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
-- [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
-- OFW: [API version in UI #2649 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2649)
-- OFW: [ufbt: improvements #2648 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2648)
-- Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) (Thanks to hedger)
-- OFW: [ble: attempt to handle hardfaulted c2 #2653 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2653)
-- OFW: [Add Mfkey32 application #2517 (By noproto)](https://github.com/flipperdevices/flipperzero-firmware/pull/2617)
-- OFW: [added DigitalSequence and PulseReader #2070 (By g3gg0)](https://github.com/flipperdevices/flipperzero-firmware/pull/2070)
-- OFW: [Debug: revert cortex debug to lxml and drop DWT #2651 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2651)
-- OFW: [furi_crash: added C2 status; added fw-version gdb command #2638 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2638)
-- OFW: [Removed STM32CubeWB module #2608 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2608)
-- [expose external gpio pins for infrared application without needing debug enabled #621 (By jbohack)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/621)
-- [NFC EMV handling modified to hopefully fix some detection (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/bf577091a66385ad535270ff50047eee1d85995e)
-- UL: Update to new versioning with merge fixes
-- Removed: [T-Rex (By gelin)](https://github.com/gelin/t-rex-runner) WIP
-- Added: [T-Rex Runner (By Rrycbarm)](https://github.com/Rrycbarm/t-rex-runner)
-- Removed duplicate Mfkey32 app
-- [WiFi (Deauther) V2 (By Timmotools)](https://github.com/Timmotools/flipperzero_esp8266_deautherv2) `Req: ESP8266` (Updated By xMasterX)
-- [Remove Old Passport, Rename Applications to Apps & Remove One Off Inversion (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/625)
-- [Updated: NRF24Batch Assets (By vad7)](https://github.com/vad7/nRF24-Batch/commit/ac292998857e972f0b92695b2bdbe28e45489013)
-- Updated: [Mifare Nested 1.4.4 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
-- Added: [ESP32 WIFI Mapping (By carvilsi)](https://github.com/carvilsi/flipper0-wifi-map) `Req: ESP32` & [ESP32 FW](https://github.com/carvilsi/esp32-wifi-map)
-- BadUSB: [fr-FR-mac key layout #626 (By FelixLgr)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/626)
-- UL: [SubGhz app refactoring #461 (By gid9798 & xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/pull/461)
-- UL: Some Infrared Power Changes (By xMasterX)
-- OFW: [Part 2 of hooking C2 IPC #2662 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2662)
-- UL: [Using scene manager functions in DecodeRAW #462 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/462)
-- OFW: [Rpc: add desktop service. Desktop: refactor locking routine. #2665 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2665)
-- Removed: Settings: "Lock W PIN + Off" add to UP menu [(By RogueMaster)] due to conflict with Desktop locking refactor
-- Updated: Marauder Companion: [Added sniff pmkid on selected aps from 0.10.4 update #13 (By clipboard1)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion/pull/13)
-- [BadBT Updates - Imported by ESurge #627 (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/627)
-- [Notifications Settings Stored Externally - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/d1cbe8f6859e841cc3c1ab7eae222e5024722651)
-- [Controlled StartUp & Version File Changes - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/57293f79e69d85bb3480d47f287ea57236d58ee2)
-- [RGB LED Drivers Added (Backend Only) - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/fc41f816bcac16762680893c4466e139545ec7f6)
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-12 14:42 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-12 14:42 EST`
 
 <a name="release">
 
@@ -429,4 +395,4 @@ $ ./fbt dolphin_ext
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
 - [Zero Tracker (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-music-tracker)
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0508-0232-0.82.4-9f88c2a.tgz&channel=RM0508-0232-0.82.4-9f88c2a&version=0.82.4) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0508-0232-0.82.4-9f88c2a-NoAnim.tgz&channel=RM0508-0232-0.82.4-9f88c2a-NoAnim&version=0.82.4)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7.tgz&channel=RM0512-1442-0.83.1-f0144d7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7-NoAnim.tgz&channel=RM0512-1442-0.83.1-f0144d7-NoAnim&version=0.83.1)
