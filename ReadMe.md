@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0511-0044-0.82.5-753b977](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-11 20:30 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-11 20:30 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-12 03:15 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-12 03:15 EST`
 - Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - OFW: [API version in UI #2649 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2649)
@@ -63,6 +63,10 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [Rpc: add desktop service. Desktop: refactor locking routine. #2665 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2665)
 - Removed: Settings: "Lock W PIN + Off" add to UP menu [(By RogueMaster)] due to conflict with Desktop locking refactor
 - Updated: Marauder Companion: [Added sniff pmkid on selected aps from 0.10.4 update #13 (By clipboard1)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion/pull/13)
+- [BadBT Updates - Imported by ESurge #627 (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/627)
+- [Notifications Settings Stored Externally - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/d1cbe8f6859e841cc3c1ab7eae222e5024722651)
+- [Controlled StartUp & Version File Changes - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/57293f79e69d85bb3480d47f287ea57236d58ee2)
+- [RGB Drivers Added (Backend Only) - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/fc41f816bcac16762680893c4466e139545ec7f6)
 
 <a name="release">
 
