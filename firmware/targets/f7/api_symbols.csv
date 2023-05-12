@@ -85,6 +85,7 @@ Header,+,firmware/targets/furi_hal_include/furi_hal_usb_hid.h,,
 Header,+,firmware/targets/furi_hal_include/furi_hal_usb_hid_u2f.h,,
 Header,+,firmware/targets/furi_hal_include/furi_hal_version.h,,
 Header,+,firmware/targets/furi_hal_include/furi_hal_vibro.h,,
+Header,+,lib/drivers/rgb_backlight.h,,
 Header,+,lib/flipper_application/api_hashtable/api_hashtable.h,,
 Header,+,lib/flipper_application/api_hashtable/compilesort.hpp,,
 Header,+,lib/flipper_application/flipper_application.h,,
@@ -310,6 +311,10 @@ Function,-,LL_USART_DeInit,ErrorStatus,const USART_TypeDef*
 Function,+,LL_USART_Init,ErrorStatus,"USART_TypeDef*, const LL_USART_InitTypeDef*"
 Function,-,LL_USART_StructInit,void,LL_USART_InitTypeDef*
 Function,-,LL_mDelay,void,uint32_t
+Function,-,SK6805_get_led_count,uint8_t,
+Function,-,SK6805_init,void,
+Function,-,SK6805_set_led_color,void,"uint8_t, uint8_t, uint8_t, uint8_t"
+Function,-,SK6805_update,void,
 Function,-,SystemCoreClockUpdate,void,
 Function,-,SystemInit,void,
 Function,-,_Exit,void,int
@@ -2538,6 +2543,13 @@ Function,-,rfal_platform_spi_acquire,void,
 Function,-,rfal_platform_spi_release,void,
 Function,-,rfal_set_callback_context,void,void*
 Function,-,rfal_set_state_changed_callback,void,RfalStateChangedCallback
+Function,+,rgb_backlight_get_color_count,uint8_t,
+Function,+,rgb_backlight_get_color_text,const char*,uint8_t
+Function,+,rgb_backlight_get_settings,RGBBacklightSettings*,
+Function,-,rgb_backlight_load_settings,void,
+Function,+,rgb_backlight_save_settings,void,
+Function,+,rgb_backlight_set_color,void,uint8_t
+Function,-,rgb_backlight_update,void,uint8_t
 Function,-,rindex,char*,"const char*, int"
 Function,-,rint,double,double
 Function,-,rintf,float,float
@@ -4678,6 +4690,7 @@ Function,+,version_get_gitbranchnum,const char*,const Version*
 Function,+,version_get_githash,const char*,const Version*
 Function,+,version_get_target,uint8_t,const Version*
 Function,+,version_get_version,const char*,const Version*
+Function,-,version_set_custom_name,void,"Version*, const char*"
 Function,-,vfiprintf,int,"FILE*, const char*, __gnuc_va_list"
 Function,-,vfiscanf,int,"FILE*, const char*, __gnuc_va_list"
 Function,-,vfprintf,int,"FILE*, const char*, __gnuc_va_list"
