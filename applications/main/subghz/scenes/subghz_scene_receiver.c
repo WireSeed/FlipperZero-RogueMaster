@@ -186,8 +186,10 @@ void subghz_scene_receiver_on_enter(void* context) {
         }
     }
 
-    subghz->state_notifications = SubGhzNotificationStateRx;
-    subghz_txrx_rx_start(subghz->txrx);
+    if(!subghz_history_get_text_space_left(subghz->history, NULL)) {
+        subghz->state_notifications = SubGhzNotificationStateRx;
+        subghz_txrx_rx_start(subghz->txrx);
+    }
     subghz_view_receiver_set_idx_menu(subghz->subghz_receiver, subghz->idx_menu_chosen);
 
     //to use a universal decoder, we are looking for a link to it
