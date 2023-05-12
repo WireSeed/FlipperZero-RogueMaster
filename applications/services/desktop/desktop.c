@@ -553,7 +553,7 @@ Desktop* desktop_alloc() {
     furi_record_close(RECORD_STORAGE);
 
     desktop->bt = furi_record_open(RECORD_BT);
-    
+
     furi_record_create(RECORD_DESKTOP, desktop);
 
     return desktop;
@@ -718,8 +718,7 @@ int32_t desktop_srv(void* p) {
     case ICON_STYLE_STOCK:
         //dummy mode icon
         if(desktop->settings.dumbmode_icon) {
-            view_port_enabled_set(
-                desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
+            view_port_enabled_set(desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
             view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, false);
         }
         //stealth icon
@@ -757,7 +756,6 @@ int32_t desktop_srv(void* p) {
 
     view_dispatcher_run(desktop->view_dispatcher);
     desktop_free(desktop);
-    
 
     return 0;
 }
