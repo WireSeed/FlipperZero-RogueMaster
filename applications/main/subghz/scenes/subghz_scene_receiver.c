@@ -75,6 +75,8 @@ static void subghz_scene_receiver_update_statusbar(void* context) {
     } else {
         subghz_view_receiver_add_data_statusbar(
             subghz->subghz_receiver, furi_string_get_cstr(history_stat_str), "", "");
+        notification_message(subghz->notifications, &sequence_error);
+        subghz_txrx_stop(subghz->txrx);
         subghz->state_notifications = SubGhzNotificationStateIDLE;
     }
     furi_string_free(history_stat_str);
@@ -221,18 +223,21 @@ bool subghz_scene_receiver_on_event(void* context, SceneManagerEvent event) {
             break;
         case SubGhzCustomEventViewReceiverOK:
             // Show file info, scene: receiver_info
+            subghz->state_notifications = SubGhzNotificationStateIDLE;
             subghz->idx_menu_chosen = subghz_view_receiver_get_idx_menu(subghz->subghz_receiver);
             scene_manager_next_scene(subghz->scene_manager, SubGhzSceneReceiverInfo);
             DOLPHIN_DEED(DolphinDeedSubGhzReceiverInfo);
             consumed = true;
             break;
         case SubGhzCustomEventViewReceiverDeleteItem:
+            subghz->state_notifications = SubGhzNotificationStateRx;
             subghz->idx_menu_chosen = subghz_view_receiver_get_idx_menu(subghz->subghz_receiver);
 
             subghz_history_delete_item(subghz->history, subghz->idx_menu_chosen);
             subghz_view_receiver_delete_element_callback(subghz->subghz_receiver);
 
             subghz_scene_receiver_update_statusbar(subghz);
+            subghz_txrx_rx_start(subghz->txrx);
             consumed = true;
             break;
         case SubGhzCustomEventViewReceiverConfig:
