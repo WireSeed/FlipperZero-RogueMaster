@@ -61,6 +61,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [Part 2 of hooking C2 IPC #2662 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2662)
 - UL: [Using scene manager functions in DecodeRAW #462 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/462)
 - OFW: [Rpc: add desktop service. Desktop: refactor locking routine. #2665 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2665)
+- Removed: Settings: "Lock W PIN + Off" add to UP menu [(By RogueMaster)] due to conflict with Desktop locking refactor
 
 <a name="release">
 
@@ -202,7 +203,6 @@ $ ./fbt dolphin_ext
 - Plugins: Icon for Clock [Thanks to Redlink](https://github.com/redlink2/flipperzero-firmware/tree/menuChanges)
 - Plugins: OFW PR [Snake Plugin: Store game state on close and restore it on restart, show highscore #1922 (By JuanJakobo)](https://github.com/flipperdevices/flipperzero-firmware/pull/1922)
 - [RFID: LFRFID AS FAP #397 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/397) (With Thanks to ESurge) [Restored Infrared and RFID CLI #405 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/405)
-- Settings: "Lock W PIN + Off" add to UP menu [(By RogueMaster)]
 - Settings: OFW PR [Automatic shutdown on idle #1647 (By SHxKenzuto)](https://github.com/flipperdevices/flipperzero-firmware/pull/1647)
 - Settings: Actual PIN Lock [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/desktop/desktop.c)
 - Settings: Auto-Lock Options Added: 10s+15s+90s [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/desktop/desktop_settings/scenes/desktop_settings_scene_start.c)
