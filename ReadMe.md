@@ -62,6 +62,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: [Using scene manager functions in DecodeRAW #462 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/462)
 - OFW: [Rpc: add desktop service. Desktop: refactor locking routine. #2665 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2665)
 - Removed: Settings: "Lock W PIN + Off" add to UP menu [(By RogueMaster)] due to conflict with Desktop locking refactor
+- Updated: Marauder Companion: [Added sniff pmkid on selected aps from 0.10.4 update #13 (By clipboard1)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion/pull/13)
 
 <a name="release">
 
