@@ -29,10 +29,10 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0511-0044-0.82.5-753b977](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0512-0353-0.82.5-0522121](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-12 03:15 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-12 03:15 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-12 03:53 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-12 03:53 EST`
 - Added: [Bad BT (By Willy-JL)(Imported By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/620)
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - OFW: [API version in UI #2649 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2649)
@@ -66,7 +66,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [BadBT Updates - Imported by ESurge #627 (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/627)
 - [Notifications Settings Stored Externally - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/d1cbe8f6859e841cc3c1ab7eae222e5024722651)
 - [Controlled StartUp & Version File Changes - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/57293f79e69d85bb3480d47f287ea57236d58ee2)
-- [RGB Drivers Added (Backend Only) - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/fc41f816bcac16762680893c4466e139545ec7f6)
+- [RGB LED Drivers Added (Backend Only) - Imported by RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/fc41f816bcac16762680893c4466e139545ec7f6)
 
 <a name="release">
 
