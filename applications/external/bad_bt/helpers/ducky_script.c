@@ -23,8 +23,6 @@ const uint8_t BAD_BT_EMPTY_MAC_ADDRESS[BAD_BT_MAC_ADDRESS_LEN] =
 #define BADBT_ASCII_TO_KEY(script, x) \
     (((uint8_t)x < 128) ? (script->layout[(uint8_t)x]) : HID_KEYBOARD_NONE)
 
-#define HID_BT_KEYS_STORAGE_PATH EXT_PATH("apps/Tools/.bt_hid.keys")
-
 /**
  * Delays for waiting between HID key press and key release
 */
@@ -361,8 +359,10 @@ static bool ducky_script_preload(BadBtScript* bad_bt, File* script_file) {
         bad_bt->app->switch_mode_thread = NULL;
     }
     // Looking for BT_ID command at first line
-    bool bt_id = false;
-    if(strncmp(line_tmp, ducky_cmd_bt_id, strlen(ducky_cmd_bt_id)) == 0) {
+    bad_bt->set_bt_id = false;
+    bad_bt->has_bt_id = strncmp(line_tmp, ducky_cmd_bt_id, strlen(ducky_cmd_bt_id)) == 0;
+
+    if(bad_bt->has_bt_id) {
         if(!bad_bt->bt) {
             bad_bt->app->switch_mode_thread = furi_thread_alloc_ex(
                 "BadBtSwitchMode",
@@ -373,12 +373,13 @@ static bool ducky_script_preload(BadBtScript* bad_bt, File* script_file) {
             return false;
         }
         if(!bad_bt->app->bt_remember) {
-            bt_id = ducky_set_bt_id(bad_bt, &line_tmp[strlen(ducky_cmd_bt_id) + 1]);
+            bad_bt->set_bt_id = ducky_set_bt_id(bad_bt, &line_tmp[strlen(ducky_cmd_bt_id) + 1]);
         }
     }
+    bad_bt_config_refresh_menu(bad_bt->app);
 
     if(bad_bt->bt) {
-        if(!bt_id) {
+        if(!bad_bt->set_bt_id) {
             const char* bt_name = bad_bt->app->config.bt_name;
             const uint8_t* bt_mac = bad_bt->app->bt_remember ?
                                         (uint8_t*)&BAD_BT_BOUND_MAC_ADDRESS :

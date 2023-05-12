@@ -81,6 +81,9 @@ typedef struct {
     FuriString* string_print;
     size_t string_print_pos;
 
+    bool set_bt_id;
+    bool has_bt_id;
+
     Bt* bt;
     BadBtApp* app;
 } BadBtScript;
@@ -143,6 +146,8 @@ struct BadBtApp {
 };
 
 int32_t bad_bt_config_switch_mode(BadBtApp* app);
+
+void bad_bt_config_refresh_menu(BadBtApp* app);
 
 #ifdef __cplusplus
 }

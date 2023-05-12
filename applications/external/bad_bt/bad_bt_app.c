@@ -1,5 +1,4 @@
 #include "bad_bt_app.h"
-#include "bad_bt_settings_filename.h"
 #include <furi.h>
 #include <furi_hal.h>
 #include <storage/storage.h>
@@ -8,8 +7,6 @@
 
 #include <bt/bt_service/bt_i.h>
 #include <bt/bt_service/bt.h>
-
-#define BAD_BT_SETTINGS_PATH BAD_BT_APP_BASE_FOLDER "/" BAD_BT_SETTINGS_FILE_NAME
 
 static bool bad_bt_app_custom_event_callback(void* context, uint32_t event) {
     furi_assert(context);
@@ -104,9 +101,14 @@ void bad_bt_reload_worker(BadBtApp* app) {
 int32_t bad_bt_config_switch_mode(BadBtApp* app) {
     bad_bt_reload_worker(app);
     furi_hal_bt_start_advertising();
+    bad_bt_config_refresh_menu(app);
+
+    return 0;
+}
+
+void bad_bt_config_refresh_menu(BadBtApp* app) {
     scene_manager_next_scene(app->scene_manager, BadBtSceneConfig);
     scene_manager_previous_scene(app->scene_manager);
-    return 0;
 }
 
 void bad_bt_config_switch_remember_mode(BadBtApp* app) {
@@ -134,7 +136,7 @@ int32_t bad_bt_connection_init(BadBtApp* app) {
 
     bt_timeout = bt_hid_delays[LevelRssi39_0];
     bt_disconnect(app->bt);
-    bt_keys_storage_set_storage_path(app->bt, BAD_BT_APP_PATH_BOUND_KEYS_FILE);
+    bt_keys_storage_set_storage_path(app->bt, BAD_BT_KEYS_PATH);
     if(strcmp(app->config.bt_name, "") != 0) {
         furi_hal_bt_set_profile_adv_name(FuriHalBtProfileHidKeyboard, app->config.bt_name);
     }
