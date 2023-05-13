@@ -64,6 +64,7 @@ static ViewPort* bt_pin_code_view_port_alloc(Bt* bt) {
 static void bt_pin_code_show(Bt* bt, uint32_t pin_code) {
     furi_assert(bt);
     bt->pin_code = pin_code;
+    if(bt->suppress_pin_screen) return;
     notification_message(bt->notification, &sequence_display_backlight_on);
     if(bt->suppress_pin_screen) return;
 
@@ -81,6 +82,7 @@ static void bt_pin_code_hide(Bt* bt) {
 static bool bt_pin_code_verify_event_handler(Bt* bt, uint32_t pin) {
     furi_assert(bt);
     bt->pin_code = pin;
+    if(bt->suppress_pin_screen) return true;
     notification_message(bt->notification, &sequence_display_backlight_on);
     if(bt->suppress_pin_screen) return true;
 

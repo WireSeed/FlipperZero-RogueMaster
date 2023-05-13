@@ -3,7 +3,6 @@ App(
     name="Bad BT",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="bad_bt_app",
-    #cdefines=["APP_BAD_BT"],
     requires=[
         "gui",
         "dialogs",

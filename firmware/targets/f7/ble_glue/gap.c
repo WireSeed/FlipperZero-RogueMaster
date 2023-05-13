@@ -71,6 +71,19 @@ static inline void fetch_rssi() {
 static void gap_advertise_start(GapState new_state);
 static int32_t gap_app(void* context);
 
+/** function for updating rssi informations in global Gap object
+ * 
+*/
+static inline void fetch_rssi() {
+    uint8_t ret_rssi = 127;
+    if(hci_read_rssi(gap->service.connection_handle, &ret_rssi) == BLE_STATUS_SUCCESS) {
+        gap->conn_rssi = (int8_t)ret_rssi;
+        gap->time_rssi_sample = furi_get_tick();
+        return;
+    }
+    FURI_LOG_D(TAG, "Failed to read RSSI");
+}
+
 static void gap_verify_connection_parameters(Gap* gap) {
     furi_assert(gap);
 
@@ -144,7 +157,7 @@ SVCCTL_UserEvtFlowStatus_t SVCCTL_App_Notification(void* pckt) {
             FURI_LOG_I(TAG, "Connection parameters event complete");
             gap_verify_connection_parameters(gap);
 
-            // save rssi for current connection
+            // Save rssi for current connection
             fetch_rssi();
             break;
         }
@@ -181,8 +194,8 @@ SVCCTL_UserEvtFlowStatus_t SVCCTL_App_Notification(void* pckt) {
 
             gap_verify_connection_parameters(gap);
 
+            // Save rssi for current connection
             fetch_rssi();
-
             // Start pairing by sending security request
             aci_gap_slave_security_req(event->Connection_Handle);
         } break;
@@ -263,6 +276,7 @@ SVCCTL_UserEvtFlowStatus_t SVCCTL_App_Notification(void* pckt) {
                     pairing_complete->Status);
                 aci_gap_terminate(gap->service.connection_handle, 5);
             } else {
+                // Save RSSI
                 fetch_rssi();
 
                 FURI_LOG_I(TAG, "Pairing complete");
@@ -368,9 +382,11 @@ static void gap_init_svc(Gap* gap) {
     hci_le_set_default_phy(ALL_PHYS_PREFERENCE, TX_2M_PREFERRED, RX_2M_PREFERRED);
     // Set I/O capability
     bool keypress_supported = false;
+    // New things below
     uint8_t conf_mitm = CFG_MITM_PROTECTION;
     uint8_t conf_used_fixed_pin = CFG_USED_FIXED_PIN;
     bool conf_bonding = gap->config->bonding_mode;
+
     if(gap->config->pairing_method == GapPairingPinCodeShow) {
         aci_gap_set_io_capability(IO_CAP_DISPLAY_ONLY);
     } else if(gap->config->pairing_method == GapPairingPinCodeVerifyYesNo) {
@@ -554,6 +570,7 @@ bool gap_init(GapConfig* config, GapEventCallback on_event_cb, void* context) {
     return true;
 }
 
+// Get RSSI
 uint32_t gap_get_remote_conn_rssi(int8_t* rssi) {
     if(gap && gap->state == GapStateConnected) {
         fetch_rssi();
