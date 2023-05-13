@@ -41,6 +41,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW PR: [nfc: Mifare Ultralight C detection #2668 (By GMMan)](https://github.com/flipperdevices/flipperzero-firmware/pull/2668)
 - OFW PR: [Hitag #2658 (By blackvault88)](https://github.com/flipperdevices/flipperzero-firmware/pull/2658)
 - Show RAW RFID Debug Options
+- [Updated: NRF24Batch Assets (By vad7)](https://github.com/vad7/nRF24-Batch/commit/6f56ab48c16c2e34c500d01f6b5deec746a79368)
 
 <a name="release">
 
