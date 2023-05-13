@@ -36,6 +36,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
 - Updated Passport to have an option for a Dolphin (Moody) animation.
 - UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
+- Fixed Lefty Mode
+- OFW PR: [nfc: Fix MFUL tearing flags read #2669 (By GMMan)](https://github.com/flipperdevices/flipperzero-firmware/pull/2669)
+- OFW PR: [nfc: Mifare Ultralight C detection #2668 (By GMMan)](https://github.com/flipperdevices/flipperzero-firmware/pull/2668)
 
 <a name="release">
 
