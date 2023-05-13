@@ -36,5 +36,5 @@ const ProtocolBase* lfrfid_protocols[] = {
     [LFRFIDProtocolPACStanley] = &protocol_pac_stanley,
     [LFRFIDProtocolKeri] = &protocol_keri,
     [LFRFIDProtocolGallagher] = &protocol_gallagher,
-	[LFRFIDProtocolHitag1] = &protocol_hitag1,
+    [LFRFIDProtocolHitag1] = &protocol_hitag1,
 };

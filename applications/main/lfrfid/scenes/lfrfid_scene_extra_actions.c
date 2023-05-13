@@ -5,7 +5,7 @@ typedef enum {
     SubmenuIndexASK,
     SubmenuIndexPSK,
     SubmenuIndexClearT5577,
-	SubmenuIndexHitag,
+    SubmenuIndexHitag,
     SubmenuIndexRAW,
     SubmenuIndexRAWEmulate,
 } SubmenuIndex;
@@ -38,7 +38,7 @@ void lfrfid_scene_extra_actions_on_enter(void* context) {
         SubmenuIndexClearT5577,
         lfrfid_scene_extra_actions_submenu_callback,
         app);
-	submenu_add_item(
+    submenu_add_item(
         submenu,
         "Read RTF (Reader Talks First)",
         SubmenuIndexHitag,
