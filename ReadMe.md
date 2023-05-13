@@ -45,6 +45,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [NFCV + SLIX Protocol Updates (By g3gg0)](https://github.com/flipperdevices/flipperzero-firmware/pull/2316)
 - UL PR: [SubGhz some improvements #465 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/465)
 - UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
+- Added: [CFW Settings - Imported/Modified By RogueMaster (By Willy-JL)] WIP
 
 <a name="release">
 

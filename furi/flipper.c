@@ -4,6 +4,7 @@
 #include <furi_hal_version.h>
 #include <furi_hal_memory.h>
 #include <furi_hal_rtc.h>
+#include <cfw/private.h>
 
 #define TAG "Flipper"
 
@@ -44,6 +45,10 @@ void flipper_init() {
     FURI_LOG_I(TAG, "Boot mode %d, starting services", furi_hal_rtc_get_boot_mode());
 
     flipper_start_service(&FLIPPER_SERVICES[0]);
+
+    // NAMESPOOF_INIT();
+    // CFW_SETTINGS_LOAD();
+    // CFW_ASSETS_LOAD();
 
     for(size_t i = 1; i < FLIPPER_SERVICES_COUNT; i++) {
         flipper_start_service(&FLIPPER_SERVICES[i]);
