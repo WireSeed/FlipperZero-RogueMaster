@@ -521,52 +521,6 @@ bool furi_hal_bt_ensure_c2_mode(BleGlueC2Mode mode) {
     return false;
 }
 
-void furi_hal_bt_set_profile_adv_name(
-    FuriHalBtProfile profile,
-    const char name[FURI_HAL_BT_ADV_NAME_LENGTH]) {
-    furi_assert(profile < FuriHalBtProfileNumber);
-    furi_assert(name);
-
-    if(strlen(name) == 0) {
-        memset(
-            &(profile_config[profile].config.adv_name[1]),
-            0,
-            strlen(&(profile_config[profile].config.adv_name[1])));
-    } else {
-        profile_config[profile].config.adv_name[0] = AD_TYPE_COMPLETE_LOCAL_NAME;
-        memcpy(&(profile_config[profile].config.adv_name[1]), name, FURI_HAL_BT_ADV_NAME_LENGTH);
-    }
-}
-
-const char* furi_hal_bt_get_profile_adv_name(FuriHalBtProfile profile) {
-    furi_assert(profile < FuriHalBtProfileNumber);
-    return &(profile_config[profile].config.adv_name[1]);
-}
-
-void furi_hal_bt_set_profile_mac_addr(
-    FuriHalBtProfile profile,
-    const uint8_t mac_addr[GAP_MAC_ADDR_SIZE]) {
-    furi_assert(profile < FuriHalBtProfileNumber);
-    furi_assert(mac_addr);
-
-    memcpy(profile_config[profile].config.mac_address, mac_addr, GAP_MAC_ADDR_SIZE);
-}
-
-const uint8_t* furi_hal_bt_get_profile_mac_addr(FuriHalBtProfile profile) {
-    furi_assert(profile < FuriHalBtProfileNumber);
-    return profile_config[profile].config.mac_address;
-}
-
-void furi_hal_bt_set_profile_pairing_method(FuriHalBtProfile profile, GapPairing pairing_method) {
-    furi_assert(profile < FuriHalBtProfileNumber);
-    profile_config[profile].config.pairing_method = pairing_method;
-}
-
-GapPairing furi_hal_bt_get_profile_pairing_method(FuriHalBtProfile profile) {
-    furi_assert(profile < FuriHalBtProfileNumber);
-    return profile_config[profile].config.pairing_method;
-}
-
 const FuriHalBtHardfaultInfo* furi_hal_bt_get_hardfault_info() {
     /* AN5289, 4.8.2 */
     const FuriHalBtHardfaultInfo* info = (FuriHalBtHardfaultInfo*)(SRAM2A_BASE);

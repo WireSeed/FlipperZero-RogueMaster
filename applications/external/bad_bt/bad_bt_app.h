@@ -1,6 +1,5 @@
 #pragma once
 
-// #include "bad_bt_paths.h"
 #include "scenes/bad_bt_scene.h"
 #include "helpers/ducky_script.h"
 
@@ -9,7 +8,7 @@
 #include <gui/scene_manager.h>
 #include <dialogs/dialogs.h>
 #include <notification/notification_messages.h>
-#include "Bad_BT_icons.h"
+#include "bad_bt_icons.h"
 
 #define BAD_BT_APP_BASE_FOLDER EXT_PATH("badusb")
 #define BAD_BT_APP_BASE_CONFIG_FOLDER EXT_PATH("apps_data/badbt")

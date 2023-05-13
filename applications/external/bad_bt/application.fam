@@ -11,7 +11,7 @@ App(
     order=70,
     fap_libs=["assets"],
     fap_category="Bluetooth",
-    fap_icon="images/bad_bt_10px.png",
+    fap_icon="images/badbt_10px.png",
     fap_icon_assets="images",
     fap_icon_assets_symbol="bad_bt",
 )

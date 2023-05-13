@@ -55,19 +55,6 @@ static const uint8_t gap_erk[16] =
 
 static Gap* gap = NULL;
 
-/** function for updating rssi informations in global Gap object
- * 
-*/
-static inline void fetch_rssi() {
-    uint8_t ret_rssi = 127;
-    if(hci_read_rssi(gap->service.connection_handle, &ret_rssi) == BLE_STATUS_SUCCESS) {
-        gap->conn_rssi = (int8_t)ret_rssi;
-        gap->time_rssi_sample = furi_get_tick();
-        return;
-    }
-    FURI_LOG_D(TAG, "Failed to read RSSI");
-}
-
 static void gap_advertise_start(GapState new_state);
 static int32_t gap_app(void* context);
 
@@ -411,7 +398,7 @@ static void gap_init_svc(Gap* gap) {
         CFG_ENCRYPTION_KEY_SIZE_MAX,
         conf_used_fixed_pin, // 0x0 for no pin
         0,
-        PUBLIC_ADDR);
+        CFG_IDENTITY_ADDRESS);
     // Configure whitelist
     aci_gap_configure_whitelist();
 }
@@ -446,7 +433,7 @@ static void gap_advertise_start(GapState new_state) {
         ADV_IND,
         min_interval,
         max_interval,
-        PUBLIC_ADDR,
+        CFG_IDENTITY_ADDRESS,
         0,
         strlen(gap->service.adv_name),
         (uint8_t*)gap->service.adv_name,
@@ -529,16 +516,6 @@ bool gap_init(GapConfig* config, GapEventCallback on_event_cb, void* context) {
     gap->advertise_timer = furi_timer_alloc(gap_advetise_timer_callback, FuriTimerTypeOnce, NULL);
     // Initialization of GATT & GAP layer
     gap->service.adv_name = config->adv_name;
-    FURI_LOG_D(TAG, "Advertising name: %s", &(gap->service.adv_name[1]));
-    FURI_LOG_D(
-        TAG,
-        "MAC @ : %02X:%02X:%02X:%02X:%02X:%02X",
-        config->mac_address[5],
-        config->mac_address[4],
-        config->mac_address[3],
-        config->mac_address[2],
-        config->mac_address[1],
-        config->mac_address[0]);
     gap_init_svc(gap);
     // Initialization of the BLE Services
     SVCCTL_Init();

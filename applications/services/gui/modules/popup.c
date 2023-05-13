@@ -1,7 +1,6 @@
 #include "popup.h"
 #include <gui/elements.h>
 #include <furi.h>
-#include <assets_icons.h>
 
 struct Popup {
     View* view;

@@ -62,12 +62,9 @@ static ViewPort* bt_pin_code_view_port_alloc(Bt* bt) {
 }
 
 static void bt_pin_code_show(Bt* bt, uint32_t pin_code) {
-    furi_assert(bt);
     bt->pin_code = pin_code;
     if(bt->suppress_pin_screen) return;
     notification_message(bt->notification, &sequence_display_backlight_on);
-    if(bt->suppress_pin_screen) return;
-
     gui_view_port_send_to_front(bt->gui, bt->pin_code_view_port);
     view_port_enabled_set(bt->pin_code_view_port, true);
 }
@@ -84,8 +81,6 @@ static bool bt_pin_code_verify_event_handler(Bt* bt, uint32_t pin) {
     bt->pin_code = pin;
     if(bt->suppress_pin_screen) return true;
     notification_message(bt->notification, &sequence_display_backlight_on);
-    if(bt->suppress_pin_screen) return true;
-
     FuriString* pin_str;
     dialog_message_set_icon(bt->dialog_message, &I_BLE_Pairing_128x64, 0, 0);
     pin_str = furi_string_alloc_printf("Verify code\n%06lu", pin);
@@ -137,14 +132,14 @@ Bt* bt_alloc() {
     bt->message_queue = furi_message_queue_alloc(8, sizeof(BtMessage));
 
     // Setup statusbar view port
-    //bt->statusbar_view_port = bt_statusbar_view_port_alloc(bt);
+    // bt->statusbar_view_port = bt_statusbar_view_port_alloc(bt);
     // Pin code view port
     bt->pin_code_view_port = bt_pin_code_view_port_alloc(bt);
     // Notification
     bt->notification = furi_record_open(RECORD_NOTIFICATION);
     // Gui
     bt->gui = furi_record_open(RECORD_GUI);
-    //gui_add_view_port(bt->gui, bt->statusbar_view_port, GuiLayerStatusBarLeft);
+    // gui_add_view_port(bt->gui, bt->statusbar_view_port, GuiLayerStatusBarLeft);
     gui_add_view_port(bt->gui, bt->pin_code_view_port, GuiLayerFullscreen);
 
     // Dialogs
@@ -512,7 +507,7 @@ int32_t bt_srv(void* p) {
             furi_message_queue_get(bt->message_queue, &message, FuriWaitForever) == FuriStatusOk);
         if(message.type == BtMessageTypeUpdateStatus) {
             // Update view ports
-            //bt_statusbar_update(bt);
+            // bt_statusbar_update(bt);
             bt_pin_code_hide(bt);
             if(bt->status_changed_cb) {
                 bt->status_changed_cb(bt->status, bt->status_changed_ctx);
