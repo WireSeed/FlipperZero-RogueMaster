@@ -52,6 +52,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: REMOVED Settings: Custom name with this compile: CUSTOM_FLIPPER_NAME=name ./fbt updater_package [By Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware)
 - UL: Desktop Name Changer changes from UL not merged in due to existing method using Name Changer app that takes up less space internally and doesn't lag the desktop
 - UL: [NFC Reader Analyzer changes (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/523c63fec7698cee417e987929cc26d7c6d1f588#diff-f8dba3faa9b885735d7bf3bba3ad5eff1a43b0611c805c656616c8d1ce87fc1c)
+- OFW: [fix retry count reset on reboot #2671 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2671)
+- OFW: [fbt: allow strings for fap_version field in app manifests #2672 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2672)
+- [Fix for RFID + SubGHz apps not working via browser (By RogueMaster)]
 
 <a name="release">
 

@@ -15,8 +15,8 @@
 static const char* flipper_app_name[] = {
     [ArchiveFileTypeIButton] = "iButton",
     [ArchiveFileTypeNFC] = "NFC",
-    [ArchiveFileTypeSubGhz] = "Sub-GHz",
-    [ArchiveFileTypeLFRFID] = "125 kHz RFID",
+    [ArchiveFileTypeSubGhz] = "SubGHz",
+    [ArchiveFileTypeLFRFID] = "RFID",
     [ArchiveFileTypeInfrared] = "Infrared",
     [ArchiveFileTypeBadUsb] = "Bad USB",
     [ArchiveFileTypeU2f] = "U2F",
@@ -76,7 +76,7 @@ static void archive_run_in_app(ArchiveBrowserView* browser, ArchiveFile_t* selec
             strcpy(result, tmpType);
             strcat(result, furi_string_get_cstr(selected->path));
             status = loader_start(loader, FAP_LOADER_APP_NAME, result);
-            // } else if(strcmp(flipper_app_name[selected->type], "125 kHz RFID") == 0) {
+            // } else if(strcmp(flipper_app_name[selected->type], "RFID") == 0) {
             // char* tmpType = "/ext/apps/Main/lfrfid.fap¯";
             // char* result =
             // malloc(strlen(tmpType) + strlen(furi_string_get_cstr(selected->path)) + 1);
