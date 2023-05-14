@@ -255,6 +255,9 @@ static void render_callback(Canvas* const canvas, void* ctx) {
         case PIMG_NEUROMANCER:
             canvas_draw_icon(canvas, 11, 2, &I_Neuromancer);
             break;
+        case PIMG_PIKASLEEPY:
+            canvas_draw_icon(canvas, 11, 2, &I_PikaSleepy);
+            break;
         case PIMG_RABBIT:
             canvas_draw_icon_animation(canvas, 11, 2, animations[AniRabbit]);
             break;

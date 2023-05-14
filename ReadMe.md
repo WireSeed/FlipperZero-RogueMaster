@@ -46,6 +46,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL PR: [SubGhz some improvements #465 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/465)
 - UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
 - Added: [CFW Settings - Imported/Modified By RogueMaster WIP (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ecf91524a956f773881d564c4ada833f844264ca)
+- Updated Passport to have an option for a Pikachu (Sleepy) profile.
 
 <a name="release">
 

@@ -37,7 +37,7 @@ extern "C" {
 #define BG_SCROLL 7
 #define BG_SLUT 8
 
-#define PROFILE_IMG_COUNT 29
+#define PROFILE_IMG_COUNT 30
 
 #define PIMG_NONE 0
 #define PIMG_BRIAREOS 1
@@ -58,16 +58,17 @@ extern "C" {
 #define PIMG_MARVIN 16
 #define PIMG_MORELEELLOO 17
 #define PIMG_NEUROMANCER 18
-#define PIMG_RABBIT 19
-#define PIMG_SHINKAI 20
-#define PIMG_SLIME 21
-#define PIMG_SONIC 22
-#define PIMG_SPIDER 23
-#define PIMG_TANKGIRL 24
-#define PIMG_TOTORO 25
-#define PIMG_WAIFU1 26
-#define PIMG_WAIFU2 27
-#define PIMG_WAIFU3 28
+#define PIMG_PIKASLEEPY 19
+#define PIMG_RABBIT 20
+#define PIMG_SHINKAI 21
+#define PIMG_SLIME 22
+#define PIMG_SONIC 23
+#define PIMG_SPIDER 24
+#define PIMG_TANKGIRL 25
+#define PIMG_TOTORO 26
+#define PIMG_WAIFU1 27
+#define PIMG_WAIFU2 28
+#define PIMG_WAIFU3 29
 
 typedef struct {
     uint8_t background;
