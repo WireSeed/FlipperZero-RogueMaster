@@ -1,12 +1,12 @@
 #include "cfw.h"
 #include "private.h"
-#include <assets_icons.h>
+// #include <assets_icons.h>
 #include <storage/storage.h>
 #include <core/dangerous_defines.h>
 
 #define TAG "CfwAssets"
 
-#define ICONS_FMT CFW_ASSETS_PATH "/%s/Icons/%s"
+// #define ICONS_FMT CFW_ASSETS_PATH "/%s/Icons/%s"
 
 // CfwAssets cfw_assets = {
     // .A_Levelup_128x64 = &A_Levelup_128x64,
@@ -142,8 +142,8 @@
     // icon(&x->I_Error_62x31, "U2F/Error_62x31", p, f);
 // }
 
-// void CFW_ASSETS_LOAD() {
-    // CfwSettings* cfw_settings = CFW_SETTINGS();
+void CFW_ASSETS_LOAD() {
+    CfwSettings* cfw_settings = CFW_SETTINGS();
     // if(cfw_settings->asset_pack[0] == '\0') return;
     // cfw_assets.is_nsfw = strncmp(xtreme_settings->asset_pack, "NSFW", strlen("NSFW")) == 0;
 
@@ -159,8 +159,8 @@
     // }
     // furi_string_free(path);
     // furi_record_close(RECORD_STORAGE);
-// }
+}
 
-// CfwAssets* CFW_ASSETS() {
-    // return &cfw_assets;
-// }
+CfwAssets* CFW_ASSETS() {
+    return &cfw_assets;
+}

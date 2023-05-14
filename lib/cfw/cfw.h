@@ -41,8 +41,8 @@ typedef struct {
 void CFW_SETTINGS_SAVE();
 CfwSettings* CFW_SETTINGS();
 
-// typedef struct {
-    // bool is_nsfw;
+typedef struct {
+    bool is_nsfw;
     // const Icon* A_Levelup_128x64;
     // const Icon* I_BLE_Pairing_128x64;
     // const Icon* I_DolphinCommon_56x48;
@@ -69,9 +69,9 @@ CfwSettings* CFW_SETTINGS();
     // const Icon* I_Connect_me_62x31;
     // const Icon* I_Connected_62x31;
     // const Icon* I_Error_62x31;
-// } CfwAssets;
+} CfwAssets;
 
-// CfwAssets* CFW_ASSETS();
+CfwAssets* CFW_ASSETS();
 
 #ifdef __cplusplus
 }
