@@ -22,6 +22,7 @@
 #define SCENE_EVENT_SELECT_TOP_BAR 14
 #define SCENE_EVENT_SELECT_DUMBMODE 15
 #define SCENE_EVENT_SELECT_DUMBMODE_ICON 16
+#define SCENE_EVENT_SELECT_CHANGE_NAME 17
 
 #define AUTO_LOCK_DELAY_COUNT 9
 const char* const auto_lock_delay_text[AUTO_LOCK_DELAY_COUNT] = {
@@ -343,8 +344,11 @@ void desktop_settings_scene_start_on_enter(void* context) {
     variable_item_set_current_value_index(item, value_index);
     variable_item_set_current_value_text(item, desktop_on_off_text[value_index]);
 
+    variable_item_list_add(variable_item_list, "Change Flipper Name", 0, NULL, app);
+		
     variable_item_list_set_enter_callback(
         variable_item_list, desktop_settings_scene_start_var_list_enter_callback, app);
+
     view_dispatcher_switch_to_view(app->view_dispatcher, DesktopSettingsAppViewVarItemList);
 }
 
@@ -412,6 +416,10 @@ bool desktop_settings_scene_start_on_event(void* context, SceneManagerEvent sme)
             consumed = true;
             break;
         case SCENE_EVENT_SELECT_DUMBMODE_ICON:
+            consumed = true;
+            break;
+        case SCENE_EVENT_SELECT_CHANGE_NAME:
+            scene_manager_next_scene(app->scene_manager, DesktopSettingsAppSceneChangeName);
             consumed = true;
             break;
         }
