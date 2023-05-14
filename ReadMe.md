@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0513-0528-0.83.1-5194cac](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-13 20:00 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-13 20:00 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-13 22:05 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-13 22:05 EST`
 - [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
 - Updated Passport to have an option for a Dolphin (Moody) animation.
 - UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
@@ -47,6 +47,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
 - Added: [CFW Settings - Imported/Modified By RogueMaster WIP (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ecf91524a956f773881d564c4ada833f844264ca)
 - Updated Passport to have an option for a Pikachu (Sleepy) profile.
+- UL: Fix Small SubGHz Bugs
+- UL: Updated: [Sub-GHz Bruteforcer v3.5 (By Ganapati/xMasterX/derskythe)](https://github.com/derskythe/flipperzero-subbrute/tree/master)
 
 <a name="release">
 
