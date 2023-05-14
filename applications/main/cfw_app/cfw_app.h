@@ -6,7 +6,6 @@
 #include <gui/view_dispatcher.h>
 #include <gui/scene_manager.h>
 #include <dialogs/dialogs.h>
-#include <assets_icons.h>
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/text_input.h>
 #include <gui/modules/popup.h>
@@ -22,8 +21,8 @@
 #include <notification/notification_app.h>
 #include <rgb_backlight.h>
 #include <m-array.h>
-#include <namespoof.h>
 #include <cfw.h>
+#include "namespoof.h"
 
 #define CFW_SUBGHZ_FREQ_BUFFER_SIZE 6
 

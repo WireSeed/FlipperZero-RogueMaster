@@ -11,6 +11,9 @@ extern "C" {
 // #define CFW_ASSETS_PATH EXT_PATH("dolphin_custom")
 #define CFW_APPS_PATH CFG_PATH("cfw_apps.txt")
 // #define CFW_ASSETS_PACK_NAME_LEN 32
+#define NAMESPOOF_HEADER "Flipper Name File"
+#define NAMESPOOF_VERSION 1
+#define NAMESPOOF_PATH EXT_PATH("dolphin/name.txt")
 
 typedef struct {
     // char asset_pack[CFW_ASSETS_PACK_NAME_LEN];
