@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0513-2235-0.83.1-35faf21](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-13 22:35 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-13 22:35 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-14 00:35 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-14 00:35 EST`
 - [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
 - Updated Passport to have an option for a Dolphin (Moody) animation.
 - UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
@@ -49,6 +49,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated Passport to have an option for a Pikachu (Sleepy) profile.
 - UL: Fix Small SubGHz Bugs
 - UL: Updated: [Sub-GHz Bruteforcer v3.5 (By Ganapati/xMasterX/derskythe)](https://github.com/derskythe/flipperzero-subbrute/tree/master)
+- UL: REMOVED Settings: Custom name with this compile: CUSTOM_FLIPPER_NAME=name ./fbt updater_package [By Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware)
+- UL: Desktop Name Changer changes from UL not merged in due to existing method using Name Changer app that takes up less space internally and doesn't lag the desktop
 
 <a name="release">
 
@@ -194,7 +196,6 @@ $ ./fbt dolphin_ext
 - Settings: Actual PIN Lock [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/desktop/desktop.c)
 - Settings: Auto-Lock Options Added: 10s+15s+90s [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/desktop/desktop_settings/scenes/desktop_settings_scene_start.c)
 - Settings: Battery Meter on Desktop [Thanks to McAzzaMan](https://github.com/McAzzaMan/flipperzero-firmware/tree/BatteryPercentageView)
-- Settings: Custom name with this compile: CUSTOM_FLIPPER_NAME=name ./fbt updater_package [By Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware)
 - Settings: Desktop => [Games Only Mode (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/GAMES_ONLY.md)
 - - [UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT FROM CLOCK](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/GAMES_ONLY.md) (FULL LIST OF GAMES ONLY CONTROLS)
 - [Settings: External instead of internal for all settings except notifications (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/f6e0d0fd4cfab4b4b751bb7512ffd82514aa0fcc)
