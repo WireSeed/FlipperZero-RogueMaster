@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0513-0528-0.83.1-5194cac](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-13 18:35 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-13 18:35 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-13 20:00 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-13 20:00 EST`
 - [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
 - Updated Passport to have an option for a Dolphin (Moody) animation.
 - UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
@@ -45,7 +45,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [NFCV + SLIX Protocol Updates (By g3gg0)](https://github.com/flipperdevices/flipperzero-firmware/pull/2316)
 - UL PR: [SubGhz some improvements #465 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/465)
 - UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
-- Added: [CFW Settings - Imported/Modified By RogueMaster (By Willy-JL)] WIP
+- Added: [CFW Settings - Imported/Modified By RogueMaster WIP (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ecf91524a956f773881d564c4ada833f844264ca)
 
 <a name="release">
 
@@ -287,6 +287,7 @@ $ ./fbt dolphin_ext
 - [Calculator "2" (By theCow61)](https://github.com/theCow61/calculator)
 - [Camera (By Z4urce)](https://github.com/Z4urce/flipper-camera) `Req: ESP32-CAM`
 - [Ceasar Cipher (By panki27)](https://github.com/panki27/caesar-cipher)
+- [CFW Settings - Imported/Modified By RogueMaster WIP (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ecf91524a956f773881d564c4ada833f844264ca)
 - [CLI Bridge (By ranchordo)](https://github.com/ranchordo/flipperzero-cli-bridge)
 - [Clock (By kowalski7cc)](https://github.com/kowalski7cc/flipperzero-firmware/tree/clock-v1)
 - [Control 7-segment display with Flipper Zero (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
