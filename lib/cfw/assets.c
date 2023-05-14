@@ -161,6 +161,6 @@ void CFW_ASSETS_LOAD() {
     // furi_record_close(RECORD_STORAGE);
 }
 
-CfwAssets* CFW_ASSETS() {
-    return &cfw_assets;
-}
+// CfwAssets* CFW_ASSETS() {
+    // return &cfw_assets;
+// }

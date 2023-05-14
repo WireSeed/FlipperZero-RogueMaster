@@ -217,7 +217,6 @@ Header,+,lib/toolbox/tar/tar_archive.h,,
 Header,+,lib/toolbox/value_index.h,,
 Header,+,lib/toolbox/version.h,,
 Header,+,lib/u8g2/u8g2.h,,
-Function,+,CFW_ASSETS,CfwAssets*,
 Function,+,CFW_SETTINGS,CfwSettings*,
 Function,+,CFW_SETTINGS_SAVE,void,
 Function,-,LL_ADC_CommonDeInit,ErrorStatus,ADC_Common_TypeDef*
