@@ -53,19 +53,23 @@ static void storage_Desktop_status_callback(const void* message, void* context) 
        (storage_event->type == StorageEventTypeCardMountError)) {
         view_port_enabled_set(desktop->sdcard_icon_viewport, false);
         view_port_enabled_set(desktop->sdcard_icon_slim_viewport, false);
+        desktop->sdcard_status = false;
     }
 
     if(storage_event->type == StorageEventTypeCardMount) {
         switch(desktop->settings.icon_style) {
         case ICON_STYLE_SLIM:
+            view_port_enabled_set(desktop->sdcard_icon_viewport, false);
             view_port_enabled_set(desktop->sdcard_icon_slim_viewport, desktop->settings.sdcard);
             view_port_update(desktop->sdcard_icon_slim_viewport);
             break;
         case ICON_STYLE_STOCK:
             view_port_enabled_set(desktop->sdcard_icon_viewport, desktop->settings.sdcard);
+            view_port_enabled_set(desktop->sdcard_icon_slim_viewport, false);
             view_port_update(desktop->sdcard_icon_viewport);
             break;
         }
+        desktop->sdcard_status = true;
     }
 }
 
@@ -223,9 +227,11 @@ static void desktop_tick_event_callback(void* context) {
             view_port_enabled_set(
                 desktop->stealth_mode_icon_slim_viewport, desktop->settings.stealth_icon);
         }
-        //sdcard icon
-        view_port_enabled_set(desktop->sdcard_icon_viewport, false);
-        view_port_enabled_set(desktop->sdcard_icon_slim_viewport, desktop->settings.sdcard);
+        if(desktop->sdcard_status) {
+            //sdcard icon
+            view_port_enabled_set(desktop->sdcard_icon_viewport, false);
+            view_port_enabled_set(desktop->sdcard_icon_slim_viewport, desktop->settings.sdcard);
+        }
         break;
     case ICON_STYLE_STOCK:
         //dummy mode icon
@@ -239,9 +245,11 @@ static void desktop_tick_event_callback(void* context) {
                 desktop->stealth_mode_icon_viewport, desktop->settings.stealth_icon);
             view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, false);
         }
-        //sdcard icon
-        view_port_enabled_set(desktop->sdcard_icon_viewport, desktop->settings.sdcard);
-        view_port_enabled_set(desktop->sdcard_icon_slim_viewport, false);
+        if(desktop->sdcard_status) {
+            //sdcard icon
+            view_port_enabled_set(desktop->sdcard_icon_viewport, desktop->settings.sdcard);
+            view_port_enabled_set(desktop->sdcard_icon_slim_viewport, false);
+        }
         break;
     }
 
@@ -329,10 +337,12 @@ void desktop_set_dummy_mode_state(Desktop* desktop, bool enabled) {
     if(desktop->settings.dumbmode_icon) {
         switch(desktop->settings.icon_style) {
         case ICON_STYLE_SLIM:
+            view_port_enabled_set(desktop->dummy_mode_icon_viewport, false);
             view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, enabled);
             break;
         case ICON_STYLE_STOCK:
             view_port_enabled_set(desktop->dummy_mode_icon_viewport, enabled);
+            view_port_enabled_set(desktop->dummy_mode_icon_slim_viewport, false);
             break;
         }
     }
@@ -353,10 +363,12 @@ void desktop_set_stealth_mode_state(Desktop* desktop, bool enabled) {
     if(desktop->settings.stealth_icon) {
         switch(desktop->settings.icon_style) {
         case ICON_STYLE_SLIM:
+            view_port_enabled_set(desktop->stealth_mode_icon_viewport, false);
             view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, enabled);
             break;
         case ICON_STYLE_STOCK:
             view_port_enabled_set(desktop->stealth_mode_icon_viewport, enabled);
+            view_port_enabled_set(desktop->stealth_mode_icon_slim_viewport, false);
             break;
         }
     }
@@ -547,6 +559,7 @@ Desktop* desktop_alloc() {
     desktop->auto_lock_timer =
         furi_timer_alloc(desktop_auto_lock_timer_callback, FuriTimerTypeOnce, desktop);
 
+    desktop->sdcard_status = false;
     Storage* storage = furi_record_open(RECORD_STORAGE);
     desktop->storage_sub = furi_pubsub_subscribe(
         storage_get_pubsub(storage), storage_Desktop_status_callback, desktop);
