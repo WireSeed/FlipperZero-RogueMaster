@@ -677,21 +677,6 @@ int32_t desktop_srv(void* p) {
         DESKTOP_SETTINGS_SAVE(&desktop->settings);
     }
 
-    view_port_enabled_set(desktop->dummy_mode_icon_viewport, desktop->settings.dummy_mode);
-    desktop_main_set_dummy_mode_state(desktop->main_view, desktop->settings.dummy_mode);
-    animation_manager_set_dummy_mode_state(
-        desktop->animation_manager, desktop->settings.dummy_mode);
-
-    scene_manager_next_scene(desktop->scene_manager, DesktopSceneMain);
-
-    if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagLock)) {
-        desktop_lock(desktop);
-    } else {
-        if(!loader_is_locked(desktop->loader)) {
-            desktop_auto_lock_arm(desktop);
-        }
-    }
-
     view_port_enabled_set(desktop->topbar_icon_viewport, desktop->settings.top_bar);
 
     switch(desktop->settings.icon_style) {
@@ -741,6 +726,14 @@ int32_t desktop_srv(void* p) {
         desktop->animation_manager, desktop->settings.dummy_mode);
 
     scene_manager_next_scene(desktop->scene_manager, DesktopSceneMain);
+
+    if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagLock)) {
+        desktop_lock(desktop);
+    } else {
+        if(!loader_is_locked(desktop->loader)) {
+            desktop_auto_lock_arm(desktop);
+        }
+    }
 
     if(desktop_check_file_flag(SLIDESHOW_FS_PATH)) {
         scene_manager_next_scene(desktop->scene_manager, DesktopSceneSlideshow);
