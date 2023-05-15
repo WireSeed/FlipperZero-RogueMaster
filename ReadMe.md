@@ -61,6 +61,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Text input handling changes
 - Switched Desktop settings file back to internal storage to correct game mode persistance.
 - UL: Text input fixes
+- REVERTED UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
 
 <a name="release">
 

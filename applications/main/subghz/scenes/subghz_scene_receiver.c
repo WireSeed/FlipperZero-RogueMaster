@@ -75,8 +75,6 @@ static void subghz_scene_receiver_update_statusbar(void* context) {
     } else {
         subghz_view_receiver_add_data_statusbar(
             subghz->subghz_receiver, furi_string_get_cstr(history_stat_str), "", "");
-        notification_message(subghz->notifications, &sequence_error);
-        subghz_txrx_stop(subghz->txrx);
         subghz->state_notifications = SubGhzNotificationStateIDLE;
     }
     furi_string_free(history_stat_str);
@@ -133,7 +131,6 @@ void subghz_scene_receiver_on_enter(void* context) {
         subghz_txrx_set_preset(subghz->txrx, "AM650", subghz->last_settings->frequency, NULL, 0);
         subghz_history_reset(history);
         subghz_rx_key_state_set(subghz, SubGhzRxKeyStateStart);
-        subghz->idx_menu_chosen = 0;
     }
 
     subghz_view_receiver_set_lock(subghz->subghz_receiver, subghz_is_locked(subghz));
@@ -186,10 +183,8 @@ void subghz_scene_receiver_on_enter(void* context) {
         }
     }
 
-    if(!subghz_history_get_text_space_left(subghz->history, NULL)) {
-        subghz->state_notifications = SubGhzNotificationStateRx;
-        subghz_txrx_rx_start(subghz->txrx);
-    }
+    subghz->state_notifications = SubGhzNotificationStateRx;
+    subghz_txrx_rx_start(subghz->txrx);
     subghz_view_receiver_set_idx_menu(subghz->subghz_receiver, subghz->idx_menu_chosen);
 
     //to use a universal decoder, we are looking for a link to it
@@ -209,6 +204,7 @@ bool subghz_scene_receiver_on_event(void* context, SceneManagerEvent event) {
             subghz->state_notifications = SubGhzNotificationStateIDLE;
             subghz_txrx_stop(subghz->txrx);
             subghz_txrx_hopper_set_state(subghz->txrx, SubGhzHopperStateOFF);
+            subghz->idx_menu_chosen = 0;
             subghz_txrx_set_rx_calback(subghz->txrx, NULL, subghz);
 
             if(subghz_rx_key_state_get(subghz) == SubGhzRxKeyStateAddKey) {
@@ -225,21 +221,18 @@ bool subghz_scene_receiver_on_event(void* context, SceneManagerEvent event) {
             break;
         case SubGhzCustomEventViewReceiverOK:
             // Show file info, scene: receiver_info
-            subghz->state_notifications = SubGhzNotificationStateIDLE;
             subghz->idx_menu_chosen = subghz_view_receiver_get_idx_menu(subghz->subghz_receiver);
             scene_manager_next_scene(subghz->scene_manager, SubGhzSceneReceiverInfo);
             DOLPHIN_DEED(DolphinDeedSubGhzReceiverInfo);
             consumed = true;
             break;
         case SubGhzCustomEventViewReceiverDeleteItem:
-            subghz->state_notifications = SubGhzNotificationStateRx;
             subghz->idx_menu_chosen = subghz_view_receiver_get_idx_menu(subghz->subghz_receiver);
 
             subghz_history_delete_item(subghz->history, subghz->idx_menu_chosen);
             subghz_view_receiver_delete_element_callback(subghz->subghz_receiver);
 
             subghz_scene_receiver_update_statusbar(subghz);
-            subghz_txrx_rx_start(subghz->txrx);
             consumed = true;
             break;
         case SubGhzCustomEventViewReceiverConfig:
