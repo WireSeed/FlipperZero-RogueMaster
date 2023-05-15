@@ -57,6 +57,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Fix for RFID + SubGHz apps not working via browser (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/4276224196bdec3a14104fa605fe14ff75e96f55)
 - UL: "fix debugging" w custom_flipper_name
 - Fix for API & SubGHz Remote loading.
+- UL: Plugins: UART Terminal: Fix crashes on plugin load with RX connected
+- UL: Text input handling changes
 
 <a name="release">
 
