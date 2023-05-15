@@ -164,7 +164,7 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
                 lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
             }
         } else if((idx == DesktopLockMenuIndexLockShutdown) && (event->type == InputTypeShort)) {
-			lock_menu->callback(DesktopLockMenuEventLockShutdown, lock_menu->context);
+            lock_menu->callback(DesktopLockMenuEventLockShutdown, lock_menu->context);
         } else if((idx == DesktopLockMenuIndexGameMode) && (event->type == InputTypeShort)) {
             DOLPHIN_DEED(getRandomDeed());
             desktop_view_lock_menu_dumbmode_changed(1);
