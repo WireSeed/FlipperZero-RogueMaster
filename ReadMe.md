@@ -66,6 +66,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Use App Vars To Forget BT Keys + Move Some BadBT Vars - Imported/Modified By RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/66da0bce733d46bd1fbadb3333ac75c44ba6faa7)
 - [Lock Screen Issue After Locked Shutdown Fixed (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/632)
 - Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) with [UART Terminal: Fix crashes on plugin load with RX connected (By xMasterX)](https://github.com/cool4uma/UART_Terminal/pull/12)
+- Desktop: ['Game Mode' & 'Lock + Off' added to UP menu (By RogueMaster)]
 
 <a name="release">
 

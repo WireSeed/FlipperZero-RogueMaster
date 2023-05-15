@@ -9,8 +9,17 @@
 
 #define LOCK_MENU_ITEMS_NB 5
 
+static void desktop_view_lock_menu_dumbmode_changed(bool isThisGameMode) {
+    DesktopSettingsApp* app = malloc(sizeof(DesktopSettingsApp));
+    DESKTOP_SETTINGS_LOAD(&app->settings);
+    app->settings.is_dumbmode = isThisGameMode;
+    DESKTOP_SETTINGS_SAVE(&app->settings);
+}
+
 typedef enum {
     DesktopLockMenuIndexLock,
+    DesktopLockMenuIndexLockShutdown,
+    DesktopLockMenuIndexGameMode,
     DesktopLockMenuIndexStealth,
     DesktopLockMenuIndexDummy,
 
@@ -63,6 +72,12 @@ void desktop_lock_menu_draw_callback(Canvas* canvas, void* model) {
         switch(i) {
         case DesktopLockMenuIndexLock:
             str = "Lock";
+            break;
+        case DesktopLockMenuIndexLockShutdown:
+            str = "Lock + Off";
+            break;
+        case DesktopLockMenuIndexGameMode:
+            str = "Game Mode";
             break;
         case DesktopLockMenuIndexStealth:
             if(m->stealth_mode) {
@@ -148,6 +163,12 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
             if(event->type == InputTypeShort) {
                 lock_menu->callback(DesktopLockMenuEventLock, lock_menu->context);
             }
+        } else if((idx == DesktopLockMenuIndexLockShutdown) && (event->type == InputTypeShort)) {
+			lock_menu->callback(DesktopLockMenuEventLockShutdown, lock_menu->context);
+        } else if((idx == DesktopLockMenuIndexGameMode) && (event->type == InputTypeShort)) {
+            DOLPHIN_DEED(getRandomDeed());
+            desktop_view_lock_menu_dumbmode_changed(1);
+            lock_menu->callback(DesktopLockMenuEventExit, lock_menu->context);
         } else if(idx == DesktopLockMenuIndexStealth) {
             if((stealth_mode == false) && (event->type == InputTypeShort)) {
                 lock_menu->callback(DesktopLockMenuEventStealthModeOn, lock_menu->context);
