@@ -60,6 +60,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Plugins: UART Terminal: Fix crashes on plugin load with RX connected
 - UL: Text input handling changes
 - Switched Desktop settings file back to internal storage to correct game mode persistance.
+- UL: Text input fixes
 
 <a name="release">
 
