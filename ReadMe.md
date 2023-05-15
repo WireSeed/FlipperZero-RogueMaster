@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7.tgz&channel=RM0512-1442-0.83.1-f0144d7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7-NoAnim.tgz&channel=RM0512-1442-0.83.1-f0144d7-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb.tgz&channel=RM0515-0528-0.83.1-4e5f8bb&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb-NoAnim.tgz&channel=RM0515-0528-0.83.1-4e5f8bb-NoAnim&version=0.83.1)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -29,44 +29,11 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0514-1516-0.83.1-6d486fd](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0515-0538-0.83.1-6ccf2d5](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-15 05:15 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 05:15 EST`
-- [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
-- Updated Passport to have an option for a Dolphin (Moody) animation.
-- UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
-- Fixed Lefty Mode
-- OFW PR: [nfc: Fix MFUL tearing flags read #2669 (By GMMan)](https://github.com/flipperdevices/flipperzero-firmware/pull/2669)
-- OFW PR: [nfc: Mifare Ultralight C detection #2668 (By GMMan)](https://github.com/flipperdevices/flipperzero-firmware/pull/2668)
-- OFW PR: [Hitag #2658 (By blackvault88)](https://github.com/flipperdevices/flipperzero-firmware/pull/2658)
-- Show RAW RFID Debug Options
-- [Updated: NRF24Batch Assets (By vad7)](https://github.com/vad7/nRF24-Batch/commit/6f56ab48c16c2e34c500d01f6b5deec746a79368)
-- [NFCV + SLIX Protocol Updates (By g3gg0)](https://github.com/flipperdevices/flipperzero-firmware/pull/2316)
-- UL PR: [SubGhz some improvements #465 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/465)
-- UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
-- Added: [CFW Settings - Imported/Modified By RogueMaster WIP (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ecf91524a956f773881d564c4ada833f844264ca)
-- Updated Passport to have an option for a Pikachu (Sleepy) profile.
-- UL: Fix Small SubGHz Bugs
-- UL: Updated: [Sub-GHz Bruteforcer v3.5 (By Ganapati/xMasterX/derskythe)](https://github.com/derskythe/flipperzero-subbrute/tree/master)
-- UL: REMOVED Settings: Custom name with this compile: CUSTOM_FLIPPER_NAME=name ./fbt updater_package [By Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware)
-- UL: Desktop Name Changer changes from UL not merged in due to existing method using Name Changer app that takes up less space internally and doesn't lag the desktop
-- UL: [NFC Reader Analyzer changes (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/523c63fec7698cee417e987929cc26d7c6d1f588#diff-f8dba3faa9b885735d7bf3bba3ad5eff1a43b0611c805c656616c8d1ce87fc1c)
-- OFW: [fix retry count reset on reboot #2671 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2671)
-- OFW: [fbt: allow strings for fap_version field in app manifests #2672 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2672)
-- [Fix for RFID + SubGHz apps not working via browser (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/4276224196bdec3a14104fa605fe14ff75e96f55)
-- UL: "fix debugging" w custom_flipper_name
-- Fix for API & SubGHz Remote loading.
-- UL: Plugins: [UART Terminal: Fix crashes on plugin load with RX connected (By xMasterX)](https://github.com/cool4uma/UART_Terminal/pull/12)
-- UL: Text input handling changes
-- [Switched Desktop settings file back to internal storage to correct game mode persistance. (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/dd819f91dfa2fabc87efa81d9abb75944e43b069)
-- [Clock Fix For Game Mode Exit (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/3d06791ee3fa7b65ea7661be9a26fdee1e87c5da)
-- UL: Text input fixes
-- REVERTED UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
-- [Use App Vars To Forget BT Keys + Move Some BadBT Vars - Imported/Modified By RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/66da0bce733d46bd1fbadb3333ac75c44ba6faa7)
-- [Lock Screen Issue After Locked Shutdown Fixed (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/632)
-- Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) with [UART Terminal: Fix crashes on plugin load with RX connected (By xMasterX)](https://github.com/cool4uma/UART_Terminal/pull/12)
-- Desktop: ['Game Mode' & 'Lock + Off' added to UP menu (By RogueMaster)]
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-15 05:38 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 05:38 EST`
+- [Fixed SD Card icon issue + Clean up some code #633 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/633)
 
 <a name="release">
 
@@ -430,4 +397,4 @@ $ ./fbt dolphin_ext
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
 - [Zero Tracker (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-music-tracker)
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7.tgz&channel=RM0512-1442-0.83.1-f0144d7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0512-1442-0.83.1-f0144d7-NoAnim.tgz&channel=RM0512-1442-0.83.1-f0144d7-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb.tgz&channel=RM0515-0528-0.83.1-4e5f8bb&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb-NoAnim.tgz&channel=RM0515-0528-0.83.1-4e5f8bb-NoAnim&version=0.83.1)
