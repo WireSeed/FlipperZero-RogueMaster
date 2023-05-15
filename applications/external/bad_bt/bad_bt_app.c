@@ -8,12 +8,6 @@
 #include <bt/bt_service/bt_i.h>
 #include <bt/bt_service/bt.h>
 
-#define BAD_BT_SETTINGS_FILE_NAME ".badbt.settings"
-#define BAD_BT_APP_PATH_BOUND_KEYS_FOLDER EXT_PATH("apps_data/badbt")
-#define BAD_BT_APP_PATH_BOUND_KEYS_FILE BAD_BT_APP_PATH_BOUND_KEYS_FOLDER "/.badbt.keys"
-
-#define BAD_BT_SETTINGS_PATH BAD_BT_APP_BASE_CONFIG_FOLDER "/" BAD_BT_SETTINGS_FILE_NAME
-
 static bool bad_bt_app_custom_event_callback(void* context, uint32_t event) {
     furi_assert(context);
     BadBtApp* app = context;

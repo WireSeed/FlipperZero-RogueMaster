@@ -62,6 +62,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Switched Desktop settings file back to internal storage to correct game mode persistance.
 - UL: Text input fixes
 - REVERTED UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
+- [Use App Vars To Forget BT Keys + Move Some BadBT Vars - Imported/Modified By RogueMaster (By Willy-JL)]
 
 <a name="release">
 

@@ -1,6 +1,8 @@
 #include "../bt_settings_app.h"
 #include <furi_hal_bt.h>
-#include <storage/storage.h>
+#include <applications/external/bad_bt/bad_bt_paths.h>
+#include <applications/external/hid_app/hid_path.h>
+#include <applications/external/totp/workers/bt_type_code/bt_type_code.h>
 
 void bt_settings_scene_forget_dev_confirm_dialog_callback(DialogExResult result, void* context) {
     furi_assert(context);
@@ -35,9 +37,10 @@ bool bt_settings_scene_forget_dev_confirm_on_event(void* context, SceneManagerEv
 
             // Also remove keys of BadBT, Bluetooth Remote, TOTP Authenticator
             Storage* storage = furi_record_open(RECORD_STORAGE);
-            storage_simply_remove(storage, EXT_PATH("apps_data/badbt/.badbt.keys"));
-            storage_simply_remove(storage, EXT_PATH("apps_data/hid_ble/.bt_hid.keys"));
-            storage_simply_remove(storage, EXT_PATH("apps_data/authenticator/.bt_hid.keys"));
+            storage_simply_remove(storage, BAD_BT_APP_PATH_BOUND_KEYS_FILE);
+            storage_simply_remove(
+                storage, EXT_PATH("apps_data/hid_ble/") HID_BT_KEYS_STORAGE_NAME);
+            storage_simply_remove(storage, EXT_PATH(TOTP_BT_KEYS_STORAGE_PATH));
             furi_record_close(RECORD_STORAGE);
 
             scene_manager_next_scene(app->scene_manager, BtSettingsAppSceneForgetDevSuccess);
