@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0514-1516-0.83.1-6d486fd](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-15 04:08 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 04:08 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-15 05:15 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 05:15 EST`
 - [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
 - Updated Passport to have an option for a Dolphin (Moody) animation.
 - UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
@@ -57,13 +57,16 @@ This software is for experimental purposes only and is not meant for any illegal
 - [Fix for RFID + SubGHz apps not working via browser (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/4276224196bdec3a14104fa605fe14ff75e96f55)
 - UL: "fix debugging" w custom_flipper_name
 - Fix for API & SubGHz Remote loading.
-- UL: Plugins: UART Terminal: Fix crashes on plugin load with RX connected
+- UL: Plugins: [UART Terminal: Fix crashes on plugin load with RX connected (By xMasterX)](https://github.com/cool4uma/UART_Terminal/pull/12)
 - UL: Text input handling changes
-- Switched Desktop settings file back to internal storage to correct game mode persistance.
+- [Switched Desktop settings file back to internal storage to correct game mode persistance. (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/dd819f91dfa2fabc87efa81d9abb75944e43b069)
+- [Clock Fix For Game Mode Exit (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/3d06791ee3fa7b65ea7661be9a26fdee1e87c5da)
 - UL: Text input fixes
 - REVERTED UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
-- [Use App Vars To Forget BT Keys + Move Some BadBT Vars - Imported/Modified By RogueMaster (By Willy-JL)]
+- [Use App Vars To Forget BT Keys + Move Some BadBT Vars - Imported/Modified By RogueMaster (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/66da0bce733d46bd1fbadb3333ac75c44ba6faa7)
 - [Lock Screen Issue After Locked Shutdown Fixed (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/632)
+- Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) with [UART Terminal: Fix crashes on plugin load with RX connected (By xMasterX)](https://github.com/cool4uma/UART_Terminal/pull/12)
+- Desktop: ['Game Mode' & 'Lock + Off' added to UP menu (By RogueMaster)]
 
 <a name="release">
 
@@ -164,6 +167,7 @@ $ ./fbt dolphin_ext
 - Bluetooth Remote + USB Keyboard: [Added movement interval in mouse_jiggler USB & BLE #303 (By DocKuro)](https://github.com/DarkFlippers/unleashed-firmware/pull/303)
 - Clock: Clock.fap loader apps and available as Favorites [Thanks to ESurge](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/336)
 - Desktop: Desktop icons are now dynamic, and can be changed in Desktop Settings [(By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/527)
+- Desktop: ['Game Mode' & 'Lock + Off' added to UP menu (By RogueMaster)]
 - Desktop: Hold Right goes to About with Battery Info [(Thanks to Willy-JL)]
 - Desktop: Exclude icons on the left and show minimal battery [Thanks to skizzophrenic/Talking-Sasquach](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/360)
 - Development free space thanks to removal of unused debug tools and [thanks to ESurge](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/46/files) for removal of first start assets.
