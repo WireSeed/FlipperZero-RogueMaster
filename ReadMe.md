@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0514-1516-0.83.1-6d486fd](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-15 03:13 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 03:13 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-15 04:08 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 04:08 EST`
 - [Patreon Build Update: Senpai animation in ALL, Cherui, Minimal, Stock & Dolphin builds](https://github.com/RogueMaster/awesome-flipperzero-withModules/commit/a1817892149b0951444294024c399a943651e051)
 - Updated Passport to have an option for a Dolphin (Moody) animation.
 - UL: Some TOTP & Bad BT changes to cleanup code (Thanks to xMasterX, WillyJL, ClaraCrazy, and XFW contributors)
@@ -63,6 +63,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Text input fixes
 - REVERTED UL PR: [SubGHz: Notifications refines #464 (By wosk)](https://github.com/DarkFlippers/unleashed-firmware/pull/464)
 - [Use App Vars To Forget BT Keys + Move Some BadBT Vars - Imported/Modified By RogueMaster (By Willy-JL)]
+- [Lock Screen Issue After Locked Shutdown Fixed (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/632)
 
 <a name="release">
 
