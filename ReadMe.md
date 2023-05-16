@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb.tgz&channel=RM0515-0528-0.83.1-4e5f8bb&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb-NoAnim.tgz&channel=RM0515-0528-0.83.1-4e5f8bb-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf.tgz&channel=RM0516-1227-0.83.1-0e408bf&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf-NoAnim.tgz&channel=RM0516-1227-0.83.1-0e408bf-NoAnim&version=0.83.1)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -29,10 +29,10 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0516-0453-0.83.1-9743574](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0516-1222-0.83.1-0e408bf](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-16 06:25 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-16 06:25 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-16 12:22 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-16 12:22 EST`
 - [Fixed SD Card icon issue + Clean up some code #633 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/633)
 - OFW: [api: added lib/nfc/protocols/nfc_util.h #2674 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2674)
 - Removed Setting Migration Code
@@ -411,4 +411,4 @@ $ ./fbt dolphin_ext
 - [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
 - Have a new app? Submit GitHub link to me on Discord for a special reward (if I add it to RM Firmware).
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb.tgz&channel=RM0515-0528-0.83.1-4e5f8bb&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb-NoAnim.tgz&channel=RM0515-0528-0.83.1-4e5f8bb-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf.tgz&channel=RM0516-1227-0.83.1-0e408bf&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf-NoAnim.tgz&channel=RM0516-1227-0.83.1-0e408bf-NoAnim&version=0.83.1)
