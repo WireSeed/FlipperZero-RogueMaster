@@ -85,12 +85,12 @@ bool cfw_app_apply(CfwApp* app) {
     }
 
     // if(app->save_level) {
-        // Dolphin* dolphin = furi_record_open(RECORD_DOLPHIN);
-        // int32_t xp = app->xp_level > 1 ? dolphin_get_levels()[app->xp_level - 2] : 0;
-        // dolphin->state->data.icounter = xp + 1;
-        // dolphin->state->dirty = true;
-        // dolphin_state_save(dolphin->state);
-        // furi_record_close(RECORD_DOLPHIN);
+    // Dolphin* dolphin = furi_record_open(RECORD_DOLPHIN);
+    // int32_t xp = app->xp_level > 1 ? dolphin_get_levels()[app->xp_level - 2] : 0;
+    // dolphin->state->data.icounter = xp + 1;
+    // dolphin->state->dirty = true;
+    // dolphin_state_save(dolphin->state);
+    // furi_record_close(RECORD_DOLPHIN);
     // }
 
     if(app->save_backlight) {
@@ -102,7 +102,7 @@ bool cfw_app_apply(CfwApp* app) {
     }
 
     // if(app->show_slideshow) {
-        // callback_reboot(NULL);
+    // callback_reboot(NULL);
     // }
 
     if(app->require_reboot) {
@@ -145,8 +145,7 @@ CfwApp* cfw_app_alloc() {
     view_dispatcher_enable_queue(app->view_dispatcher);
     view_dispatcher_set_event_callback_context(app->view_dispatcher, app);
 
-    view_dispatcher_set_custom_event_callback(
-        app->view_dispatcher, cfw_app_custom_event_callback);
+    view_dispatcher_set_custom_event_callback(app->view_dispatcher, cfw_app_custom_event_callback);
     view_dispatcher_set_navigation_event_callback(
         app->view_dispatcher, cfw_app_back_event_callback);
 
@@ -177,28 +176,28 @@ CfwApp* cfw_app_alloc() {
     // FileInfo info;
     // char* name = malloc(CFW_ASSETS_PACK_NAME_LEN);
     // if(storage_dir_open(folder, CFW_ASSETS_PATH)) {
-        // while(storage_dir_read(folder, &info, name, CFW_ASSETS_PACK_NAME_LEN)) {
-            // if(info.flags & FSF_DIRECTORY) {
-                // char* copy = malloc(CFW_ASSETS_PACK_NAME_LEN);
-                // strlcpy(copy, name, CFW_ASSETS_PACK_NAME_LEN);
-                // uint idx = 0;
-                // if(strcmp(copy, "NSFW") != 0) {
-                    // for(; idx < CharList_size(app->asset_pack_names); idx++) {
-                        // char* comp = *CharList_get(app->asset_pack_names, idx);
-                        // if(strcasecmp(copy, comp) < 0 && strcmp(comp, "NSFW") != 0) {
-                            // break;
-                        // }
-                    // }
-                // }
-                // CharList_push_at(app->asset_pack_names, idx, copy);
-                // if(app->asset_pack_index != 0) {
-                    // if(idx < app->asset_pack_index) app->asset_pack_index++;
-                // } else {
-                    // if(strcmp(copy, CFW_settings->asset_pack) == 0)
-                        // app->asset_pack_index = idx + 1;
-                // }
-            // }
-        // }
+    // while(storage_dir_read(folder, &info, name, CFW_ASSETS_PACK_NAME_LEN)) {
+    // if(info.flags & FSF_DIRECTORY) {
+    // char* copy = malloc(CFW_ASSETS_PACK_NAME_LEN);
+    // strlcpy(copy, name, CFW_ASSETS_PACK_NAME_LEN);
+    // uint idx = 0;
+    // if(strcmp(copy, "NSFW") != 0) {
+    // for(; idx < CharList_size(app->asset_pack_names); idx++) {
+    // char* comp = *CharList_get(app->asset_pack_names, idx);
+    // if(strcasecmp(copy, comp) < 0 && strcmp(comp, "NSFW") != 0) {
+    // break;
+    // }
+    // }
+    // }
+    // CharList_push_at(app->asset_pack_names, idx, copy);
+    // if(app->asset_pack_index != 0) {
+    // if(idx < app->asset_pack_index) app->asset_pack_index++;
+    // } else {
+    // if(strcmp(copy, CFW_settings->asset_pack) == 0)
+    // app->asset_pack_index = idx + 1;
+    // }
+    // }
+    // }
     // }
     // free(name);
     // storage_file_free(folder);
@@ -226,7 +225,8 @@ CfwApp* cfw_app_alloc() {
     app->subghz_use_defaults = true;
     do {
         uint32_t temp;
-        if(!flipper_format_file_open_existing(file, EXT_PATH("subghz/assets/setting_user.txt"))) break;
+        if(!flipper_format_file_open_existing(file, EXT_PATH("subghz/assets/setting_user.txt")))
+            break;
 
         flipper_format_read_bool(file, "Add_standard_frequencies", &app->subghz_use_defaults, 1);
 
@@ -281,7 +281,7 @@ void cfw_app_free(CfwApp* app) {
 
     CharList_it_t it;
     // for(CharList_it(it, app->asset_pack_names); !CharList_end_p(it); CharList_next(it)) {
-        // free(*CharList_cref(it));
+    // free(*CharList_cref(it));
     // }
     // CharList_clear(app->asset_pack_names);
 
