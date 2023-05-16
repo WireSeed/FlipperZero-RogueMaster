@@ -41,6 +41,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Removed Dolphin Backup & Dolphin Restorer apps. They are no longer wanted/needed, out-dated on file locations, Dolphin Trainer can now fix levels, and most settings are switched to store on SD.
 - [Removed Duplicated GPIO/PIN Settings option in Infrared menu (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e5d9a9842b04a00f13032607b7d620eb1a3201db)
 - Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
+- UL PR: Wifi Marauder Companion [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
+- Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem) with [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
 
 <a name="release">
 
