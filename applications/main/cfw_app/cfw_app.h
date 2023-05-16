@@ -19,6 +19,7 @@
 #include <lib/subghz/subghz_setting.h>
 #include <applications/main/fap_loader/fap_loader_app.h>
 #include <notification/notification_app.h>
+#include <power/power_service/power.h>
 #include <rgb_backlight.h>
 #include <m-array.h>
 #include <cfw.h>
