@@ -38,6 +38,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Removed Setting Migration Code
 - [Desktop Settings works externally as FAP (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/2fca5f243885a2cce69a5f26eb7e6ac1c72a1da3)
 - [RFID: HiTag: minor memory correction in decoder_feed #634 (By blackvault88)](https://github.com/blackvault88/flipperzero-firmware-blackvault/commit/d8704f69673dbfd40b3478e019b5f15c14a8efe6)
+- Removed Dolphin Backup & Dolphin Restorer apps. They are no longer wanted/needed, out-dated on file locations, Dolphin Trainer can now fix levels, and most settings are switched to store on SD.
 
 <a name="release">
 
@@ -389,7 +390,6 @@ $ ./fbt dolphin_ext
 - [UART Terminal (By cool4uma)](https://github.com/cool4uma/UART_Terminal)
 - [USB HID Autofire (By pbek)](https://github.com/pbek/usb_hid_autofire)
 - [USB Midi (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-usb-midi) [Instructions by ESurge](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/plugins/usb_midi/ReadMe.md)
-- [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
 - [Video Player (By LTVA1)](https://github.com/LTVA1/flipper-zero-video-player)
 - [WAV Player (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/tree/zlo/wav-player) Updated by Atmanos & RogueMaster To Work.  [Updated by xMasterX](https://github.com/DarkFlippers/unleashed-firmware/commit/76d3f84a5eb069b749e3ad20df6fdbbc785eb253)
 - [WAV Recorder (By scrolltex)](https://github.com/scrolltex/flipper-wav-recorder)
@@ -401,5 +401,13 @@ $ ./fbt dolphin_ext
 - [WiFi Scanner v.0.4 (By SequoiaSan)](https://github.com/SequoiaSan/FlipperZero-WiFi-Scanner_Module-ESP8266) `Req: ESP8266 or ESP32`
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
 - [Zero Tracker (By DrZlo13)](https://github.com/DrZlo13/flipper-zero-music-tracker)
+
+## COMMENTED OUT / NOT COMPILED DUE TO ISSUES
+
+- If you can fix any of these, DM me on Discord for a surprise reward.
+- [Bad Apple (By GMMan)](https://github.com/GMMan/flipperzero-badapple)
+- [Chess (By okalachev)](https://github.com/okalachev/flipperzero-firmware/tree/chess)
+- [Dolphin SOS (By arha)](https://github.com/arha/dolphin-sos)
+- [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
 
 # Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb.tgz&channel=RM0515-0528-0.83.1-4e5f8bb&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb-NoAnim.tgz&channel=RM0515-0528-0.83.1-4e5f8bb-NoAnim&version=0.83.1)
