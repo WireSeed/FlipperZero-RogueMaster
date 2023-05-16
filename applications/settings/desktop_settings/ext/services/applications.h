@@ -25,55 +25,54 @@ typedef struct {
 const FlipperApplication FLIPPER_APPS2[] = {
 
     {
-     .name = "Clock",
-     },
+        .name = "Clock",
+    },
 
     {
-     .name = "Apps",
-     },
+        .name = "Apps",
+    },
 
     {
-     .name = "SubGHz",
-     },
+        .name = "SubGHz",
+    },
 
     {
-     .name = "Sub-GHz Remote",
-     },
+        .name = "Sub-GHz Remote",
+    },
 
     {
-     .name = "Sub-GHz Playlist",
-     },
+        .name = "Sub-GHz Playlist",
+    },
 
     {
-     .name = "RFID",
-     },
+        .name = "RFID",
+    },
 
     {
-     .name = "NFC",
-     },
+        .name = "NFC",
+    },
 
     {
-     .name = "Infrared",
-     },
+        .name = "Infrared",
+    },
 
     {
-     .name = "IR Remote",
-     },
+        .name = "IR Remote",
+    },
 
     {
-     .name = "GPIO",
-     },
+        .name = "GPIO",
+    },
 
     {
-     .name = "iButton",
-     },
+        .name = "iButton",
+    },
 
     {
-     .name = "Bad USB",
-     },
+        .name = "Bad USB",
+    },
 
     {
-     .name = "U2F",
-     }
-};
+        .name = "U2F",
+    }};
 const size_t FLIPPER_APPS_COUNT2 = COUNT_OF(FLIPPER_APPS2);
