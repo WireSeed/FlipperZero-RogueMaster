@@ -35,6 +35,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-15 16:20 EST`
 - [Fixed SD Card icon issue + Clean up some code #633 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/633)
 - OFW: [api: added lib/nfc/protocols/nfc_util.h #2674 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2674)
+- Removed Setting Migration Code
 
 <a name="release">
 
