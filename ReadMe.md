@@ -31,12 +31,13 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0516-0453-0.83.1-9743574](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-16 04:53 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-16 04:53 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-16 06:25 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-16 06:25 EST`
 - [Fixed SD Card icon issue + Clean up some code #633 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/633)
 - OFW: [api: added lib/nfc/protocols/nfc_util.h #2674 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2674)
 - Removed Setting Migration Code
 - [Desktop Settings works externally as FAP (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/2fca5f243885a2cce69a5f26eb7e6ac1c72a1da3)
+- [RFID: HiTag: minor memory correction in decoder_feed #634 (By blackvault88)](https://github.com/blackvault88/flipperzero-firmware-blackvault/commit/d8704f69673dbfd40b3478e019b5f15c14a8efe6)
 
 <a name="release">
 
