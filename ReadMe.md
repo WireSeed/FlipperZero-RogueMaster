@@ -409,5 +409,6 @@ $ ./fbt dolphin_ext
 - [Chess (By okalachev)](https://github.com/okalachev/flipperzero-firmware/tree/chess)
 - [Dolphin SOS (By arha)](https://github.com/arha/dolphin-sos)
 - [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
+- Have a new app? Submit GitHub link to me on Discord for a special reward (if I add it to RM Firmware).
 
 # Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb.tgz&channel=RM0515-0528-0.83.1-4e5f8bb&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0515-0528-0.83.1-4e5f8bb-NoAnim.tgz&channel=RM0515-0528-0.83.1-4e5f8bb-NoAnim&version=0.83.1)
