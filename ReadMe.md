@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf.tgz&channel=RM0516-1227-0.83.1-0e408bf&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf-NoAnim.tgz&channel=RM0516-1227-0.83.1-0e408bf-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7.tgz&channel=RM0516-2353-0.83.1-2efffd7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7-NoAnim.tgz&channel=RM0516-2353-0.83.1-2efffd7-NoAnim&version=0.83.1)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -29,23 +29,11 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0516-1222-0.83.1-0e408bf](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0516-2350-0.83.1-29e98b7](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-16 14:52 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-16 14:52 EST`
-- [Fixed SD Card icon issue + Clean up some code #633 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/633)
-- OFW: [api: added lib/nfc/protocols/nfc_util.h #2674 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2674)
-- Removed Setting Migration Code
-- [Desktop Settings works externally as FAP (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/2fca5f243885a2cce69a5f26eb7e6ac1c72a1da3)
-- [RFID: HiTag: minor memory correction in decoder_feed #634 (By blackvault88)](https://github.com/blackvault88/flipperzero-firmware-blackvault/commit/d8704f69673dbfd40b3478e019b5f15c14a8efe6)
-- Removed Dolphin Backup & Dolphin Restorer apps. They are no longer wanted/needed, out-dated on file locations, Dolphin Trainer can now fix levels, and most settings are switched to store on SD.
-- [Removed Duplicated GPIO/PIN Settings option in Infrared menu (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e5d9a9842b04a00f13032607b7d620eb1a3201db)
-- Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
-- UL PR: Wifi Marauder Companion [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
-- Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem) with [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
-- [Fix Issue with CFW Settings App RGB Settings (I think) & Cleaned Up Code. It is still a WIP.](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ea20a52c09a10af40914da06e0105ce3ca628024)
-- [Fix CFW Settings Load & Setting Migration Event Location (Original Code From Willy-JL)(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/33b33f9970685c7f6c7c076d1e55f4fd6ca13590)
-- Settings: [Dark Mode & Wii Menu (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/83e836fc797ce9ce8998a5d9b1fde6a172480bf2)
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-16 23:53 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-16 23:53 EST`
+- [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 
 <a name="release">
 
@@ -419,4 +407,4 @@ $ ./fbt dolphin_ext
 - [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
 - Have a new app? Submit GitHub link to me on Discord for a special reward (if I add it to RM Firmware).
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf.tgz&channel=RM0516-1227-0.83.1-0e408bf&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-1227-0.83.1-0e408bf-NoAnim.tgz&channel=RM0516-1227-0.83.1-0e408bf-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7.tgz&channel=RM0516-2353-0.83.1-2efffd7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7-NoAnim.tgz&channel=RM0516-2353-0.83.1-2efffd7-NoAnim&version=0.83.1)
