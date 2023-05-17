@@ -219,11 +219,6 @@ CfwApp* cfw_app_alloc() {
 
     strlcpy(app->device_name, furi_hal_version_get_name_ptr(), FURI_HAL_VERSION_ARRAY_NAME_LENGTH);
 
-    // Dolphin* dolphin = furi_record_open(RECORD_DOLPHIN);
-    // DolphinStats stats = dolphin_stats(dolphin);
-    // app->xp_level = stats.level;
-    // furi_record_close(RECORD_DOLPHIN);
-
     app->version_tag =
         furi_string_alloc_printf("%s  %s", version_get_version(NULL), version_get_builddate(NULL));
 
@@ -248,10 +243,6 @@ void cfw_app_free(CfwApp* app) {
     // Settings deinit
 
     CharList_it_t it;
-    // for(CharList_it(it, app->asset_pack_names); !CharList_end_p(it); CharList_next(it)) {
-    // free(*CharList_cref(it));
-    // }
-    // CharList_clear(app->asset_pack_names);
 
     for(CharList_it(it, app->mainmenu_app_names); !CharList_end_p(it); CharList_next(it)) {
         free(*CharList_cref(it));

@@ -21,7 +21,7 @@ typedef struct {
     // bool lockscreen_date;
     // bool lockscreen_statusbar;
     // bool lockscreen_prompt;
-    // bool sort_dirs_first;
+    bool sort_dirs_first;
     bool dark_mode;
     // uint32_t favorite_timeout;
     bool rgb_backlight;

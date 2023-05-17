@@ -13,7 +13,7 @@ CfwSettings cfw_settings = {
     // .lockscreen_date = true, // ON
     // .lockscreen_statusbar = true, // ON
     // .lockscreen_prompt = true, // ON
-    // .sort_dirs_first = true, // ON
+    .sort_dirs_first = true, // ON
     .dark_mode = false, // OFF
     // .favorite_timeout = 0, // OFF
     .rgb_backlight = false, // OFF
@@ -38,8 +38,8 @@ void CFW_SETTINGS_LOAD() {
         // flipper_format_read_bool(file, "lockscreen_statusbar", &x->lockscreen_statusbar, 1);
         // flipper_format_rewind(file);
         // flipper_format_read_bool(file, "lockscreen_prompt", &x->lockscreen_prompt, 1);
-        // flipper_format_rewind(file);
-        // flipper_format_read_bool(file, "sort_dirs_first", &x->sort_dirs_first, 1);
+        flipper_format_rewind(file);
+        flipper_format_read_bool(file, "sort_dirs_first", &x->sort_dirs_first, 1);
         flipper_format_rewind(file);
         flipper_format_read_bool(file, "dark_mode", &x->dark_mode, 1);
         // flipper_format_rewind(file);
@@ -66,7 +66,7 @@ void CFW_SETTINGS_SAVE() {
         // flipper_format_write_bool(file, "lockscreen_date", &x->lockscreen_date, 1);
         // flipper_format_write_bool(file, "lockscreen_statusbar", &x->lockscreen_statusbar, 1);
         // flipper_format_write_bool(file, "lockscreen_prompt", &x->lockscreen_prompt, 1);
-        // flipper_format_write_bool(file, "sort_dirs_first", &x->sort_dirs_first, 1);
+        flipper_format_write_bool(file, "sort_dirs_first", &x->sort_dirs_first, 1);
         flipper_format_write_bool(file, "dark_mode", &x->dark_mode, 1);
         // flipper_format_write_uint32(file, "favorite_timeout", &x->favorite_timeout, 1);
         flipper_format_write_bool(file, "rgb_backlight", &x->rgb_backlight, 1);
