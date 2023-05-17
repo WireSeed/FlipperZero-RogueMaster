@@ -47,7 +47,6 @@ typedef enum {
     NfcWorkerEventReadNfcV,
     NfcWorkerEventReadBankCard,
     NfcWorkerEventReadPassport,
-    NfcWorkerEventReadNfcV,
 
     // Nfc worker common events
     NfcWorkerEventSuccess,
