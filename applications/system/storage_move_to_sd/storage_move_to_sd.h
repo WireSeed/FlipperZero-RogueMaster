@@ -16,6 +16,7 @@
 #include <bt/bt_settings.h>
 #include <bt/bt_service/bt_i.h>
 #include <power/power_settings.h>
+#include <desktop/desktop_settings.h>
 #include <notification/notification_app.h>
 #include <dolphin/helpers/dolphin_state.h>
 #include <applications/main/u2f/u2f_data.h>
