@@ -43,7 +43,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
 - UL PR: Wifi Marauder Companion [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
 - Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem) with [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
-- Fix Issue with CFW Settings App RGB Settings (I think) & Cleaned Up Code. It is still a WIP.
+- [Fix Issue with CFW Settings App RGB Settings (I think) & Cleaned Up Code. It is still a WIP.](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ea20a52c09a10af40914da06e0105ce3ca628024)
+- [Fix CFW Settings Load & Setting Migration Event Location (Original Code From Willy-JL)(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/33b33f9970685c7f6c7c076d1e55f4fd6ca13590)
 
 <a name="release">
 
