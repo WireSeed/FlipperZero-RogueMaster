@@ -49,6 +49,7 @@ void CFW_SETTINGS_LOAD() {
     }
     flipper_format_free(file);
     furi_record_close(RECORD_STORAGE);
+    FURI_LOG_I(TAG, "RM WUZ HERE");
 }
 
 void CFW_SETTINGS_SAVE() {

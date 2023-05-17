@@ -45,6 +45,7 @@ void flipper_migrate_files() {
     storage_common_copy(storage, U2F_KEY_OLD_FILE, U2F_KEY_FILE); // Ext -> Int
 
     furi_record_close(RECORD_STORAGE);
+    FURI_LOG_I(TAG, "flipper_migrate_files DONE");
 }
 
 bool storage_move_to_sd_perform(void) {
