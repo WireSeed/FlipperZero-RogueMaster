@@ -270,8 +270,7 @@ void subghz_view_receiver_draw(Canvas* canvas, SubGhzViewReceiverModel* model) {
             str_buff,
             scroll_counter,
             (model->idx != idx),
-            false
-            );
+            false);
         furi_string_reset(str_buff);
     }
     if(scrollbar) {

@@ -189,7 +189,7 @@ int32_t storage_move_to_sd_app(void* p) {
     } else {
         FURI_LOG_I(TAG, "Nothing to move");
     }
-    
+
     flipper_migrate_files();
 
     return 0;

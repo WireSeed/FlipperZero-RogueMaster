@@ -328,8 +328,7 @@ static void draw_list(Canvas* canvas, ArchiveBrowserViewModel* model) {
             str_buf,
             scroll_counter,
             (model->item_idx != idx),
-            false
-            );
+            false);
 
         furi_string_free(str_buf);
     }

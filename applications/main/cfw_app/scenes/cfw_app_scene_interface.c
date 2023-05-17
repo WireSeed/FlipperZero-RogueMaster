@@ -42,11 +42,11 @@ bool cfw_app_scene_interface_on_event(void* context, SceneManagerEvent event) {
             scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceMainmenu);
             break;
         // case VarItemListIndexLockscreen:
-            // scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceLockscreen);
-            // break;
+        // scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceLockscreen);
+        // break;
         // case VarItemListIndexStatusbar:
-            // scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceStatusbar);
-            // break;
+        // scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceStatusbar);
+        // break;
         case VarItemListIndexCommon:
             scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceCommon);
             break;
