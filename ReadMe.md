@@ -45,6 +45,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [ESP32CAM Marauder (By 0xchocolate & eried)](https://github.com/eried/flipperzero-mayhem) with [Moved pmkid on aps and channel to one section #470 (By clipboard1)](https://github.com/DarkFlippers/unleashed-firmware/pull/470)
 - [Fix Issue with CFW Settings App RGB Settings (I think) & Cleaned Up Code. It is still a WIP.](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ea20a52c09a10af40914da06e0105ce3ca628024)
 - [Fix CFW Settings Load & Setting Migration Event Location (Original Code From Willy-JL)(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/33b33f9970685c7f6c7c076d1e55f4fd6ca13590)
+- Settings: [Dark Mode & Wii Menu (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/83e836fc797ce9ce8998a5d9b1fde6a172480bf2)
 
 <a name="release">
 
@@ -192,6 +193,7 @@ $ ./fbt dolphin_ext
 - Settings: Actual PIN Lock [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/desktop/desktop.c)
 - Settings: Auto-Lock Options Added: 10s+15s+90s [(By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/desktop/desktop_settings/scenes/desktop_settings_scene_start.c)
 - Settings: Battery Meter on Desktop [Thanks to McAzzaMan](https://github.com/McAzzaMan/flipperzero-firmware/tree/BatteryPercentageView)
+- Settings: [Dark Mode & Wii Menu (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/83e836fc797ce9ce8998a5d9b1fde6a172480bf2)
 - Settings: Desktop => [Games Only Mode (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/GAMES_ONLY.md)
 - - [UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT FROM CLOCK](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/GAMES_ONLY.md) (FULL LIST OF GAMES ONLY CONTROLS)
 - [Settings: External instead of internal for all settings except notifications (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/f6e0d0fd4cfab4b4b751bb7512ffd82514aa0fcc)
