@@ -64,7 +64,7 @@ bool cfw_app_apply(CfwApp* app) {
     }
 
     if(app->save_subghz) {
-        furi_hal_subghz_set_is_extended(app->subghz_extend);
+        furi_hal_subghz_set_extend_settings(app->subghz_extend, app->subghz_bypass);
     }
 
     if(app->save_name) {
@@ -75,23 +75,27 @@ bool cfw_app_apply(CfwApp* app) {
 
             do {
                 if(!flipper_format_file_open_always(file, NAMESPOOF_PATH)) break;
-                if(!flipper_format_write_header_cstr(file, NAMESPOOF_HEADER, NAMESPOOF_VERSION))
+
+                if(!flipper_format_write_header_cstr(file, NAMESPOOF_HEADER, 1)) break;
+
+                if(!flipper_format_write_comment_cstr(
+                       file, "Changing the value below will change your FlipperZero device name."))
                     break;
+                if(!flipper_format_write_comment_cstr(
+                       file,
+                       "Note: This is limited to 8 characters using the following: a-z, A-Z, 0-9, and _"))
+                    break;
+                if(!flipper_format_write_comment_cstr(
+                       file, "It cannot contain any other characters."))
+                    break;
+
                 if(!flipper_format_write_string_cstr(file, "Name", app->device_name)) break;
+
             } while(0);
 
             flipper_format_free(file);
         }
     }
-
-    // if(app->save_level) {
-    // Dolphin* dolphin = furi_record_open(RECORD_DOLPHIN);
-    // int32_t xp = app->xp_level > 1 ? dolphin_get_levels()[app->xp_level - 2] : 0;
-    // dolphin->state->data.icounter = xp + 1;
-    // dolphin->state->dirty = true;
-    // dolphin_state_save(dolphin->state);
-    // furi_record_close(RECORD_DOLPHIN);
-    // }
 
     if(app->save_backlight) {
         rgb_backlight_save_settings();
@@ -100,10 +104,6 @@ bool cfw_app_apply(CfwApp* app) {
     if(app->save_settings) {
         CFW_SETTINGS_SAVE();
     }
-
-    // if(app->show_slideshow) {
-    // callback_reboot(NULL);
-    // }
 
     if(app->require_reboot) {
         popup_set_header(app->popup, "Rebooting...", 64, 26, AlignCenter, AlignCenter);
@@ -166,41 +166,9 @@ CfwApp* cfw_app_alloc() {
     view_dispatcher_add_view(app->view_dispatcher, CfwAppViewPopup, popup_get_view(app->popup));
 
     // Settings init
-
     CfwSettings* cfw_settings = CFW_SETTINGS();
 
-    // app->asset_pack_index = 0;
-    // CharList_init(app->asset_pack_names);
     Storage* storage = furi_record_open(RECORD_STORAGE);
-    // File* folder = storage_file_alloc(storage);
-    // FileInfo info;
-    // char* name = malloc(CFW_ASSETS_PACK_NAME_LEN);
-    // if(storage_dir_open(folder, CFW_ASSETS_PATH)) {
-    // while(storage_dir_read(folder, &info, name, CFW_ASSETS_PACK_NAME_LEN)) {
-    // if(info.flags & FSF_DIRECTORY) {
-    // char* copy = malloc(CFW_ASSETS_PACK_NAME_LEN);
-    // strlcpy(copy, name, CFW_ASSETS_PACK_NAME_LEN);
-    // uint idx = 0;
-    // if(strcmp(copy, "NSFW") != 0) {
-    // for(; idx < CharList_size(app->asset_pack_names); idx++) {
-    // char* comp = *CharList_get(app->asset_pack_names, idx);
-    // if(strcasecmp(copy, comp) < 0 && strcmp(comp, "NSFW") != 0) {
-    // break;
-    // }
-    // }
-    // }
-    // CharList_push_at(app->asset_pack_names, idx, copy);
-    // if(app->asset_pack_index != 0) {
-    // if(idx < app->asset_pack_index) app->asset_pack_index++;
-    // } else {
-    // if(strcmp(copy, CFW_settings->asset_pack) == 0)
-    // app->asset_pack_index = idx + 1;
-    // }
-    // }
-    // }
-    // }
-    // free(name);
-    // storage_file_free(folder);
 
     CharList_init(app->mainmenu_app_names);
     CharList_init(app->mainmenu_app_paths);
@@ -247,7 +215,7 @@ CfwApp* cfw_app_alloc() {
     flipper_format_free(file);
     furi_record_close(RECORD_STORAGE);
 
-    app->subghz_extend = furi_hal_subghz_get_is_extended();
+    furi_hal_subghz_get_extend_settings(&app->subghz_extend, &app->subghz_bypass);
 
     strlcpy(app->device_name, furi_hal_version_get_name_ptr(), FURI_HAL_VERSION_ARRAY_NAME_LENGTH);
 

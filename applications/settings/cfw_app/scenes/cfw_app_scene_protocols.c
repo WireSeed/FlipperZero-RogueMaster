@@ -3,6 +3,7 @@
 enum VarItemListIndex {
     VarItemListIndexSubghzFrequencies,
     VarItemListIndexSubghzExtend,
+    VarItemListIndexSubghzBypass,
 };
 
 void cfw_app_scene_protocols_var_item_list_callback(void* context, uint32_t index) {
@@ -14,6 +15,13 @@ static void cfw_app_scene_protocols_subghz_extend_changed(VariableItem* item) {
     CfwApp* app = variable_item_get_context(item);
     app->subghz_extend = variable_item_get_current_value_index(item);
     variable_item_set_current_value_text(item, app->subghz_extend ? "ON" : "OFF");
+    app->save_subghz = true;
+}
+
+static void cfw_app_scene_protocols_subghz_bypass_changed(VariableItem* item) {
+    CfwApp* app = variable_item_get_context(item);
+    app->subghz_bypass = variable_item_get_current_value_index(item);
+    variable_item_set_current_value_text(item, app->subghz_bypass ? "ON" : "OFF");
     app->save_subghz = true;
 }
 
@@ -29,6 +37,11 @@ void cfw_app_scene_protocols_on_enter(void* context) {
         var_item_list, "SubGHz Extend", 2, cfw_app_scene_protocols_subghz_extend_changed, app);
     variable_item_set_current_value_index(item, app->subghz_extend);
     variable_item_set_current_value_text(item, app->subghz_extend ? "ON" : "OFF");
+
+    item = variable_item_list_add(
+        var_item_list, "SubGHz Bypass", 2, cfw_app_scene_protocols_subghz_bypass_changed, app);
+    variable_item_set_current_value_index(item, app->subghz_bypass);
+    variable_item_set_current_value_text(item, app->subghz_bypass ? "ON" : "OFF");
 
     variable_item_list_set_enter_callback(
         var_item_list, cfw_app_scene_protocols_var_item_list_callback, app);
