@@ -1,8 +1,7 @@
 #pragma once
 
 #include <gui/icon_i.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include <power/power_service/power.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -6,6 +6,7 @@
 #include <gui/view_dispatcher.h>
 #include <gui/scene_manager.h>
 #include <dialogs/dialogs.h>
+#include <assets_icons.h>
 #include <gui/modules/variable_item_list.h>
 #include <gui/modules/text_input.h>
 #include <gui/modules/popup.h>
@@ -19,11 +20,10 @@
 #include <lib/subghz/subghz_setting.h>
 #include <applications/main/fap_loader/fap_loader_app.h>
 #include <notification/notification_app.h>
-#include <power/power_service/power.h>
 #include <rgb_backlight.h>
 #include <m-array.h>
-#include <cfw.h>
 #include "namespoof.h"
+#include <cfw.h>
 
 #define CFW_SUBGHZ_FREQ_BUFFER_SIZE 6
 
