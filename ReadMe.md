@@ -38,7 +38,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - [CFW Settings fixes for Extended Range / Bypass (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/dcd0225ffcbf958951db2d6f5da7a400a75f289b)
 - [CFW Settings Loader In Settings Menu (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/bde45edb8ccbe7e6125b1b2c7ea38aa78efac83a)
 - [crypto: Erase key from RAM after storing into enclave (By Bonstra)](https://github.com/Bonstra/flipperzero-firmware/tree/erase-keys-from-memory-after-use)
-- [sort_dirs_first (By Willy-JL)]
+- [sort_dirs_first (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/08d529de831409f83d4f93cf7d20b0cceda1b5ee)
 
 <a name="release">
 
