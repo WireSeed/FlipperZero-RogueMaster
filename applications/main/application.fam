@@ -25,6 +25,7 @@ App(
         # "Clock",
         "SubGHz_Remote_loader",
         # "Spectrum_Analyzer",
+        "CFW",
     ],
 )
 

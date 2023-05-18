@@ -17,6 +17,7 @@ struct Loader {
     FuriMessageQueue* queue;
     LoaderMenu* loader_menu;
     LoaderAppData app;
+    ExtMainAppList_t ext_main_apps;
 };
 
 typedef enum {
@@ -27,6 +28,7 @@ typedef enum {
     LoaderMessageTypeLock,
     LoaderMessageTypeUnlock,
     LoaderMessageTypeIsLocked,
+    LoaderMessageTypeShowSettings,
 } LoaderMessageType;
 
 typedef struct {

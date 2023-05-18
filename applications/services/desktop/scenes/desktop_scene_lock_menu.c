@@ -4,6 +4,7 @@
 #include <toolbox/saved_struct.h>
 #include <stdbool.h>
 #include <loader/loader.h>
+#include <cfw.h>
 
 #include "../desktop_i.h"
 #include <desktop/desktop_settings.h>
@@ -29,9 +30,24 @@ void desktop_scene_lock_menu_on_enter(void* context) {
     desktop_lock_menu_set_dummy_mode_state(desktop->lock_menu, desktop->settings.dummy_mode);
     desktop_lock_menu_set_stealth_mode_state(
         desktop->lock_menu, furi_hal_rtc_is_flag_set(FuriHalRtcFlagStealthMode));
-    desktop_lock_menu_set_idx(desktop->lock_menu, 0);
+    desktop_lock_menu_set_idx(desktop->lock_menu, 3);
+
+    Gui* gui = furi_record_open(RECORD_GUI);
+    gui_set_hide_statusbar(gui, true);
+    furi_record_close(RECORD_GUI);
 
     view_dispatcher_switch_to_view(desktop->view_dispatcher, DesktopViewIdLockMenu);
+}
+
+void desktop_scene_lock_menu_save_settings(Desktop* desktop) {
+    if(desktop->lock_menu->save_notification) {
+        notification_message_save_settings(desktop->lock_menu->notification);
+        desktop->lock_menu->save_notification = false;
+    }
+    if(desktop->lock_menu->save_cfw) {
+        CFW_SETTINGS_SAVE();
+        desktop->lock_menu->save_cfw = false;
+    }
 }
 
 bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
@@ -53,12 +69,20 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
             scene_manager_search_and_switch_to_previous_scene(
                 desktop->scene_manager, DesktopSceneMain);
             break;
+        case DesktopLockMenuEventSettings:
+            desktop_scene_lock_menu_save_settings(desktop);
+            loader_show_settings(furi_record_open(RECORD_LOADER));
+            furi_record_close(RECORD_LOADER);
+            consumed = true;
+            break;
         case DesktopLockMenuEventLock:
+            desktop_scene_lock_menu_save_settings(desktop);
             scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 0);
             desktop_lock(desktop);
             consumed = true;
             break;
         case DesktopLockMenuEventLockShutdown:
+            desktop_scene_lock_menu_save_settings(desktop);
             scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 0);
             desktop_lock(desktop);
             consumed = true;
@@ -66,6 +90,12 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
             furi_delay_ms(666);
             power_off(power);
             furi_record_close(RECORD_POWER);
+            break;
+        case DesktopLockMenuEventCfw:
+            desktop_scene_lock_menu_save_settings(desktop);
+            loader_start(
+                desktop->loader, FAP_LOADER_APP_NAME, EXT_PATH("apps/Settings/CFW.fap"));
+            consumed = true;
             break;
         case DesktopLockMenuEventDummyModeOn:
             desktop_set_dummy_mode_state(desktop, true);
@@ -96,6 +126,13 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
     return consumed;
 }
 
+
 void desktop_scene_lock_menu_on_exit(void* context) {
     UNUSED(context);
+    Desktop* desktop = (Desktop*)context;
+    desktop_scene_lock_menu_save_settings(desktop);
+
+    Gui* gui = furi_record_open(RECORD_GUI);
+    gui_set_hide_statusbar(gui, false);
+    furi_record_close(RECORD_GUI);
 }
