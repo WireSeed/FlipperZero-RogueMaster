@@ -47,8 +47,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - Assets: Walgreens SUB fixed on remote example (By RogueMaster)
 - UL: NFC: Mifare mini with SAK 0x89 support
 - UL: Infrared: Updated universal remote assets (by amec0e | PR #474)
-- Updated: [WiFi (Marauder) v0.3.5 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion) 
+- Updated: [WiFi (Marauder) v0.3.5 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion)
 - Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
+- [Fixed issue with Android app launching file shortcuts (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/issues/636)
 
 <a name="release">
 
