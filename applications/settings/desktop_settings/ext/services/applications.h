@@ -25,15 +25,15 @@ typedef struct {
 const FlipperApplication FLIPPER_APPS2[] = {
 
     {
-        .name = "Clock",
-    },
-
-    {
         .name = "Applications",
     },
 
     {
-        .name = "SubGHz",
+        .name = "Clock",
+    },
+
+    {
+        .name = "Sub-GHz",
     },
 
     {
@@ -45,7 +45,7 @@ const FlipperApplication FLIPPER_APPS2[] = {
     },
 
     {
-        .name = "RFID",
+        .name = "125 kHz RFID",
     },
 
     {
