@@ -77,12 +77,6 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
             power_off(power);
             furi_record_close(RECORD_POWER);
             break;
-        case DesktopLockMenuEventCfw:
-            desktop_scene_lock_menu_save_settings(desktop);
-            loader_start(
-                desktop->loader, FAP_LOADER_APP_NAME, EXT_PATH("apps/Settings/CFW.fap"));
-            consumed = true;
-            break;
         case DesktopLockMenuEventDummyModeOn:
             desktop_set_dummy_mode_state(desktop, true);
             scene_manager_search_and_switch_to_previous_scene(

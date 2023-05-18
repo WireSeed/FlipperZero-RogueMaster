@@ -72,7 +72,7 @@ void desktop_lock_menu_set_idx(DesktopLockMenuView* lock_menu, uint8_t idx) {
 
 void desktop_lock_menu_draw_callback(Canvas* canvas, void* model) {
     DesktopLockMenuViewModel* m = model;
-    
+
     canvas_set_color(canvas, ColorBlack);
     canvas_set_font(canvas, FontBatteryPercent);
 
@@ -310,7 +310,7 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
             case DesktopLockMenuIndexDummy:
                 DOLPHIN_DEED(getRandomDeed());
                 desktop_event = dummy_mode ? DesktopLockMenuEventDummyModeOff :
-                                               DesktopLockMenuEventDummyModeOn;
+                                             DesktopLockMenuEventDummyModeOn;
                 break;
             case DesktopLockMenuIndexBluetooth:
                 lock_menu->bt->bt_settings.enabled = !lock_menu->bt->bt_settings.enabled;
