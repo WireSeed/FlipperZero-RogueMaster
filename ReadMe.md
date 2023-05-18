@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0517-1708-0.83.2-9efe974](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-18 01:46 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-18 01:46 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-18 02:30 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-18 02:30 EST`
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - [Desktop Settings Migrate If Present (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/d4c5c1d043e49a09a015dac0673190ea21fe7f58)
 - [CFW Settings fixes for Extended Range / Bypass (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/dcd0225ffcbf958951db2d6f5da7a400a75f289b)
@@ -48,6 +48,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: NFC: Mifare mini with SAK 0x89 support
 - UL: Infrared: Updated universal remote assets (by amec0e | PR #474)
 - Updated: [WiFi (Marauder) v0.3.5 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion) 
+- Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
 
 <a name="release">
 
