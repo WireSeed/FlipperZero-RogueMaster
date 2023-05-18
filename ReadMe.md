@@ -49,7 +49,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Infrared: Updated universal remote assets (by amec0e | PR #474)
 - Updated: [WiFi (Marauder) v0.3.5 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion)
 - Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
-- [Fixed issue with Android app launching file shortcuts (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/issues/636)
+- [Fixed issue with Android app launching file shortcuts (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/7506ec92059eae9f630b111be350bb636fd702ce)
+- Updated: [NFC Magic Gen4 app #2238 (By nullableVoidPtr)](https://github.com/flipperdevices/flipperzero-firmware/pull/2238) [(Updates By xMasterX)](https://github.com/xMasterX/unleashed-extra-pack)
 
 <a name="release">
 
