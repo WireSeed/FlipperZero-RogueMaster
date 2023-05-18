@@ -3,6 +3,7 @@ App(
     name="Passport",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="passport_app",
+    # cdefines=["APP_PASSPORT"],
     requires=[
         "gui",
         "dolphin",
