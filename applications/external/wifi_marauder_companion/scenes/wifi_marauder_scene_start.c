@@ -154,9 +154,11 @@ static void wifi_marauder_scene_start_var_list_enter_callback(void* context, uin
         return;
     }
 
-    if (app->selected_tx_string && strncmp("sniffpmkid", app->selected_tx_string, strlen("sniffpmkid")) == 0) {
+    if(app->selected_tx_string &&
+       strncmp("sniffpmkid", app->selected_tx_string, strlen("sniffpmkid")) == 0) {
         // sniffpmkid submenu
-        view_dispatcher_send_custom_event(app->view_dispatcher, WifiMarauderEventStartSniffPmkidOptions);
+        view_dispatcher_send_custom_event(
+            app->view_dispatcher, WifiMarauderEventStartSniffPmkidOptions);
         return;
     }
 
