@@ -51,8 +51,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
 - [Fixed issue with Android app launching file shortcuts (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/7506ec92059eae9f630b111be350bb636fd702ce)
 - Updated: [NFC Magic Gen4 app #2238 (By nullableVoidPtr)](https://github.com/flipperdevices/flipperzero-firmware/pull/2238) [(Updates By xMasterX)](https://github.com/xMasterX/unleashed-extra-pack)
-- Updated UP Lock Menu to have settings options that toggle & Loader changes to support external main apps (Modified By RogueMaster) (By Willy-JL)
-- Removed CFW from Settings menu and added it to Main Menu
+- Updated: [Lock Menu has toggle settings & Loader changes to support external main apps (Modified By RogueMaster) (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ddbb4a90797e8fcd5f61acd779b3629f308b1ea9)
+- [Removed CFW from Settings menu and added it to Main Menu](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ddbb4a90797e8fcd5f61acd779b3629f308b1ea9)
 
 <a name="release">
 

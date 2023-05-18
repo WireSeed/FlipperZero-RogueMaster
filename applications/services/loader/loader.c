@@ -61,12 +61,6 @@ void loader_show_menu(Loader* loader) {
     furi_message_queue_put(loader->queue, &message, FuriWaitForever);
 }
 
-void loader_show_settings(Loader* loader) {
-    LoaderMessage message;
-    message.type = LoaderMessageTypeShowSettings;
-    furi_message_queue_put(loader->queue, &message, FuriWaitForever);
-}
-
 FuriPubSub* loader_get_pubsub(Loader* loader) {
     furi_assert(loader);
     // it's safe to return pubsub without locking
@@ -363,9 +357,6 @@ int32_t loader_srv(void* p) {
                 break;
             case LoaderMessageTypeShowMenu:
                 loader_do_menu_show(loader, false);
-                break;
-            case LoaderMessageTypeShowSettings:
-                loader_do_menu_show(loader, true);
                 break;
             case LoaderMessageTypeMenuClosed:
                 loader_do_menu_closed(loader);

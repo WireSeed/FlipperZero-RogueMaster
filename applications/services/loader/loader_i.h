@@ -28,7 +28,6 @@ typedef enum {
     LoaderMessageTypeLock,
     LoaderMessageTypeUnlock,
     LoaderMessageTypeIsLocked,
-    LoaderMessageTypeShowSettings,
 } LoaderMessageType;
 
 typedef struct {

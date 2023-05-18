@@ -54,26 +54,12 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
     Desktop* desktop = (Desktop*)context;
     bool consumed = false;
 
-    if(event.type == SceneManagerEventTypeTick) {
-        bool check_pin_changed =
-            scene_manager_get_scene_state(desktop->scene_manager, DesktopSceneLockMenu);
-        if(check_pin_changed) {
-            DESKTOP_SETTINGS_LOAD(&desktop->settings);
-            if(desktop->settings.pin_code.length > 0) {
-                scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 0);
-            }
-        }
-    } else if(event.type == SceneManagerEventTypeCustom) {
+    if(event.type == SceneManagerEventTypeCustom) {
         switch(event.event) {
         case DesktopLockMenuEventExit:
+            desktop_scene_lock_menu_save_settings(desktop);
             scene_manager_search_and_switch_to_previous_scene(
                 desktop->scene_manager, DesktopSceneMain);
-            break;
-        case DesktopLockMenuEventSettings:
-            desktop_scene_lock_menu_save_settings(desktop);
-            loader_show_settings(furi_record_open(RECORD_LOADER));
-            furi_record_close(RECORD_LOADER);
-            consumed = true;
             break;
         case DesktopLockMenuEventLock:
             desktop_scene_lock_menu_save_settings(desktop);
@@ -125,7 +111,6 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
     }
     return consumed;
 }
-
 
 void desktop_scene_lock_menu_on_exit(void* context) {
     UNUSED(context);

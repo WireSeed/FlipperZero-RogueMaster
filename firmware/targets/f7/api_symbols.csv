@@ -1954,7 +1954,6 @@ Function,+,loader_get_pubsub,FuriPubSub*,Loader*
 Function,+,loader_is_locked,_Bool,Loader*
 Function,+,loader_lock,_Bool,Loader*
 Function,+,loader_show_menu,void,Loader*
-Function,-,loader_show_settings,void,Loader*
 Function,+,loader_start,LoaderStatus,"Loader*, const char*, const char*"
 Function,+,loader_unlock,void,Loader*
 Function,+,loading_alloc,Loading*,

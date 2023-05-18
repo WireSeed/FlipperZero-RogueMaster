@@ -49,9 +49,6 @@ bool loader_is_locked(Loader* instance);
 /** Show primary loader */
 void loader_show_menu(Loader* instance);
 
-/** Show settings menu */
-void loader_show_settings(Loader* loader);
-
 /** Show primary loader */
 FuriPubSub* loader_get_pubsub(Loader* instance);
 

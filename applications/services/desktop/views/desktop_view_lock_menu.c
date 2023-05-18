@@ -34,8 +34,6 @@ typedef enum {
     DesktopLockMenuIndexDummy,
     DesktopLockMenuIndexBrightness,
     DesktopLockMenuIndexVolume,
-    // DesktopLockMenuIndexSettings,
-    // DesktopLockMenuIndexCfw,
 
     DesktopLockMenuIndexTotalCount
 } DesktopLockMenuIndex;
@@ -301,9 +299,6 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
                     furi_hal_rtc_set_flag(FuriHalRtcFlagHandOrient);
                 }
                 break;
-            // case DesktopLockMenuIndexSettings:
-                // desktop_event = DesktopLockMenuEventSettings;
-                // break;
             case DesktopLockMenuIndexStealth:
                 desktop_event = stealth_mode ? DesktopLockMenuEventStealthModeOff :
                                                DesktopLockMenuEventStealthModeOn;
@@ -326,9 +321,6 @@ bool desktop_lock_menu_input_callback(InputEvent* event, void* context) {
                 }
                 lock_menu->save_bt = true;
                 break;
-            // case DesktopLockMenuIndexCfw:
-                // desktop_event = DesktopLockMenuEventCfw;
-                // break;
             case DesktopLockMenuIndexVolume:
                 desktop_event = stealth_mode ? DesktopLockMenuEventStealthModeOff :
                                                DesktopLockMenuEventStealthModeOn;
