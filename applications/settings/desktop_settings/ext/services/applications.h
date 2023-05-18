@@ -29,7 +29,7 @@ const FlipperApplication FLIPPER_APPS2[] = {
     },
 
     {
-        .name = "Apps",
+        .name = "Applications",
     },
 
     {

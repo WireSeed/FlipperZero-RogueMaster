@@ -7,7 +7,7 @@
 #include "archive/scenes/archive_scene.h"
 
 #define TAG "ArchiveSceneBrowser"
-#define FAP_LOADER_APP_NAME "Apps"
+#define FAP_LOADER_APP_NAME "Applications"
 
 #define SCENE_STATE_DEFAULT (0)
 #define SCENE_STATE_NEED_REFRESH (1)
@@ -61,7 +61,7 @@ static void archive_run_in_app(ArchiveBrowserView* browser, ArchiveFile_t* selec
         }
     } else {
         if(strcmp(flipper_app_name[selected->type], "iButton") == 0) {
-            char* tmpType = "/ext/apps/Main/ibutton.fap¯";
+            char* tmpType = "/ext/apps/Main/iButton.fap¯";
             char* result =
                 malloc(strlen(tmpType) + strlen(furi_string_get_cstr(selected->path)) + 1);
 

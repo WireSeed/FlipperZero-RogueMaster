@@ -53,6 +53,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [NFC Magic Gen4 app #2238 (By nullableVoidPtr)](https://github.com/flipperdevices/flipperzero-firmware/pull/2238) [(Updates By xMasterX)](https://github.com/xMasterX/unleashed-extra-pack)
 - Updated: [Lock Menu has toggle settings & Loader changes to support external main apps (Modified By RogueMaster) (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ddbb4a90797e8fcd5f61acd779b3629f308b1ea9)
 - [Removed CFW from Settings menu and added it to Main Menu](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/ddbb4a90797e8fcd5f61acd779b3629f308b1ea9)
+- [More Android Shortcut Fixes with naming for iButton and Applications (By RogueMaster)]
 
 <a name="release">
 

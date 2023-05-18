@@ -13,7 +13,7 @@ App(
         "infrared",
         "IR_Remote",
         "GPIO",
-        "ibutton",
+        "iButton",
         "bad_usb",
         "u2f",
         "CFW",
