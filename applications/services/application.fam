@@ -12,6 +12,6 @@ App(
 		"ibuttonsrv",
 		# "infraredsrv",
 		"lfrfidsrv",
-        "namechangersrv",
+        "namechanger_srv",
     ],
 )
