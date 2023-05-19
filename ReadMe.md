@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7.tgz&channel=RM0516-2353-0.83.1-2efffd7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7-NoAnim.tgz&channel=RM0516-2353-0.83.1-2efffd7-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480.tgz&channel=RM0518-2052-0.83.2-8197480&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480-NoAnim.tgz&channel=RM0518-2052-0.83.2-8197480-NoAnim&version=0.83.1)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -407,4 +407,4 @@ $ ./fbt dolphin_ext
 - [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
 - Have a new app? Submit GitHub link to me on Discord for a special reward (if I add it to RM Firmware).
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7.tgz&channel=RM0516-2353-0.83.1-2efffd7&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0516-2353-0.83.1-2efffd7-NoAnim.tgz&channel=RM0516-2353-0.83.1-2efffd7-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480.tgz&channel=RM0518-2052-0.83.2-8197480&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480-NoAnim.tgz&channel=RM0518-2052-0.83.2-8197480-NoAnim&version=0.83.1)
