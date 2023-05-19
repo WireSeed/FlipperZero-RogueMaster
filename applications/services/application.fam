@@ -9,9 +9,9 @@ App(
         "desktop",
         "loader",
         "power",
-		"ibuttonsrv",
-		# "infraredsrv",
-		"lfrfidsrv",
+        "ibuttonsrv",
+        # "infraredsrv",
+        "lfrfidsrv",
         "namechanger_srv",
     ],
 )

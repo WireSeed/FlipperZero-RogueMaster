@@ -1,6 +1,6 @@
 App(
-    appid="Subghz_Remote_Remix",
-    name="Sub-GHz Remote Remix",
+    appid="Subghz_Remote_Refactored",
+    name="Sub-GHz Remote Refactored",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="subghz_remote_app",
     # cdefines=[
@@ -17,5 +17,5 @@ App(
     fap_libs=["assets"],
     fap_icon="subghz_remote_10px.png",
     fap_category="Sub-GHz",
-    # link="/ext/apps/Sub-GHz/Subghz_Remote_Remix.fap",
+    # link="/ext/apps/Sub-GHz/Subghz_Remote_Refactored.fap",
 )

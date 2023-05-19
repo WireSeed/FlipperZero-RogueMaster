@@ -35,6 +35,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-18 20:45 EST`
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - Updated: [Dab Timer (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer) Clock Faces Inverted
+- UL: [Name Changer Service Improvements / ReWritten To Cover Needed Bluetooth Name Changes (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/a7ee5fea93ad424c159b9a9a242a13d6b79f5c8f)
+- UL:[Move dangerous_settings check #475 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/475)
+- UL: Added:[Sub-GHz Remote Refactored #477 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
 
 <a name="release">
 
