@@ -80,7 +80,6 @@ typedef struct {
     uint8_t rolling_counter_mult;
     bool ext_module_power_disabled : 1;
     bool timestamp_file_names : 1;
-    bool dangerous_frequency_i : 1;
 } FuriHalSubGhz;
 
 extern volatile FuriHalSubGhz furi_hal_subghz;

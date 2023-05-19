@@ -1,3 +1,3 @@
 #pragma once
 
-void furi_hal_subghz_set_dangerous_frequency(bool state_i);
+void furi_hal_subghz_set_extend_settings(bool extend, bool bypass);

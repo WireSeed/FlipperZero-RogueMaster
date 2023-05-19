@@ -73,7 +73,7 @@ static bool namechanger_init() {
 
 int32_t namechanger_on_system_start(void* p) {
     UNUSED(p);
-    if(furi_hal_rtc_get_boot_mode() != FuriHalRtcBootModeNormal) {
+    if(!furi_hal_is_normal_boot()) {
         return 0;
     }
 
