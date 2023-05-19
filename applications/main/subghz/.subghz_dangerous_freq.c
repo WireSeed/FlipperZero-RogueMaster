@@ -19,7 +19,8 @@ void subghz_dangerous_freq() {
             fff_data_file, "ignore_default_tx_region", &is_bypassed_i, 1);
     }
 
-    furi_hal_subghz_set_extend_settings(is_extended_i, is_bypassed_i);
+    // Not set up to store and use a variable on tests yet (function below re-sets the settings on the file that it just read)
+    // furi_hal_subghz_set_extend_settings(is_extended_i, is_bypassed_i);
 
     flipper_format_free(fff_data_file);
     furi_record_close(RECORD_STORAGE);

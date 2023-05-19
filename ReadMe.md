@@ -31,14 +31,14 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0518-2055-0.83.2-c393c4b](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-18 18:30 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-18 20:45 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-19 04:15 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-19 04:15 EST`
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - Updated: [Dab Timer (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer) Clock Faces Inverted
 - UL: [Name Changer Service Improvements / ReWritten To Cover Needed Bluetooth Name Changes (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/a7ee5fea93ad424c159b9a9a242a13d6b79f5c8f)
 - UL:[Move dangerous_settings check #475 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/475)
 - UL: Added:[Sub-GHz Remote Refactored #477 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
-- [subghz_dangerous_freq service on start stopped due to boot freeze (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/815db042243fb18e778c2b02fbde7e2bfc7c88ae#diff-8336a68a9721283a389662cebedac2fbc8ae520904c5a5cbf297cbddc5be393c)
+- [subghz_dangerous_freq service not needed due to other settings (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/815db042243fb18e778c2b02fbde7e2bfc7c88ae#diff-8336a68a9721283a389662cebedac2fbc8ae520904c5a5cbf297cbddc5be393c)
 
 <a name="release">
 
