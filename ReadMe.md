@@ -4,7 +4,7 @@
 &nbsp;<a href='https://shop.rogue-master.net/' target='_blank'><img src='https://rogue-master.net/img/Merch.png' alt='RM Merch'' title='RM Merch'></a>
 &nbsp;<a href='https://github.com/RogueMaster/awesome-flipperzero-withModules' target='_blank'><img src='https://rogue-master.net/img/Resources.png' alt='More Research / Assets' title='More Research / Assets'></a></h1>
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480.tgz&channel=RM0518-2052-0.83.2-8197480&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480-NoAnim.tgz&channel=RM0518-2052-0.83.2-8197480-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480.tgz&channel=RM0518-2052-0.83.2-8197480&version=0.83.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480-NoAnim.tgz&channel=RM0518-2052-0.83.2-8197480-NoAnim&version=0.83.2)
 
 ## Thank you so much to our RM Pro/SUPER Patreon supporters! Because of people like you, we are able to offer the best and most up-to-date Flipper Zero Firmware!
 
@@ -29,7 +29,7 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0518-1830-0.83.2-aef6509](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0518-2055-0.83.2-c393c4b](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
 - Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-18 18:30 EST`
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-18 20:45 EST`
@@ -407,4 +407,4 @@ $ ./fbt dolphin_ext
 - [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate)
 - Have a new app? Submit GitHub link to me on Discord for a special reward (if I add it to RM Firmware).
 
-# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480.tgz&channel=RM0518-2052-0.83.2-8197480&version=0.83.1) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480-NoAnim.tgz&channel=RM0518-2052-0.83.2-8197480-NoAnim&version=0.83.1)
+# Install GitHub Version With [WEB INSTALLER](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480.tgz&channel=RM0518-2052-0.83.2-8197480&version=0.83.2) OR  [WITHOUT ANIMATIONS](https://lab.flipper.net/?url=https%3A%2F%2Frogue-master.net%2F%3Ffile%3DRM0518-2052-0.83.2-8197480-NoAnim.tgz&channel=RM0518-2052-0.83.2-8197480-NoAnim&version=0.83.2)
