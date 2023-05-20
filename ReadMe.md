@@ -40,6 +40,11 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Added:[Sub-GHz Remote Refactored #477 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
 - [subghz_dangerous_freq service not needed due to other settings (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/815db042243fb18e778c2b02fbde7e2bfc7c88ae#diff-8336a68a9721283a389662cebedac2fbc8ae520904c5a5cbf297cbddc5be393c)
 - Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch) Included Asset Changed
+- [Fixed Clock Order in Main Menu (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/61c4cd65dacfa0bd2813e501542beaec381aa4a4)
+- UL: Updated: [WiFi (Marauder) v0.3.5 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion)
+- UL: Updated:[Sub-GHz Remote Refactored #477 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
+- UL: [SubGHz App: alloc balance (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/commit/2bda0820bfb16c4397b4a7e99f0481ef30614936)
+- OFW PR: [USB HID report timeout #2682 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2682)
 
 <a name="release">
 

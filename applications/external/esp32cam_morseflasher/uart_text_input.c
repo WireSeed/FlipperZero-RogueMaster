@@ -1,10 +1,9 @@
-#include "wifi_marauder_text_input.h"
+#include "uart_text_input.h"
 #include <gui/elements.h>
-#include "ESP32_WiFi_Marauder_icons.h"
-#include "wifi_marauder_app_i.h"
+#include "MAYHEM_MorseFlash_icons.h"
 #include <furi.h>
 
-struct WIFI_TextInput {
+struct UART_TextInput {
     View* view;
     FuriTimer* timer;
 };
@@ -13,217 +12,151 @@ typedef struct {
     const char text;
     const uint8_t x;
     const uint8_t y;
-} WIFI_TextInputKey;
-
-typedef struct {
-    const WIFI_TextInputKey* rows[3];
-    const uint8_t keyboard_index;
-} Keyboard;
+} UART_TextInputKey;
 
 typedef struct {
     const char* header;
     char* text_buffer;
     size_t text_buffer_size;
-    size_t minimum_length;
     bool clear_default_text;
 
-    bool cursor_select;
-    size_t cursor_pos;
-
-    WIFI_TextInputCallback callback;
+    UART_TextInputCallback callback;
     void* callback_context;
 
     uint8_t selected_row;
     uint8_t selected_column;
-    uint8_t selected_keyboard;
 
-    WIFI_TextInputValidatorCallback validator_callback;
+    UART_TextInputValidatorCallback validator_callback;
     void* validator_callback_context;
     FuriString* validator_text;
-    bool validator_message_visible;
-} WIFI_TextInputModel;
+    bool valadator_message_visible;
+} UART_TextInputModel;
 
 static const uint8_t keyboard_origin_x = 1;
 static const uint8_t keyboard_origin_y = 29;
-static const uint8_t keyboard_row_count = 3;
-static const uint8_t keyboard_count = 2;
+static const uint8_t keyboard_row_count = 4;
 
 #define ENTER_KEY '\r'
 #define BACKSPACE_KEY '\b'
-#define SWITCH_KEYBOARD_KEY 0xfe
 
-static const WIFI_TextInputKey keyboard_keys_row_1[] = {
-    {'q', 1, 8},
-    {'w', 10, 8},
-    {'e', 19, 8},
-    {'r', 28, 8},
-    {'t', 37, 8},
-    {'y', 46, 8},
-    {'u', 55, 8},
-    {'i', 64, 8},
-    {'o', 73, 8},
-    {'p', 82, 8},
-    {'0', 91, 8},
-    {'1', 100, 8},
-    {'2', 110, 8},
-    {'3', 120, 8},
+static const UART_TextInputKey keyboard_keys_row_1[] = {
+    {'{', 1, 0},
+    {'(', 9, 0},
+    {'[', 17, 0},
+    {'|', 25, 0},
+    {'@', 33, 0},
+    {'&', 41, 0},
+    {'#', 49, 0},
+    {';', 57, 0},
+    {'^', 65, 0},
+    {'*', 73, 0},
+    {'`', 81, 0},
+    {'"', 89, 0},
+    {'~', 97, 0},
+    {'\'', 105, 0},
+    {'.', 113, 0},
+    {'/', 120, 0},
 };
 
-static const WIFI_TextInputKey keyboard_keys_row_2[] = {
-    {'a', 1, 20},
-    {'s', 10, 20},
-    {'d', 19, 20},
-    {'f', 28, 20},
-    {'g', 37, 20},
-    {'h', 46, 20},
-    {'j', 55, 20},
-    {'k', 64, 20},
-    {'l', 73, 20},
-    {BACKSPACE_KEY, 82, 12},
-    {'4', 100, 20},
-    {'5', 110, 20},
-    {'6', 120, 20},
+static const UART_TextInputKey keyboard_keys_row_2[] = {
+    {'q', 1, 10},
+    {'w', 9, 10},
+    {'e', 17, 10},
+    {'r', 25, 10},
+    {'t', 33, 10},
+    {'y', 41, 10},
+    {'u', 49, 10},
+    {'i', 57, 10},
+    {'o', 65, 10},
+    {'p', 73, 10},
+    {'0', 81, 10},
+    {'1', 89, 10},
+    {'2', 97, 10},
+    {'3', 105, 10},
+    {'=', 113, 10},
+    {'-', 120, 10},
 };
 
-static const WIFI_TextInputKey keyboard_keys_row_3[] = {
-    {SWITCH_KEYBOARD_KEY, 1, 23},
-    {'z', 13, 32},
-    {'x', 21, 32},
-    {'c', 28, 32},
-    {'v', 36, 32},
-    {'b', 44, 32},
-    {'n', 52, 32},
-    {'m', 59, 32},
-    {'_', 67, 32},
-    {ENTER_KEY, 74, 23},
-    {'7', 100, 32},
-    {'8', 110, 32},
-    {'9', 120, 32},
+static const UART_TextInputKey keyboard_keys_row_3[] = {
+    {'a', 1, 21},
+    {'s', 9, 21},
+    {'d', 18, 21},
+    {'f', 25, 21},
+    {'g', 33, 21},
+    {'h', 41, 21},
+    {'j', 49, 21},
+    {'k', 57, 21},
+    {'l', 65, 21},
+    {BACKSPACE_KEY, 72, 13},
+    {'4', 89, 21},
+    {'5', 97, 21},
+    {'6', 105, 21},
+    {'$', 113, 21},
+    {'%', 120, 21},
+
 };
 
-static const WIFI_TextInputKey symbol_keyboard_keys_row_1[] = {
-    {'!', 2, 8},
-    {'@', 12, 8},
-    {'#', 22, 8},
-    {'$', 32, 8},
-    {'%', 42, 8},
-    {'^', 52, 8},
-    {'&', 62, 8},
-    {'(', 71, 8},
-    {')', 81, 8},
-    {'0', 91, 8},
-    {'1', 100, 8},
-    {'2', 110, 8},
-    {'3', 120, 8},
+static const UART_TextInputKey keyboard_keys_row_4[] = {
+    {'z', 1, 33},
+    {'x', 9, 33},
+    {'c', 18, 33},
+    {'v', 25, 33},
+    {'b', 33, 33},
+    {'n', 41, 33},
+    {'m', 49, 33},
+    {'_', 57, 33},
+    {ENTER_KEY, 64, 24},
+    {'7', 89, 33},
+    {'8', 97, 33},
+    {'9', 105, 33},
+    {'!', 113, 33},
+    {'+', 120, 33},
 };
 
-static const WIFI_TextInputKey symbol_keyboard_keys_row_2[] = {
-    {'~', 2, 20},
-    {'+', 12, 20},
-    {'-', 22, 20},
-    {'=', 32, 20},
-    {'[', 42, 20},
-    {']', 52, 20},
-    {'{', 62, 20},
-    {'}', 72, 20},
-    {BACKSPACE_KEY, 82, 12},
-    {'4', 100, 20},
-    {'5', 110, 20},
-    {'6', 120, 20},
-};
-
-static const WIFI_TextInputKey symbol_keyboard_keys_row_3[] = {
-    {SWITCH_KEYBOARD_KEY, 1, 23},
-    {'.', 15, 32},
-    {',', 29, 32},
-    {';', 41, 32},
-    {'`', 53, 32},
-    {'\'', 65, 32},
-    {ENTER_KEY, 74, 23},
-    {'7', 100, 32},
-    {'8', 110, 32},
-    {'9', 120, 32},
-};
-
-static const Keyboard keyboard = {
-    .rows =
-        {
-            keyboard_keys_row_1,
-            keyboard_keys_row_2,
-            keyboard_keys_row_3,
-        },
-    .keyboard_index = 0,
-};
-
-static const Keyboard symbol_keyboard = {
-    .rows =
-        {
-            symbol_keyboard_keys_row_1,
-            symbol_keyboard_keys_row_2,
-            symbol_keyboard_keys_row_3,
-        },
-    .keyboard_index = 1,
-};
-
-static const Keyboard* keyboards[] = {
-    &keyboard,
-    &symbol_keyboard,
-};
-
-static void switch_keyboard(WIFI_TextInputModel* model) {
-    model->selected_keyboard = (model->selected_keyboard + 1) % keyboard_count;
-}
-
-static uint8_t get_row_size(const Keyboard* keyboard, uint8_t row_index) {
+static uint8_t get_row_size(uint8_t row_index) {
     uint8_t row_size = 0;
-    if(keyboard == &symbol_keyboard) {
-        switch(row_index + 1) {
-        case 1:
-            row_size = COUNT_OF(symbol_keyboard_keys_row_1);
-            break;
-        case 2:
-            row_size = COUNT_OF(symbol_keyboard_keys_row_2);
-            break;
-        case 3:
-            row_size = COUNT_OF(symbol_keyboard_keys_row_3);
-            break;
-        default:
-            furi_crash(NULL);
-        }
-    } else {
-        switch(row_index + 1) {
-        case 1:
-            row_size = COUNT_OF(keyboard_keys_row_1);
-            break;
-        case 2:
-            row_size = COUNT_OF(keyboard_keys_row_2);
-            break;
-        case 3:
-            row_size = COUNT_OF(keyboard_keys_row_3);
-            break;
-        default:
-            furi_crash(NULL);
-        }
+
+    switch(row_index + 1) {
+    case 1:
+        row_size = sizeof(keyboard_keys_row_1) / sizeof(UART_TextInputKey);
+        break;
+    case 2:
+        row_size = sizeof(keyboard_keys_row_2) / sizeof(UART_TextInputKey);
+        break;
+    case 3:
+        row_size = sizeof(keyboard_keys_row_3) / sizeof(UART_TextInputKey);
+        break;
+    case 4:
+        row_size = sizeof(keyboard_keys_row_4) / sizeof(UART_TextInputKey);
+        break;
     }
 
     return row_size;
 }
 
-static const WIFI_TextInputKey* get_row(const Keyboard* keyboard, uint8_t row_index) {
-    const WIFI_TextInputKey* row = NULL;
-    if(row_index < 3) {
-        row = keyboard->rows[row_index];
-    } else {
-        furi_crash(NULL);
+static const UART_TextInputKey* get_row(uint8_t row_index) {
+    const UART_TextInputKey* row = NULL;
+
+    switch(row_index + 1) {
+    case 1:
+        row = keyboard_keys_row_1;
+        break;
+    case 2:
+        row = keyboard_keys_row_2;
+        break;
+    case 3:
+        row = keyboard_keys_row_3;
+        break;
+    case 4:
+        row = keyboard_keys_row_4;
+        break;
     }
 
     return row;
 }
 
-static char get_selected_char(WIFI_TextInputModel* model) {
-    return get_row(
-               keyboards[model->selected_keyboard], model->selected_row)[model->selected_column]
-        .text;
+static char get_selected_char(UART_TextInputModel* model) {
+    return get_row(model->selected_row)[model->selected_column].text;
 }
 
 static bool char_is_lowercase(char letter) {
@@ -231,106 +164,123 @@ static bool char_is_lowercase(char letter) {
 }
 
 static char char_to_uppercase(const char letter) {
-    if(letter == '_') {
+    switch(letter) {
+    case '_':
         return 0x20;
-    } else if(char_is_lowercase(letter)) {
+        break;
+    case '(':
+        return 0x29;
+        break;
+    case '{':
+        return 0x7d;
+        break;
+    case '[':
+        return 0x5d;
+        break;
+    case '/':
+        return 0x5c;
+        break;
+    case ';':
+        return 0x3a;
+        break;
+    case '.':
+        return 0x2c;
+        break;
+    case '!':
+        return 0x3f;
+        break;
+    case '<':
+        return 0x3e;
+        break;
+    }
+    if(isalpha(letter)) {
         return (letter - 0x20);
     } else {
         return letter;
     }
 }
 
-static void wifi_text_input_backspace_cb(WIFI_TextInputModel* model) {
-    if(model->clear_default_text) {
-        model->text_buffer[0] = 0;
-        model->cursor_pos = 0;
-    } else if(model->cursor_pos > 0) {
-        char* move = model->text_buffer + model->cursor_pos;
-        memmove(move - 1, move, strlen(move) + 1);
-        model->cursor_pos--;
+static void uart_text_input_backspace_cb(UART_TextInputModel* model) {
+    uint8_t text_length = model->clear_default_text ? 1 : strlen(model->text_buffer);
+    if(text_length > 0) {
+        model->text_buffer[text_length - 1] = 0;
     }
 }
 
-static void wifi_text_input_view_draw_callback(Canvas* canvas, void* _model) {
-    WIFI_TextInputModel* model = _model;
+static void uart_text_input_view_draw_callback(Canvas* canvas, void* _model) {
+    UART_TextInputModel* model = _model;
     uint8_t text_length = model->text_buffer ? strlen(model->text_buffer) : 0;
     uint8_t needed_string_width = canvas_width(canvas) - 8;
     uint8_t start_pos = 4;
 
-    model->cursor_pos = model->cursor_pos > text_length ? text_length : model->cursor_pos;
-    size_t cursor_pos = model->cursor_pos;
+    const char* text = model->text_buffer;
 
     canvas_clear(canvas);
     canvas_set_color(canvas, ColorBlack);
 
-    canvas_draw_str(canvas, 2, 8, model->header);
-    elements_slightly_rounded_frame(canvas, 1, 12, 126, 15);
+    canvas_draw_str(canvas, 2, 7, model->header);
+    elements_slightly_rounded_frame(canvas, 1, 8, 126, 12);
 
-    char buf[model->text_buffer_size + 1];
-    if(model->text_buffer) {
-        strlcpy(buf, model->text_buffer, sizeof(buf));
+    if(canvas_string_width(canvas, text) > needed_string_width) {
+        canvas_draw_str(canvas, start_pos, 17, "...");
+        start_pos += 6;
+        needed_string_width -= 8;
     }
-    char* str = buf;
+
+    while(text != 0 && canvas_string_width(canvas, text) > needed_string_width) {
+        text++;
+    }
 
     if(model->clear_default_text) {
         elements_slightly_rounded_box(
-            canvas, start_pos - 1, 14, canvas_string_width(canvas, str) + 2, 10);
+            canvas, start_pos - 1, 14, canvas_string_width(canvas, text) + 2, 10);
         canvas_set_color(canvas, ColorWhite);
     } else {
-        char* move = str + cursor_pos;
-        memmove(move + 1, move, strlen(move) + 1);
-        str[cursor_pos] = '|';
+        canvas_draw_str(canvas, start_pos + canvas_string_width(canvas, text) + 1, 18, "|");
+        canvas_draw_str(canvas, start_pos + canvas_string_width(canvas, text) + 2, 18, "|");
     }
-
-    if(cursor_pos > 0 && canvas_string_width(canvas, str) > needed_string_width) {
-        canvas_draw_str(canvas, start_pos, 22, "...");
-        start_pos += 6;
-        needed_string_width -= 8;
-        for(uint32_t off = 0;
-            strlen(str) && canvas_string_width(canvas, str) > needed_string_width &&
-            off < cursor_pos;
-            off++) {
-            str++;
-        }
-    }
-
-    if(canvas_string_width(canvas, str) > needed_string_width) {
-        needed_string_width -= 4;
-        size_t len = strlen(str);
-        while(len && canvas_string_width(canvas, str) > needed_string_width) {
-            str[len--] = '\0';
-        }
-        strcat(str, "...");
-    }
-
-    canvas_draw_str(canvas, start_pos, 22, str);
+    canvas_draw_str(canvas, start_pos, 17, text);
 
     canvas_set_font(canvas, FontKeyboard);
 
-    for(uint8_t row = 0; row < keyboard_row_count; row++) {
-        const uint8_t column_count = get_row_size(keyboards[model->selected_keyboard], row);
-        const WIFI_TextInputKey* keys = get_row(keyboards[model->selected_keyboard], row);
+    for(uint8_t row = 0; row <= keyboard_row_count; row++) {
+        const uint8_t column_count = get_row_size(row);
+        const UART_TextInputKey* keys = get_row(row);
 
         for(size_t column = 0; column < column_count; column++) {
-            bool selected = !model->cursor_select && model->selected_row == row &&
-                            model->selected_column == column;
-            const Icon* icon = NULL;
             if(keys[column].text == ENTER_KEY) {
-                icon = selected ? &I_KeySaveSelected_24x11 : &I_KeySave_24x11;
-            } else if(keys[column].text == SWITCH_KEYBOARD_KEY) {
-                icon = selected ? &I_KeyKeyboardSelected_10x11 : &I_KeyKeyboard_10x11;
+                canvas_set_color(canvas, ColorBlack);
+                if(model->selected_row == row && model->selected_column == column) {
+                    canvas_draw_icon(
+                        canvas,
+                        keyboard_origin_x + keys[column].x,
+                        keyboard_origin_y + keys[column].y,
+                        &I_KeySaveSelected_24x11);
+                } else {
+                    canvas_draw_icon(
+                        canvas,
+                        keyboard_origin_x + keys[column].x,
+                        keyboard_origin_y + keys[column].y,
+                        &I_KeySave_24x11);
+                }
             } else if(keys[column].text == BACKSPACE_KEY) {
-                icon = selected ? &I_KeyBackspaceSelected_16x9 : &I_KeyBackspace_16x9;
-            }
-            canvas_set_color(canvas, ColorBlack);
-            if(icon != NULL) {
-                canvas_draw_icon(
-                    canvas,
-                    keyboard_origin_x + keys[column].x,
-                    keyboard_origin_y + keys[column].y,
-                    icon);
+                canvas_set_color(canvas, ColorBlack);
+                if(model->selected_row == row && model->selected_column == column) {
+                    canvas_draw_icon(
+                        canvas,
+                        keyboard_origin_x + keys[column].x,
+                        keyboard_origin_y + keys[column].y,
+                        &I_KeyBackspaceSelected_16x9);
+                } else {
+                    canvas_draw_icon(
+                        canvas,
+                        keyboard_origin_x + keys[column].x,
+                        keyboard_origin_y + keys[column].y,
+                        &I_KeyBackspace_16x9);
+                }
             } else {
-                if(selected) {
+                if(model->selected_row == row && model->selected_column == column) {
+                    canvas_set_color(canvas, ColorBlack);
                     canvas_draw_box(
                         canvas,
                         keyboard_origin_x + keys[column].x - 1,
@@ -338,14 +288,18 @@ static void wifi_text_input_view_draw_callback(Canvas* canvas, void* _model) {
                         7,
                         10);
                     canvas_set_color(canvas, ColorWhite);
+                } else {
+                    canvas_set_color(canvas, ColorBlack);
                 }
 
-                if(model->clear_default_text || text_length == 0) {
+                if(model->clear_default_text ||
+                   (text_length == 0 && char_is_lowercase(keys[column].text))) {
                     canvas_draw_glyph(
                         canvas,
                         keyboard_origin_x + keys[column].x,
                         keyboard_origin_y + keys[column].y,
-                        char_to_uppercase(keys[column].text));
+                        //char_to_uppercase(keys[column].text));
+                        keys[column].text);
                 } else {
                     canvas_draw_glyph(
                         canvas,
@@ -356,7 +310,7 @@ static void wifi_text_input_view_draw_callback(Canvas* canvas, void* _model) {
             }
         }
     }
-    if(model->validator_message_visible) {
+    if(model->valadator_message_visible) {
         canvas_set_font(canvas, FontSecondary);
         canvas_set_color(canvas, ColorWhite);
         canvas_draw_box(canvas, 8, 10, 110, 48);
@@ -370,157 +324,114 @@ static void wifi_text_input_view_draw_callback(Canvas* canvas, void* _model) {
 }
 
 static void
-    wifi_text_input_handle_up(WIFI_TextInput* wifi_text_input, WIFI_TextInputModel* model) {
-    UNUSED(wifi_text_input);
+    uart_text_input_handle_up(UART_TextInput* uart_text_input, UART_TextInputModel* model) {
+    UNUSED(uart_text_input);
     if(model->selected_row > 0) {
         model->selected_row--;
-        if(model->selected_row == 0 &&
-           model->selected_column >
-               get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 6) {
+        if(model->selected_column > get_row_size(model->selected_row) - 6) {
             model->selected_column = model->selected_column + 1;
         }
-        if(model->selected_row == 1 &&
-           model->selected_keyboard == symbol_keyboard.keyboard_index) {
-            if(model->selected_column > 5)
-                model->selected_column += 2;
-            else if(model->selected_column > 1)
-                model->selected_column += 1;
-        }
-    } else {
-        model->cursor_select = true;
-        model->clear_default_text = false;
     }
 }
 
 static void
-    wifi_text_input_handle_down(WIFI_TextInput* wifi_text_input, WIFI_TextInputModel* model) {
-    UNUSED(wifi_text_input);
-    if(model->cursor_select) {
-        model->cursor_select = false;
-    } else if(model->selected_row < keyboard_row_count - 1) {
+    uart_text_input_handle_down(UART_TextInput* uart_text_input, UART_TextInputModel* model) {
+    UNUSED(uart_text_input);
+    if(model->selected_row < keyboard_row_count - 1) {
         model->selected_row++;
-        if(model->selected_row == 1 &&
-           model->selected_column >
-               get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 4) {
+        if(model->selected_column > get_row_size(model->selected_row) - 4) {
             model->selected_column = model->selected_column - 1;
         }
-        if(model->selected_row == 2 &&
-           model->selected_keyboard == symbol_keyboard.keyboard_index) {
-            if(model->selected_column > 7)
-                model->selected_column -= 2;
-            else if(model->selected_column > 1)
-                model->selected_column -= 1;
-        }
     }
 }
 
 static void
-    wifi_text_input_handle_left(WIFI_TextInput* wifi_text_input, WIFI_TextInputModel* model) {
-    UNUSED(wifi_text_input);
-    if(model->cursor_select) {
-        if(model->cursor_pos > 0) {
-            model->cursor_pos = CLAMP(model->cursor_pos - 1, strlen(model->text_buffer), 0u);
-        }
-    } else if(model->selected_column > 0) {
+    uart_text_input_handle_left(UART_TextInput* uart_text_input, UART_TextInputModel* model) {
+    UNUSED(uart_text_input);
+    if(model->selected_column > 0) {
         model->selected_column--;
     } else {
-        model->selected_column =
-            get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 1;
+        model->selected_column = get_row_size(model->selected_row) - 1;
     }
 }
 
 static void
-    wifi_text_input_handle_right(WIFI_TextInput* wifi_text_input, WIFI_TextInputModel* model) {
-    UNUSED(wifi_text_input);
-    if(model->cursor_select) {
-        model->cursor_pos = CLAMP(model->cursor_pos + 1, strlen(model->text_buffer), 0u);
-    } else if(
-        model->selected_column <
-        get_row_size(keyboards[model->selected_keyboard], model->selected_row) - 1) {
+    uart_text_input_handle_right(UART_TextInput* uart_text_input, UART_TextInputModel* model) {
+    UNUSED(uart_text_input);
+    if(model->selected_column < get_row_size(model->selected_row) - 1) {
         model->selected_column++;
     } else {
         model->selected_column = 0;
     }
 }
 
-static void wifi_text_input_handle_ok(
-    WIFI_TextInput* wifi_text_input,
-    WIFI_TextInputModel* model,
-    InputType type) {
-    if(model->cursor_select) return;
-    bool shift = type == InputTypeLong;
-    bool repeat = type == InputTypeRepeat;
+static void uart_text_input_handle_ok(
+    UART_TextInput* uart_text_input,
+    UART_TextInputModel* model,
+    bool shift) {
     char selected = get_selected_char(model);
-    size_t text_length = strlen(model->text_buffer);
+    uint8_t text_length = strlen(model->text_buffer);
+
+    if(shift) {
+        selected = char_to_uppercase(selected);
+    }
 
     if(selected == ENTER_KEY) {
         if(model->validator_callback &&
            (!model->validator_callback(
                model->text_buffer, model->validator_text, model->validator_callback_context))) {
-            model->validator_message_visible = true;
-            furi_timer_start(wifi_text_input->timer, furi_kernel_get_tick_frequency() * 4);
-        } else if(model->callback != 0 && text_length >= model->minimum_length) {
+            model->valadator_message_visible = true;
+            furi_timer_start(uart_text_input->timer, furi_kernel_get_tick_frequency() * 4);
+        } else if(model->callback != 0 && text_length > 0) {
             model->callback(model->callback_context);
         }
-    } else if(selected == SWITCH_KEYBOARD_KEY) {
-        switch_keyboard(model);
+    } else if(selected == BACKSPACE_KEY) {
+        uart_text_input_backspace_cb(model);
     } else {
-        if(selected == BACKSPACE_KEY) {
-            wifi_text_input_backspace_cb(model);
-        } else if(!repeat) {
-            if(model->clear_default_text) {
-                text_length = 0;
-            }
-            if(text_length < (model->text_buffer_size - 1)) {
-                if(shift != (text_length == 0)) {
-                    selected = char_to_uppercase(selected);
-                }
-                if(model->clear_default_text) {
-                    model->text_buffer[0] = selected;
-                    model->text_buffer[1] = '\0';
-                    model->cursor_pos = 1;
-                } else {
-                    char* move = model->text_buffer + model->cursor_pos;
-                    memmove(move + 1, move, strlen(move) + 1);
-                    model->text_buffer[model->cursor_pos] = selected;
-                    model->cursor_pos++;
-                }
-            }
+        if(model->clear_default_text) {
+            text_length = 0;
         }
-        model->clear_default_text = false;
+        if(text_length < (model->text_buffer_size - 1)) {
+            if(text_length == 0 && char_is_lowercase(selected)) {
+                //selected = char_to_uppercase(selected);
+            }
+            model->text_buffer[text_length] = selected;
+            model->text_buffer[text_length + 1] = 0;
+        }
     }
+    model->clear_default_text = false;
 }
 
-static bool wifi_text_input_view_input_callback(InputEvent* event, void* context) {
-    WIFI_TextInput* wifi_text_input = context;
-    furi_assert(wifi_text_input);
+static bool uart_text_input_view_input_callback(InputEvent* event, void* context) {
+    UART_TextInput* uart_text_input = context;
+    furi_assert(uart_text_input);
 
     bool consumed = false;
 
     // Acquire model
-    WIFI_TextInputModel* model = view_get_model(wifi_text_input->view);
+    UART_TextInputModel* model = view_get_model(uart_text_input->view);
 
     if((!(event->type == InputTypePress) && !(event->type == InputTypeRelease)) &&
-       model->validator_message_visible) {
-        model->validator_message_visible = false;
+       model->valadator_message_visible) {
+        model->valadator_message_visible = false;
         consumed = true;
     } else if(event->type == InputTypeShort) {
         consumed = true;
         switch(event->key) {
         case InputKeyUp:
-            wifi_text_input_handle_up(wifi_text_input, model);
+            uart_text_input_handle_up(uart_text_input, model);
             break;
         case InputKeyDown:
-            wifi_text_input_handle_down(wifi_text_input, model);
+            uart_text_input_handle_down(uart_text_input, model);
             break;
         case InputKeyLeft:
-            wifi_text_input_handle_left(wifi_text_input, model);
+            uart_text_input_handle_left(uart_text_input, model);
             break;
         case InputKeyRight:
-            wifi_text_input_handle_right(wifi_text_input, model);
+            uart_text_input_handle_right(uart_text_input, model);
             break;
         case InputKeyOk:
-            wifi_text_input_handle_ok(wifi_text_input, model, event->type);
+            uart_text_input_handle_ok(uart_text_input, model, false);
             break;
         default:
             consumed = false;
@@ -530,22 +441,22 @@ static bool wifi_text_input_view_input_callback(InputEvent* event, void* context
         consumed = true;
         switch(event->key) {
         case InputKeyUp:
-            wifi_text_input_handle_up(wifi_text_input, model);
+            uart_text_input_handle_up(uart_text_input, model);
             break;
         case InputKeyDown:
-            wifi_text_input_handle_down(wifi_text_input, model);
+            uart_text_input_handle_down(uart_text_input, model);
             break;
         case InputKeyLeft:
-            wifi_text_input_handle_left(wifi_text_input, model);
+            uart_text_input_handle_left(uart_text_input, model);
             break;
         case InputKeyRight:
-            wifi_text_input_handle_right(wifi_text_input, model);
+            uart_text_input_handle_right(uart_text_input, model);
             break;
         case InputKeyOk:
-            wifi_text_input_handle_ok(wifi_text_input, model, event->type);
+            uart_text_input_handle_ok(uart_text_input, model, true);
             break;
         case InputKeyBack:
-            wifi_text_input_backspace_cb(model);
+            uart_text_input_backspace_cb(model);
             break;
         default:
             consumed = false;
@@ -555,22 +466,19 @@ static bool wifi_text_input_view_input_callback(InputEvent* event, void* context
         consumed = true;
         switch(event->key) {
         case InputKeyUp:
-            wifi_text_input_handle_up(wifi_text_input, model);
+            uart_text_input_handle_up(uart_text_input, model);
             break;
         case InputKeyDown:
-            wifi_text_input_handle_down(wifi_text_input, model);
+            uart_text_input_handle_down(uart_text_input, model);
             break;
         case InputKeyLeft:
-            wifi_text_input_handle_left(wifi_text_input, model);
+            uart_text_input_handle_left(uart_text_input, model);
             break;
         case InputKeyRight:
-            wifi_text_input_handle_right(wifi_text_input, model);
-            break;
-        case InputKeyOk:
-            wifi_text_input_handle_ok(wifi_text_input, model, event->type);
+            uart_text_input_handle_right(uart_text_input, model);
             break;
         case InputKeyBack:
-            wifi_text_input_backspace_cb(model);
+            uart_text_input_backspace_cb(model);
             break;
         default:
             consumed = false;
@@ -579,81 +487,73 @@ static bool wifi_text_input_view_input_callback(InputEvent* event, void* context
     }
 
     // Commit model
-    view_commit_model(wifi_text_input->view, consumed);
+    view_commit_model(uart_text_input->view, consumed);
 
     return consumed;
 }
 
-void wifi_text_input_timer_callback(void* context) {
+void uart_text_input_timer_callback(void* context) {
     furi_assert(context);
-    WIFI_TextInput* wifi_text_input = context;
+    UART_TextInput* uart_text_input = context;
 
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
-        { model->validator_message_visible = false; },
+        uart_text_input->view,
+        UART_TextInputModel * model,
+        { model->valadator_message_visible = false; },
         true);
 }
 
-WIFI_TextInput* wifi_text_input_alloc() {
-    WIFI_TextInput* wifi_text_input = malloc(sizeof(WIFI_TextInput));
-    wifi_text_input->view = view_alloc();
-    view_set_context(wifi_text_input->view, wifi_text_input);
-    view_allocate_model(wifi_text_input->view, ViewModelTypeLocking, sizeof(WIFI_TextInputModel));
-    view_set_draw_callback(wifi_text_input->view, wifi_text_input_view_draw_callback);
-    view_set_input_callback(wifi_text_input->view, wifi_text_input_view_input_callback);
+UART_TextInput* uart_text_input_alloc() {
+    UART_TextInput* uart_text_input = malloc(sizeof(UART_TextInput));
+    uart_text_input->view = view_alloc();
+    view_set_context(uart_text_input->view, uart_text_input);
+    view_allocate_model(uart_text_input->view, ViewModelTypeLocking, sizeof(UART_TextInputModel));
+    view_set_draw_callback(uart_text_input->view, uart_text_input_view_draw_callback);
+    view_set_input_callback(uart_text_input->view, uart_text_input_view_input_callback);
 
-    wifi_text_input->timer =
-        furi_timer_alloc(wifi_text_input_timer_callback, FuriTimerTypeOnce, wifi_text_input);
+    uart_text_input->timer =
+        furi_timer_alloc(uart_text_input_timer_callback, FuriTimerTypeOnce, uart_text_input);
 
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
-        {
-            model->validator_text = furi_string_alloc();
-            model->minimum_length = 1;
-            model->cursor_pos = 0;
-            model->cursor_select = false;
-        },
+        uart_text_input->view,
+        UART_TextInputModel * model,
+        { model->validator_text = furi_string_alloc(); },
         false);
 
-    wifi_text_input_reset(wifi_text_input);
+    uart_text_input_reset(uart_text_input);
 
-    return wifi_text_input;
+    return uart_text_input;
 }
 
-void wifi_text_input_free(WIFI_TextInput* wifi_text_input) {
-    furi_assert(wifi_text_input);
+void uart_text_input_free(UART_TextInput* uart_text_input) {
+    furi_assert(uart_text_input);
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
+        uart_text_input->view,
+        UART_TextInputModel * model,
         { furi_string_free(model->validator_text); },
         false);
 
     // Send stop command
-    furi_timer_stop(wifi_text_input->timer);
+    furi_timer_stop(uart_text_input->timer);
     // Release allocated memory
-    furi_timer_free(wifi_text_input->timer);
+    furi_timer_free(uart_text_input->timer);
 
-    view_free(wifi_text_input->view);
+    view_free(uart_text_input->view);
 
-    free(wifi_text_input);
+    free(uart_text_input);
 }
 
-void wifi_text_input_reset(WIFI_TextInput* wifi_text_input) {
-    furi_assert(wifi_text_input);
+void uart_text_input_reset(UART_TextInput* uart_text_input) {
+    furi_assert(uart_text_input);
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
+        uart_text_input->view,
+        UART_TextInputModel * model,
         {
+            model->text_buffer_size = 0;
             model->header = "";
             model->selected_row = 0;
             model->selected_column = 0;
-            model->selected_keyboard = 0;
-            model->minimum_length = 1;
             model->clear_default_text = false;
-            model->cursor_pos = 0;
-            model->cursor_select = false;
             model->text_buffer = NULL;
             model->text_buffer_size = 0;
             model->callback = NULL;
@@ -661,61 +561,48 @@ void wifi_text_input_reset(WIFI_TextInput* wifi_text_input) {
             model->validator_callback = NULL;
             model->validator_callback_context = NULL;
             furi_string_reset(model->validator_text);
-            model->validator_message_visible = false;
+            model->valadator_message_visible = false;
         },
         true);
 }
 
-View* wifi_text_input_get_view(WIFI_TextInput* wifi_text_input) {
-    furi_assert(wifi_text_input);
-    return wifi_text_input->view;
+View* uart_text_input_get_view(UART_TextInput* uart_text_input) {
+    furi_assert(uart_text_input);
+    return uart_text_input->view;
 }
 
-void wifi_text_input_set_result_callback(
-    WIFI_TextInput* wifi_text_input,
-    WIFI_TextInputCallback callback,
+void uart_text_input_set_result_callback(
+    UART_TextInput* uart_text_input,
+    UART_TextInputCallback callback,
     void* callback_context,
     char* text_buffer,
     size_t text_buffer_size,
     bool clear_default_text) {
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
+        uart_text_input->view,
+        UART_TextInputModel * model,
         {
             model->callback = callback;
             model->callback_context = callback_context;
             model->text_buffer = text_buffer;
             model->text_buffer_size = text_buffer_size;
             model->clear_default_text = clear_default_text;
-            model->cursor_select = false;
             if(text_buffer && text_buffer[0] != '\0') {
-                model->cursor_pos = strlen(text_buffer);
                 // Set focus on Save
                 model->selected_row = 2;
-                model->selected_column = 9;
-                model->selected_keyboard = 0;
-            } else {
-                model->cursor_pos = 0;
+                model->selected_column = 8;
             }
         },
         true);
 }
 
-void wifi_text_input_set_minimum_length(WIFI_TextInput* wifi_text_input, size_t minimum_length) {
-    with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
-        { model->minimum_length = minimum_length; },
-        true);
-}
-
-void wifi_text_input_set_validator(
-    WIFI_TextInput* wifi_text_input,
-    WIFI_TextInputValidatorCallback callback,
+void uart_text_input_set_validator(
+    UART_TextInput* uart_text_input,
+    UART_TextInputValidatorCallback callback,
     void* callback_context) {
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
+        uart_text_input->view,
+        UART_TextInputModel * model,
         {
             model->validator_callback = callback;
             model->validator_callback_context = callback_context;
@@ -723,28 +610,28 @@ void wifi_text_input_set_validator(
         true);
 }
 
-WIFI_TextInputValidatorCallback
-    wifi_text_input_get_validator_callback(WIFI_TextInput* wifi_text_input) {
-    WIFI_TextInputValidatorCallback validator_callback = NULL;
+UART_TextInputValidatorCallback
+    uart_text_input_get_validator_callback(UART_TextInput* uart_text_input) {
+    UART_TextInputValidatorCallback validator_callback = NULL;
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
+        uart_text_input->view,
+        UART_TextInputModel * model,
         { validator_callback = model->validator_callback; },
         false);
     return validator_callback;
 }
 
-void* wifi_text_input_get_validator_callback_context(WIFI_TextInput* wifi_text_input) {
+void* uart_text_input_get_validator_callback_context(UART_TextInput* uart_text_input) {
     void* validator_callback_context = NULL;
     with_view_model(
-        wifi_text_input->view,
-        WIFI_TextInputModel * model,
+        uart_text_input->view,
+        UART_TextInputModel * model,
         { validator_callback_context = model->validator_callback_context; },
         false);
     return validator_callback_context;
 }
 
-void wifi_text_input_set_header_text(WIFI_TextInput* wifi_text_input, const char* text) {
+void uart_text_input_set_header_text(UART_TextInput* uart_text_input, const char* text) {
     with_view_model(
-        wifi_text_input->view, WIFI_TextInputModel * model, { model->header = text; }, true);
+        uart_text_input->view, UART_TextInputModel * model, { model->header = text; }, true);
 }
