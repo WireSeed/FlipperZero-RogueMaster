@@ -25,11 +25,11 @@ typedef struct {
 const FlipperApplication FLIPPER_APPS2[] = {
 
     {
-        .name = "Applications",
+        .name = "Clock",
     },
 
     {
-        .name = "Clock",
+        .name = "Applications",
     },
 
     {
