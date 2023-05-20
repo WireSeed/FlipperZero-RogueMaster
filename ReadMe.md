@@ -39,6 +39,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL:[Move dangerous_settings check #475 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/475)
 - UL: Added:[Sub-GHz Remote Refactored #477 (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
 - [subghz_dangerous_freq service not needed due to other settings (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/815db042243fb18e778c2b02fbde7e2bfc7c88ae#diff-8336a68a9721283a389662cebedac2fbc8ae520904c5a5cbf297cbddc5be393c)
+- Updated: [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch) Included Asset Changed
 
 <a name="release">
 
