@@ -6,7 +6,7 @@ App(
     requires=["gui"],
     stack_size=2 * 1024,
     icon="A_Clock_14",
-    order=9,
+    order=8,
     fap_icon="ClockIcon.png",
     fap_category="Main",
     fap_icon_assets="icons",
