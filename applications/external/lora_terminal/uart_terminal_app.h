@@ -4,7 +4,7 @@
 extern "C" {
 #endif
 
-typedef struct lora_terminalApp lora_terminalApp;
+typedef struct UART_TerminalApp UART_TerminalApp;
 
 #ifdef __cplusplus
 }
