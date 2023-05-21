@@ -86,7 +86,7 @@ SubGhzRemoteApp* subghz_remote_app_alloc() {
     }
 
     app->setting = subghz_setting_alloc();
-    subghz_setting_load(app->setting, EXT_PATH("subghz/assets/setting_user"));
+    subghz_setting_load(app->setting, EXT_PATH("subghz/assets/setting_user.txt"));
 
     app->environment = subghz_environment_alloc();
 
