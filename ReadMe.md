@@ -51,6 +51,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Switched Infrared to FAP (By RogueMaster)
 - OFW PR: [Infrared: respect carrier frequency and duty cycle settings #2677](https://github.com/flipperdevices/flipperzero-firmware/pull/2677)
 - OFW PR: [LRFID: Add support for Nexkey/Nexwatch #2680](https://github.com/flipperdevices/flipperzero-firmware/pull/2680)
+- Added: [Notes for FZ WIP (By AdrianN001)](https://github.com/AdrianN001/Flipper-Zero-Note-Application)
 
 <a name="release">
 
@@ -361,6 +362,7 @@ $ ./fbt dolphin_ext
 - [NFC Magic (By gornekich)](https://github.com/flipperdevices/flipperzero-firmware/pull/1966)
 - [NFC Magic Gen4 app #2238 (By nullableVoidPtr)](https://github.com/flipperdevices/flipperzero-firmware/pull/2238) [(Updates By xMasterX)](https://github.com/xMasterX/unleashed-extra-pack)
 - [Nightstand Clock (By nymda)](https://github.com/nymda/FlipperNightStand)
+- [Notes for FZ WIP (By AdrianN001)](https://github.com/AdrianN001/Flipper-Zero-Note-Application)
 - [NRF Sniff (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/nrfsniff) ([Pin Out](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/nrfsniff) from nocomp/Frog/UberGuidoZ) `Req: NRF24`
 - [NRF24 Batch v1.9 (By vad7)](https://github.com/vad7/nRF24-Batch)
 - [NRF24 Scanner v2.2 (By vad7)](https://github.com/vad7/nrf24scan)
