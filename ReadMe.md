@@ -48,6 +48,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [LORA Terminal (By aafksab)](https://github.com/aafksab/LORA-Term) (Changes By xMasterX)
 - Updated: [WiFi (Deauther) V2 (By Timmotools)](https://github.com/Timmotools/flipperzero_esp8266_deautherv2) `Req: ESP8266` (Changes By xMasterX)
 - Updated: [Mifare Nested 1.4.6 (By AloneLiberty)](https://github.com/AloneLiberty/FlipperNested)
+- Switched Infrared to FAP (By RogueMaster)
 
 <a name="release">
 
