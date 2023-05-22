@@ -62,6 +62,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Fixed SubGHz Remote Refactored File Refrences & UL App Manifest Changes (By RogueMaster)
 - OFW PR: [Nfc mful c detect #645 (By GMMan)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/645)
 - ReAdded [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate) with fixes for NFC (By RogueMaster)
+- Updated: [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
 
 <a name="release">
 
