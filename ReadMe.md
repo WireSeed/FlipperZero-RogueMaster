@@ -53,6 +53,11 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW PR: [LRFID: Add support for Nexkey/Nexwatch #2680](https://github.com/flipperdevices/flipperzero-firmware/pull/2680)
 - Added: [Notes for FZ WIP (By AdrianN001)](https://github.com/AdrianN001/Flipper-Zero-Note-Application)
 - Updated: [Sub-GHz Remote Refactored (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
+- UL: GPS UART stability fix (By xMasterX)
+- UL: Mini Refactor for ESP8266 Deauth, Tetris & WiFi Scanner (By xMasterX)
+- UL: API Clenup (By xMasterX)
+- If you have issues opening any existing apps, please let me know - RogueMaster
+- New Music Player Assets By Red Fox: Day and Night & Through The Fire And The Flames
 
 <a name="release">
 
