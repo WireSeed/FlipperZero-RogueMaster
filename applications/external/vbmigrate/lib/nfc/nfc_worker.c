@@ -136,10 +136,11 @@ static bool nfc_worker_read_mf_ultralight(NfcWorker* nfc_worker, FuriHalNfcTxRxC
 
 static bool nfc_worker_read_nfca(NfcWorker* nfc_worker, FuriHalNfcTxRxContext* tx_rx) {
     FuriHalNfcDevData* nfc_data = &nfc_worker->dev_data->nfc_data;
+    FuriHalNfcADevData* a_data = &nfc_data->a_data;
 
     bool card_read = false;
     furi_hal_nfc_sleep();
-    if(mf_ul_check_card_type(nfc_data->atqa[0], nfc_data->atqa[1], nfc_data->sak)) {
+    if(mf_ul_check_card_type(a_data)) {
         FURI_LOG_I(TAG, "Mifare Ultralight / NTAG detected");
         nfc_worker->dev_data->protocol = NfcDeviceProtocolMifareUl;
         card_read = nfc_worker_read_mf_ultralight(nfc_worker, tx_rx);
@@ -334,7 +335,7 @@ void nfc_worker_mf_ultralight_read_auth(NfcWorker* nfc_worker) {
     while(nfc_worker->state == NfcWorkerStateReadMfUltralightReadAuth) {
         furi_hal_nfc_sleep();
         if(furi_hal_nfc_detect(nfc_data, 300) && nfc_data->type == FuriHalNfcTypeA) {
-            if(mf_ul_check_card_type(nfc_data->atqa[0], nfc_data->atqa[1], nfc_data->sak)) {
+            if(mf_ul_check_card_type(&nfc_data->a_data)) {
                 nfc_worker->callback(NfcWorkerEventCardDetected, nfc_worker->context);
                 if(data->auth_method == MfUltralightAuthMethodManual ||
                    data->auth_method == MfUltralightAuthMethodAuto) {
