@@ -1,7 +1,7 @@
 import os
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Callable, List, Optional, Tuple, Union
+from typing import Callable, List, Optional, Tuple
 
 
 class FlipperManifestException(Exception):
@@ -58,7 +58,7 @@ class FlipperApplication:
 
     # .fap-specific
     sources: List[str] = field(default_factory=lambda: ["*.c*"])
-    fap_version: Union[str, Tuple[int]] = "0.1"
+    fap_version: Tuple[int] = field(default_factory=lambda: (0, 1))
     fap_icon: Optional[str] = None
     fap_libs: List[str] = field(default_factory=list)
     fap_category: str = ""

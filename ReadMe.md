@@ -59,6 +59,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - If you have issues opening any existing apps, please let me know - RogueMaster
 - New Music Player Assets By Red Fox: Day and Night & Through The Fire And The Flames
 - UL: Updated: [Tanks (By Alexgr13)](https://github.com/alexgr13/flipperzero-firmware/tree/fork/dev/applications/tanks-game) (By xMasterX)
+- Fixed SubGHz Remote Refactored File Refrences & UL App Manifest Changes (By RogueMaster)
 
 <a name="release">
 
