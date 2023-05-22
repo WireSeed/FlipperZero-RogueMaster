@@ -60,6 +60,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - New Music Player Assets By Red Fox: Day and Night & Through The Fire And The Flames
 - UL: Updated: [Tanks (By Alexgr13)](https://github.com/alexgr13/flipperzero-firmware/tree/fork/dev/applications/tanks-game) (By xMasterX)
 - Fixed SubGHz Remote Refactored File Refrences & UL App Manifest Changes (By RogueMaster)
+- OFW PR: [Nfc mful c detect #645 (By GMMan)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/645)
 
 <a name="release">
 
