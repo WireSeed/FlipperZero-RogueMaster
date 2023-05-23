@@ -1,6 +1,5 @@
 #include "hid_mouse_jiggler.h"
 #include <gui/elements.h>
-#include <m-string.h>
 #include "../hid.h"
 
 #include "hid_icons.h"
