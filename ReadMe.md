@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0522-0201-0.83.2-d06b34a](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-22 18:04 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-22 18:04 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-05-23 15:42 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-05-23 15:42 EST`
 - [Join our Discord and see #announcemnets for our current giveaway!](https://discord.gg/roguemaster)
 - Updated: [Dab Timer (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer) Clock Faces Inverted
 - UL: [Name Changer Service Improvements / ReWritten To Cover Needed Bluetooth Name Changes (By xMasterX)](https://github.com/DarkFlippers/unleashed-firmware/commit/a7ee5fea93ad424c159b9a9a242a13d6b79f5c8f)
@@ -65,6 +65,10 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
 - Updated Music Player Assets By Red Fox: Evangeli0n Ext
 - Only Use CFW Settings on Normal Boot (By Willy-JL)
+- OFW: [Services: remove deallocator for persistent services #2692 (By skotopes)](https://github.com/flipperdevices/flipperzero-firmware/pull/2692)
+- OFW: [Storage: common_rename is now POSIX compliant #2693 (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2693)
+- OFW: [Removed user-specific data from tar artifacts #2691 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2691)
+- Updated: [WiFi (Marauder) v0.3.6 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion) [(By justcallmekoko)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion/pull/17)
 
 <a name="release">
 
@@ -426,7 +430,7 @@ $ ./fbt dolphin_ext
 - [Weather Station (By Skorpionm)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1833)
 - [Wiegand Reader (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio)
 - [WiFi (Deauther) V2 (By Timmotools)](https://github.com/Timmotools/flipperzero_esp8266_deautherv2) `Req: ESP8266`
-- [WiFi (Marauder) v0.3.5 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED` [ESP32 MARAUDER Firmware](https://github.com/tcpassos/ESP32Marauder)
+- [WiFi (Marauder) v0.3.6 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion) `Req: ESP32 WITH MARAUDER FLASHED` [ESP32 MARAUDER Firmware](https://github.com/tcpassos/ESP32Marauder)
 - [Wifi Mapping (By carvilsi)](https://github.com/carvilsi/flipper0-wifi-map/tree/main) `Req: ESP32`
 - [WiFi Scanner v.0.4 (By SequoiaSan)](https://github.com/SequoiaSan/FlipperZero-WiFi-Scanner_Module-ESP8266) `Req: ESP8266 or ESP32`
 - [Wii EC Analyzer (By csBlueChip)](https://github.com/csBlueChip/FlipperZero_WiiEC)
