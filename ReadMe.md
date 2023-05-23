@@ -64,6 +64,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - ReAdded [VB Migration Assistant (By GMMan)](https://github.com/GMMan/flipperzero-vb-migrate) with fixes for NFC (By RogueMaster)
 - Updated: [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
 - Updated Music Player Assets By Red Fox: Evangeli0n Ext
+- Only Use CFW Settings on Normal Boot (By Willy-JL)
 
 <a name="release">
 
