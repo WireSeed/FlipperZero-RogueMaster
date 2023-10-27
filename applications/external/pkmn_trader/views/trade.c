@@ -161,7 +161,6 @@ struct trade_model {
 void pokemon_plist_recreate_callback(void* context, uint32_t arg) {
     furi_assert(context);
     UNUSED(arg);
-
     struct trade_ctx* trade = context;
 
     plist_create(&(trade->patch_list), trade->trade_block);
@@ -224,13 +223,9 @@ static void trade_draw_callback(Canvas* canvas, void* view_model) {
                 canvas_draw_icon(canvas, 0, 0, &I_gb_step_2);
             }
             break;
-        case GAMEBOY_READY:
-        case GAMEBOY_WAITING:
-        case GAMEBOY_SEND:
-            canvas_draw_icon(canvas, 38, 11, model->pokemon_table[curr_pokemon].icon);
-            break;
         default:
-            // Default state added to eliminated enum warning
+            /* Every other state, draw the pokemon we're planning to trade */
+            canvas_draw_icon(canvas, 38, 11, model->pokemon_table[curr_pokemon].icon);
             break;
         }
         canvas_draw_icon(canvas, 0, 53, &I_Background_128x11);
@@ -249,7 +244,7 @@ static void trade_draw_callback(Canvas* canvas, void* view_model) {
             gameboy_status_text = "READY";
             break;
         case GAMEBOY_SEND:
-            gameboy_status_text = "DEAL...";
+            gameboy_status_text = "DEAL!";
             break;
         case GAMEBOY_PENDING:
             gameboy_status_text = "PENDING...";
@@ -284,10 +279,6 @@ uint32_t micros() {
  */
 static uint8_t getConnectResponse(uint8_t in, struct trade_ctx* trade) {
     furi_assert(trade);
-
-    /* XXX: Can streamline this code a bit by setting ret to in
-     * and then only setting ret where needed? Might be a useless
-     * optimization though */
     uint8_t ret;
 
     switch(in) {
@@ -347,9 +338,25 @@ static uint8_t getMenuResponse(uint8_t in, struct trade_ctx* trade) {
         break;
     case PKMN_TRADE_CENTRE:
         trade->connection_state = TRADE_CENTRE;
+        with_view_model(
+            trade->view,
+            struct trade_model * model,
+            {
+                model->gameboy_status = GAMEBOY_READY;
+                model->trading = true;
+            },
+            false);
         break;
     case PKMN_COLOSSEUM:
         trade->connection_state = COLOSSEUM;
+        with_view_model(
+            trade->view,
+            struct trade_model * model,
+            {
+                model->gameboy_status = GAMEBOY_READY;
+                model->trading = true;
+            },
+            false);
         break;
     case PKMN_BREAK_LINK:
     case PKMN_MASTER:
@@ -400,7 +407,6 @@ static uint8_t getTradeCentreResponse(uint8_t in, struct trade_ctx* trade) {
                 /* XXX: Set the ready to go state sooner in the link establishment. Maybe change the text a bit? */
                 trade->trade_centre_state = READY_TO_GO;
                 //  CLICK EN LA MESA, when the gameboy clicks on the trade table
-                model->gameboy_status = GAMEBOY_READY;
             }
             counter++;
         }
@@ -418,6 +424,7 @@ static uint8_t getTradeCentreResponse(uint8_t in, struct trade_ctx* trade) {
         /* Also specifically it is repeated 10 times to signify that the random block is about to start */
         if((in & 0xF0) == 0xF0) trade->trade_centre_state = SEEN_FIRST_WAIT;
         patch_pt_2 = false;
+        in_pokemon_num = 0;
         break;
 
     case SEEN_FIRST_WAIT:
@@ -464,14 +471,16 @@ static uint8_t getTradeCentreResponse(uint8_t in, struct trade_ctx* trade) {
         send = trade_block_flat[counter];
         counter++;
 
-        if(counter == 415) //TODO: replace with sizeof struct rather than static number
-            trade->trade_centre_state = SENDING_PATCH_DATA;
+        if(counter == sizeof(TradeBlock)) trade->trade_centre_state = SENDING_PATCH_DATA;
+
         break;
 
     /* XXX: This seems to end with the gameboy sending DF FE 15? */
 
     /* A couple of FD bytes are sent, looks like 6, which means I don't think we can use count of FD bytes to see what mode we're in */
-    /* We need to send our own patch data as well as receiving and then applying */
+    /* XXX: THIS IS TESTED AND WORKING AS OF 20231025!
+     * That means we for sure start this state and leave ths state at the right
+     * parts of communication */
     case SENDING_PATCH_DATA:
         if(in == 0xFD) {
             counter = 0;
@@ -511,7 +520,9 @@ static uint8_t getTradeCentreResponse(uint8_t in, struct trade_ctx* trade) {
             /* This is actually 200 bytes, but that includes the 3x 0xFD that we
 	     * sent without counting.
 	     */
-            if(counter == 197) trade->trade_centre_state = TRADE_PENDING;
+            if(counter == 196) {
+                trade->trade_centre_state = TRADE_PENDING;
+            }
         }
         break;
 
@@ -524,20 +535,27 @@ static uint8_t getTradeCentreResponse(uint8_t in, struct trade_ctx* trade) {
             model->gameboy_status = GAMEBOY_TRADE_READY;
             /* 0x6? says what pokemon the gameboy is sending us */
         } else if((in & 0x60) == 0x60) {
-            in_pokemon_num = in & 0x0F;
+            in_pokemon_num = in;
             send = 0x60; // first pokemon
             model->gameboy_status = GAMEBOY_SEND;
             /* I think this is a confirmation of what is being traded, likely from the dialog of:
 	     * so and so will be traded for so and so, is that ok?
 	     */
         } else if(in == 0x00) {
-            send = 0;
-            trade->trade_centre_state = TRADE_CONFIRMATION;
+            if(in_pokemon_num != 0) {
+                send = 0;
+                trade->trade_centre_state = TRADE_CONFIRMATION;
+                in_pokemon_num &= 0x0F;
+            }
         }
         /* XXX: Test to make sure saying no at is this okay does the right thing */
+        /* XXX: It does not */
         break;
 
     /* XXX: The actual trade uses 0x62 a bunch? Is that the OKAY? Is 0x61 a NAK? Other docs show 0x6F? */
+    /* XXX: The pending text never really shows up. Maybe have a "DEAL?" and "DEAL!" state instead?
+     * Actually, I think that goes by too quick, I think once you accept it goes straight in to trade.
+     * So maybe the PENNDING state is actually useless? */
     case TRADE_CONFIRMATION:
         if(in == 0x61) {
             trade->trade_centre_state = TRADE_PENDING;
@@ -595,20 +613,13 @@ void transferBit(void* context) {
     struct trade_ctx* trade = (struct trade_ctx*)context;
     static uint8_t out_data;
     bool connected;
-    bool trading;
 
     /* We use with_view_model since the functions called here could potentially
      * also need to use the model resources. Right now this is not an issue, but
      * if this were to ever end up having a lock, it could cause access issues.
      */
     with_view_model(
-        trade->view,
-        struct trade_model * model,
-        {
-            connected = model->connected;
-            trading = model->trading;
-        },
-        false);
+        trade->view, struct trade_model * model, { connected = model->connected; }, false);
 
     /* Shift data in every clock */
     trade->in_data <<= 1;
@@ -654,18 +665,10 @@ void transferBit(void* context) {
         DELAY_MICROSECONDS); // Wait 20-60us ... 120us max (in slave mode is not necessary)
     // TODO: The above comment doesn't make sense as DELAY_MICROSECONDS is defined as 15
 
-    if(trade->trade_centre_state == READY_TO_GO) trading = true;
-
     out_data = out_data << 1;
 
     with_view_model(
-        trade->view,
-        struct trade_model * model,
-        {
-            model->trading = trading;
-            model->connected = connected;
-        },
-        false);
+        trade->view, struct trade_model * model, { model->connected = connected; }, false);
 }
 
 void input_clk_gameboy(void* context) {
