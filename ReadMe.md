@@ -30,18 +30,21 @@ This software is for experimental purposes only and is not meant for any illegal
 ## Latest Updates - [PATREON: Latest Release RM1027-0142-0.93.1-7f8908b](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-10-23 23:00 EST`
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md): `2023-10-27 01:42 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md): `2023-10-27 18:58 EST`
 - [ESP32 Evil Portal v0.2 (By bigbrodude6119)](https://github.com/bigbrodude6119/flipper-zero-evil-portal) ADDED: `sas_lounge.html` by [PontusMadsen](https://github.com/bigbrodude6119/flipper-zero-evil-portal/pull/79)
 - SubGHz: [Transmit Indicator before Out of Region Frequency Use (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e24d4a0689db555ae083fec23a471e878adb6cd4)
 - Added: [Genie Recorder v2.5 (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/subghz/apps/genie-recorder)
 - Updated: [Sub-GHz Remote (Refactored) + Configurator v1.3 (By gid9798)](https://github.com/DarkFlippers/SubGHz_Remote)
 - [API Symbol Cleanup (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/c95dfa1fdaa868aaf98f9c5b5aab5e7e775e409b)
-- Updated: [Pokemon Trading v1.3 (By EstebanFuentealba & kbembedded)](https://github.com/EstebanFuentealba/Flipper-Zero-Game-Boy-Trading-Pokemons)
 - Updated: [ESP32 Gravity v0.6 (By chris-bc)](https://github.com/chris-bc/Flipper-Gravity)
 - Updated: [Skeleton App v1.1 (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/ui/skeleton_app)
 - Updated: [BLE Spam v4.1 (By Willy-JL & ECTO-1A & Spooks4576 with research from xMasterX; OFW API thanks to noproto)](https://github.com/noproto/apple_ble_spam_ofw) Crash Fix & Many Other Changes (By Willy-JL), New Actions (By Mr-Proxy-source) & New Devices (By xAstroBoy, Spooks4576 & DiamondRoPlayz)
 - Added: [Cookie Clicker v1.0 (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/hid/hid_cookie)
 - Added: [GPIO Badge v1.0 (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio/gpio_badge)
+- Updated: [Pokemon Trading v1.3 (By EstebanFuentealba & kbembedded)](https://github.com/EstebanFuentealba/Flipper-Zero-Game-Boy-Trading-Pokemons)
+- Updated: [GPS v1.2 (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` [Closes on short press (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877)
+- Updated: [ESP Flasher v1.2 (By 0xchocolate)](https://github.com/0xchocolate/flipperzero-esp-flasher)Add  [Support Multi-fucc and Xeon bootmode (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877)
+- Updated: [J305 Geiger Counter v1.1 (By nmrr)](https://github.com/nmrr/flipperzero-geigercounter), [NRF24 Channel Scanner v1.3 (by htotoo)](https://github.com/htotoo/NRF24ChannelScanner) & [NRF Sniff v1.1 (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/nrfsniff) [Close on short press (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877)
 
 <a name="release">
 
