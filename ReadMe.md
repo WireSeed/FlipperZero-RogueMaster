@@ -30,7 +30,7 @@ This software is for experimental purposes only and is not meant for any illegal
 ## Latest Updates - [PATREON: Latest Release RM1028-0239-0.93.1-7f362cc](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-10-23 23:00 EST`
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md): `2023-10-28 02:40 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md): `2023-10-28 22:13 EST`
 - [ESP32 Evil Portal v0.2 (By bigbrodude6119)](https://github.com/bigbrodude6119/flipper-zero-evil-portal) ADDED: `sas_lounge.html` by [PontusMadsen](https://github.com/bigbrodude6119/flipper-zero-evil-portal/pull/79)
 - SubGHz: [Transmit Indicator before Out of Region Frequency Use (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e24d4a0689db555ae083fec23a471e878adb6cd4)
 - Added: [Genie Recorder v2.5 (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/subghz/apps/genie-recorder)
@@ -43,13 +43,15 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [GPIO Badge v1.0 (By jamisonderek)](https://github.com/jamisonderek/flipper-zero-tutorials/tree/main/gpio/gpio_badge)
 - Updated: [Pokemon Trading v1.3 (By EstebanFuentealba & kbembedded)](https://github.com/EstebanFuentealba/Flipper-Zero-Game-Boy-Trading-Pokemons)
 - Updated: [GPS v1.2 (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` [Closes on short press (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877)
-- Updated: [ESP Flasher v1.2 (By 0xchocolate)](https://github.com/0xchocolate/flipperzero-esp-flasher) [Add Support Multi-fucc and Xeon bootmode (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877)
 - Updated: [J305 Geiger Counter v1.1 (By nmrr)](https://github.com/nmrr/flipperzero-geigercounter), [NRF24 Channel Scanner v1.3 (by htotoo)](https://github.com/htotoo/NRF24ChannelScanner) & [NRF Sniff v1.1 (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/nrfsniff) [Close on short press (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877)
 - Patreon Supporters: SD Card Asset Update: Included an updated [Dual_Boot_Flipper_or_WROVER.bin (By TalkingSasquach)](https://github.com/skizzophrenic/Talking-Sasquach/tree/main/Single%20File%20WiFi%20Board%20Bins/Dual%20Boot) and also the latest [Marauder bins v0.13.3 (By justcallmekoko)](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.3).
 - NFC: [Added additional aid GeldKarte (for emv) (thanks to haisenteck) (From Korai-Labs / ankris812)](https://github.com/Korai-Labs/Korai)
 - NFC: [Extra NFC Mifare Keys (By Korai-Labs / ankris812)](https://github.com/Korai-Labs/Korai)
 - SubGHz: [Added custom radio presets for AM_Q (By Korai-Labs / ankris812)](https://github.com/Korai-Labs/Korai)
 - SubGHz: [Oregon2 (thanks to haisenteck) (From Korai-Labs / ankris812)](https://github.com/Korai-Labs/Korai)
+- Updated: [NRF24 Batch v2.0 (By vad7)](https://github.com/vad7/nRF24-Batch) Minor asset update.
+- Updated: [ESP Flasher v1.2 (By 0xchocolate)](https://github.com/0xchocolate/flipperzero-esp-flasher) [Add Support Multi-fucc and Xeon bootmode (By Sil333033)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/e6677c8aa0e299f7d057d6493f0a2c67cc8c7877) + Fix bootloader mode issue (By Sil333033)
+- [Re-uploading AD Police background with XP bar (By Kuronons)](https://github.com/Kuronons/FZ_graphics/commit/fe782c6f91c8c6ae935546ee7b35f6bcaeeb1036)
 
 <a name="release">
 
@@ -331,7 +333,7 @@ $ ./fbt dolphin_ext
 - [Count Down Timer v1.2 (By 0w0mewo)](https://github.com/0w0mewo/fpz_cntdown_timer)
 - [Counter v1.2 (By Krulknul)](https://github.com/Krulknul/dolphin-counter) [Improved (By plasticuproject)](https://github.com/plasticuproject/dolphin-better-counter)
 - [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
-- [Dab Timer v1.2 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer)
+- [Dab Timer v1.5 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer)
 - [DAP Link v1.1 (By DrZlo13)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1897)
 - [DCF77 Transmitter v1.1 (By arha)](https://github.com/arha/flipper-dcf77)
 - [Deauther PWNDTOOLS V2.6.0 (By HEX0DAYS)](https://github.com/HEX0DAYS/FlipperZero-PWNDTOOLS) `Req: ESP8266` [Original](https://github.com/SpacehuhnTech/esp8266_deauther)
